@@ -74,12 +74,12 @@ Avoid ordinary anime/cel shading unless explicitly requested.
 | 比耶微笑 | PEACE SIGN + SMILE | raises a peace sign and gives a restrained smile |
 | 比心眨眼 | HEART FINGER + WINK | forms a small finger heart and gives one playful wink |
 
-## Timing scale
+## Localized-slice timing scale
 
 For duration `D`, use these normalized boundaries:
 
-`0, .055D, .14D, .27D, .39D, .52D, .65D, .78D, .90D, D`
+`0, .055D, .164D, .291D, .455D, .645D, .818D, .936D, D`
 
 For 11 seconds:
 
-`0.0, 0.6, 1.5, 3.0, 4.3, 5.7, 7.2, 8.6, 9.9, 11.0`
+`0.0, 0.6, 1.8, 3.2, 5.0, 7.1, 9.0, 10.3, 11.0`

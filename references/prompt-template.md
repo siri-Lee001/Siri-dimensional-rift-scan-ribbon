@@ -1,167 +1,79 @@
-# Body-Registered Scan-Ribbon Prompt Template
+# Localized Body-Registered Slice Template
 
-Use this template for the default SCAN-RIBBON MODE. Scale the timeline proportionally for durations other than 11 seconds.
-
-## Input mapping
-
-| Input | Derived prompt values |
-|---|---|
-| 时长 | exact beat boundaries from `preset-dict.md` |
-| 现实场景 | real environment, stable background anchors, lighting |
-| 现实主角 | gender, wardrobe, silhouette, identity anchors |
-| 裂隙中的风格场景 | transformed texture motifs; keep it subordinate to the body transformation |
-| 裂隙中的主角 | transformed identity and costume |
-| 艺术风格 | style phrase and material descriptors |
-| 收尾动作 | ending preset |
-
-Auto-derive:
-
-- `GESTURE_STYLE`
-- `PALETTE`
-- `REAL_IDENTITY_ANCHORS`
-- `TRANSFORMED_IDENTITY_ANCHORS`
-- `REGISTRATION_ANCHORS`: eyes, nose, mouth, jaw, hairline, shoulders, elbows, wrists, fingers, clothing seams
-- `CONTRAST_AXIS`
-- `ENDING_ACTION`
+Use this default template for an 11-second reference-matching clip. Scale timestamps proportionally for other durations.
 
 ## English template
 
 ```text
-SCENE SETUP
+SCENE
 
-{REAL_CHARACTER}. {REAL_SCENE}. Fixed frontal medium shot, chest-level lens, waist-up framing, approximately 10% headroom, only breathing-like ±2px drift. {REAL_LIGHTING}. Photorealistic live action, cinematic detail, stable identity, coherent hands, unchanged background geometry.
+{REAL_CHARACTER}. {REAL_SCENE}. Fixed frontal medium shot, waist-up, chest-level lens, stable live-action identity, coherent hands, unchanged background, no cut, zoom, pan, or orbit. {REAL_LIGHTING}.
 
-CORE EFFECT — BORDERLESS BODY-REGISTERED TRANSFORMATION RIBBON
+LOCALIZED EFFECT
 
-Create a borderless body-registered transformation ribbon controlled by {HIS_HER} {GESTURE_STYLE} hand movements. The ribbon is a narrow horizontal transformation frontier that INTERSECTS the subject's body plane. It is NOT a floating display in front of the person. It is NOT a portal, NOT a doorway, NOT a screen, NOT a picture frame.
+Create a borderless body-registered transformation ribbon controlled by {HIS_HER} hands. The ribbon intersects the physical body plane. It is not a screen floating in front. Transformed content exists only inside the currently visible ribbon. Outside the ribbon, the subject remains the original live-action person at all times. When the ribbon leaves any face or body region, restore that region to live action immediately on the same frames. Never accumulate transformed regions and never complete a full-body transformation.
 
-Keep ribbon height between 8% and 18% of frame height, preferably 12–14%. Keep total ribbon area at or below 22% of frame area. Keep its width within the subject's arm span. Use razor-sharp compositing boundaries but NO visible neon rectangular border, NO glowing frame, NO bezel, and NO full alternate-world window.
+Inside the ribbon only, show the same synchronized person as {TRANSFORMED_CHARACTER}, rendered in {ART_STYLE} using {STYLE_MATERIALS} and {PALETTE}. Keep {TRANSFORMED_SCENE_MOTIFS} as small motifs inside the slice. Lock eyes, nose, mouth, jaw, hairline, hair, shoulders, clothing seams, wrists, palms, and five fingers to the exact live-action screen coordinates. Preserve one person, one skeleton, one face, and one pair of hands.
 
-The ribbon converts the exact real body regions it passes. Lock transformed eyes, nose, mouth, jaw, hairline, shoulders, clothing seams, elbows, wrists, hands, and fingers to the same screen coordinates as the live-action subject. Regions already passed by the scan may remain transformed. A reverse scan restores them. If a hand crosses the ribbon, transform only the intersected portion while preserving one continuous wrist, one continuous palm, and exactly five fingers.
+Begin with a 1–2% high slit. Open to a 16–20% high ribbon and never exceed 22% of frame height or the subject's arm span. A split may create three 4–7% high strips with live-action gaps. Use sharp borderless alpha edges with no glow, bezel, or frame. Every movement is caused by the hands on the same frames. No idle pause exceeds 0.25 seconds.
 
-The transformed identity is {TRANSFORMED_CHARACTER}, rendered as {ART_STYLE} with {STYLE_MATERIALS}. Preserve {REAL_IDENTITY_ANCHORS} as timing and registration anchors while changing {TRANSFORMED_IDENTITY_ANCHORS}. SAME PERSON means synchronized pose, gaze, expression, and coordinates; it does not require identical species, costume, status, or surface appearance.
+{DURATION}-SECOND TIMELINE
 
-Use {PALETTE}. Keep {TRANSFORMED_SCENE_MOTIFS} as compact motifs integrated behind or around the transformed body, never as a complete landscape inside a framed window. Keep the real {REAL_SCENE_SHORT} unchanged outside the transformed subject.
+[0.0–0.6s] PINCH SLIT: Both hands already pinch the ends of a hairline slit at mouth or chin level. Start pulling immediately. Keep the complete live-action face readable.
 
-GESTURE CAUSALITY
+[0.6–1.8s] OPEN LOCAL SLICE: Pull outward to shoulder width. Expand the slit into one 16–20% high ribbon crossing the eyes, nose, and upper mouth. Reveal the alternate artistic identity only inside this ribbon. Hair above it and jaw, clothing, and body below it remain live action.
 
-Every ribbon motion must be caused by the hands on the same frames. Pulling outward opens it. Moving both hands upward scans it upward. Moving downward scans it downward. Opposing hand heights create a shallow S-wave. Pinching and crossing the ends creates a compact accordion fold. Rotating one hand creates a limited full-length axial twist. Bringing the hands together closes it. Allow no autonomous ribbon motion and no idle beat longer than 0.25 seconds.
+[1.8–3.2s] LOCAL UP-DOWN SCAN: Raise both hands by half a face, then lower them toward the collar. The ribbon follows. Each crossed region is artistic only while inside the ribbon and immediately returns to live action as the ribbon moves away. No transformed trail remains.
 
-{DURATION}-SECOND DENSE TIMELINE
+[3.2–5.0s] THREE-PANEL ACCORDION: Raise one hand and lower the other, then exchange heights. Form two diagonal creases and three connected low-height trapezoid panels. Flip the center panel forward approximately 35 degrees and return it. Keep facial coordinates continuous across all panels; no duplicated features.
 
-[0.0–0.6s] PINCH-LINE ANTICIPATION: Begin with both hands near chest or chin level, fingertips pinching the ends of a hair-thin luminous line. Start the pull immediately. Keep the full real face and body visible.
+[5.0–7.1s] THREE-STRIP SPLIT: Flick both hands outward. Split the ribbon into three thin horizontal slices crossing the eyes, mouth, and collar. Offset them left, right, and left by 5–8% of frame width, hold less than 0.2 seconds, then slide them back. Live-action gaps remain between the artistic strips.
 
-[0.6–1.5s] PULL OPEN: Pull both hands rapidly outward. Expand only into a borderless ribbon 12–14% of frame height, within arm span and below 22% frame area. Reveal the first perfectly registered transformed slice across the chest or lower face. No frame, no portal, no separate character.
+[7.1–9.0s] REJOIN + SHALLOW S-SWEEP: Rejoin the strips into one ribbon. Make one shallow S-shaped diagonal sweep across the face and chest, then flatten it. Restore every region immediately after the ribbon leaves it.
 
-[1.5–3.0s] UPWARD SCAN + CONVERSION: Move both hands upward together. The ribbon scans from chest through neck, mouth, nose, and eyes. Every crossed region changes into {TRANSFORMED_CHARACTER} with exact coordinate lock. The already-scanned region remains transformed, producing a clean moving transformation frontier. Match expression and gaze continuously.
+[9.0–10.3s] COMPRESS: Bring both hands together. Compress the ribbon from 18% to 5%, 2%, a slit, and then one small point. The alternate identity disappears only with the shrinking slice.
 
-[3.0–4.3s] REVERSE DOWN-SCAN + SLICE SWITCH: Move the ribbon down through the face and shoulders. Reverse only selected regions so real and transformed identity alternate in stacked horizontal slices for a few frames. Keep all slices aligned to one body; no duplicated face, neck, or hands.
-
-[4.3–5.7s] DIAGONAL S-WAVE: Raise one hand and lower the other. Tilt the narrow ribbon and form one shallow S-wave. Slide it diagonally across the face and torso while preserving registration. The subject performs a concise expression change; the transformed version mirrors it on the exact frames.
-
-[5.7–7.2s] COMPACT ACCORDION FOLD: Pinch both ribbon ends and move them inward on opposing diagonals. Create two diagonal creases and flip one center panel, forming a low-height three-panel accordion. THIS IS THE MOST IMPORTANT FOLD. The ribbon stays 8–18% high, never becomes a diamond or giant butterfly, and never behaves like paper, film, card, or rigid glass. The registered face/body slice folds coherently with the band.
-
-[7.2–8.6s] REOPEN + FAST DOUBLE SCAN: Snap the accordion open into one narrow ribbon. Perform one fast upward scan and one fast downward scan. Each pass toggles body regions between real and transformed states. Keep the background unchanged and anatomy continuous.
-
-[8.6–9.9s] LIMITED AXIAL TWIST + RESTORE: Rotate one hand by approximately 90–140 degrees while stabilizing the other. Twist the ENTIRE narrow ribbon along its full length, never only one corner. Keep it low-height and within arm span. Immediately reverse the twist and scan downward to restore the live-action identity from forehead to chest.
-
-[9.9–{DURATION}s] SNAP CLOSE + ENDING: Bring both hands together. Collapse the ribbon into a thin line and then a point. {ENDING_ACTION}. End with the real identity fully restored unless the user explicitly requests a transformed ending.
-
-CONSISTENCY RULES
-
-1. One person, one body, one face coordinate system throughout.
-2. The ribbon intersects the body plane; it never floats as a screen in front.
-3. Height stays 8–18% of frame height; area stays ≤22%; width stays within arm span.
-4. Boundaries are visually borderless; no neon rectangle, frame, bezel, gate, or doorway.
-5. Scan passage converts exact body regions; reverse passage restores them.
-6. Face, hair, clothing, arms, wrists, palms, and fingers remain spatially registered.
-7. SAME PERSON controls synchronization and coordinates, not literal appearance.
-8. The fold is a compact three-panel accordion with two diagonal creases, never a diamond.
-9. The entire ribbon performs the limited axial twist; no local curled corner.
-10. The real background, camera, exposure, and composition remain stable.
-11. Every beat contains motion; no idle pause exceeds 0.25 seconds.
+[10.3–{DURATION}] ENDING: Let the point vanish. {ENDING_ACTION}. End as the original live-action person with stable background and anatomy.
 
 NEGATIVE CONSTRAINTS
 
-NOT a portal, NOT a doorway, NOT a screen, NOT a picture frame. NO neon rectangular border, NO glowing frame, NO full alternate-world window. NO detached floating panel, NO physical card, NO film strip, NO paper sheet, NO rigid glass pane. NO duplicate person, NO second full character, NO split screen, NO double exposure. NO facial-coordinate drift, NO misaligned eyes, NO duplicated mouth, NO broken neck seam. NO extra fingers, NO fused fingers, NO disconnected wrists, NO detached arms. NEVER exceed 18% of frame height or 22% of frame area. NEVER exceed arm span. NEVER obscure the entire face. NO idle pause, NO autonomous ribbon movement, NO full-screen transition, NO random camera movement, NO text, NO watermark, NO subtitle, NO UI, NO logo, NO flashing.
+NO full-body transformation. NO cumulative transformation. NO transformed trail outside the ribbon. NO armor takeover, crown, helmet, mask, superhero pose, laser, light sword, energy beam, lightning burst, glowing horizontal line, axial twist, or double scan. NOT a portal, doorway, screen, picture frame, or complete alternate-world window. NO detached floating panel, paper sheet, film strip, physical card, or rigid glass. NO duplicate person, second character, split screen, or double exposure. NO face drift, misaligned eyes, duplicated mouth, broken neck, extra fingers, fused fingers, or disconnected wrists. NEVER exceed 22% of frame height or arm span. NO camera cut, zoom, random movement, text, watermark, subtitle, UI, logo, or flashing.
 ```
 
 ## 中文模板
 
 ```text
-场景设定
+场景
 
-{REAL_CHARACTER_CN}。{REAL_SCENE_CN}。固定正面中景，胸口高度取景，腰部以上构图，头顶约10%留白，镜头只允许±2px呼吸感漂移。{REAL_LIGHTING_CN}。真人电影质感，身份稳定，双手结构正确，背景几何不发生变化。
+{REAL_CHARACTER_CN}。{REAL_SCENE_CN}。固定正面中景，腰部以上构图，真人身份、双手、背景和曝光稳定，不切镜、不推拉、不摇移。{REAL_LIGHTING_CN}。
 
-核心特效——无边框贴身变身扫描带
+核心机制
 
-在人物身体平面上生成一条由双手控制的无边框横向变身扫描带。扫描带必须穿过人物身体，不是浮在人物前方的显示屏，不是传送门，不是门洞，不是画框。
+生成一条由双手操控、穿过人物身体平面的无边框横向异次元切片。替代身份只能存在于当前可见切片内部；切片之外始终保持原始真人。切片离开任何脸部或身体区域后，该区域必须在同一帧立即恢复真人。严禁留下累计变身轨迹，严禁完成全身变身。
 
-扫描带高度保持画面高度8%–18%，通常使用12%–14%；总面积不超过画面22%；宽度不得超出角色臂展。边界使用锐利干净的蒙版切口，但不显示霓虹矩形边框、发光画框、屏幕边框或完整异世界窗口。
+切片内部显示同一人物的{TRANSFORMED_CHARACTER_CN}形态，采用{ART_STYLE_CN}、{STYLE_MATERIALS_CN}和{PALETTE_CN}。{TRANSFORMED_SCENE_MOTIFS_CN}只能作为切片内的小型意象。双眼、鼻子、嘴、下颌、发际线、头发、肩线、衣缝、手腕、手掌和五根手指与真人逐点重合。全程只有一个人物、一套骨骼、一张脸和一双手。
 
-扫描带经过哪里，哪里的真人身体就按原坐标转化。眼睛、鼻子、嘴、下颌、发际线、肩膀、衣缝、手肘、手腕、手掌和手指必须与真人位置逐点对齐。已经扫过的区域可保持变身状态；反向扫描负责恢复真人。手掌穿过扫描带时，只改变相交部分，整只手必须连续，手腕不断裂，始终五根手指。
+初始细缝高度1%至2%，展开后16%至20%，绝不超过22%或人物臂展。分裂后形成三条4%至7%的薄切片，切片之间保留真人空隙。边缘锐利无框，不发光。所有动作由双手同帧触发，停顿不超过0.25秒。
 
-变身身份为{TRANSFORMED_CHARACTER_CN}，艺术风格为{ART_STYLE_CN}，具有{STYLE_MATERIALS_CN}。保留{REAL_IDENTITY_ANCHORS_CN}作为动作和坐标锚点，同时改变{TRANSFORMED_IDENTITY_ANCHORS_CN}。SAME PERSON 只表示姿势、视线、表情和屏幕坐标同步，不要求物种、服装、身份或表面材质相同。
+{DURATION}秒时间线
 
-使用{PALETTE_CN}。{TRANSFORMED_SCENE_MOTIFS_CN}只能作为贴合变身人物的局部纹理与小型环境意象，不能变成画框内的完整异世界全景。现实中的{REAL_SCENE_SHORT_CN}始终保持不变。
+[0.0–0.6秒] 双手已在嘴部或下巴高度捏住一条发丝般细的黑色缝隙，立即向左右拉动，完整真人面孔保持可见。
 
-手势因果
+[0.6–1.8秒] 双手拉到肩宽，细缝展开成16%至20%高的横切片，经过眼睛、鼻子和上半张嘴。只有切片内部显示艺术化身份；切片上方头发与下方下巴、衣服仍是真人。
 
-所有扫描带动作必须由双手同帧触发：向外拉开形成窄带；双手上移带动向上扫描；双手下移带动向下扫描；一高一低形成浅S形；两端内收并交叉形成紧凑折叠；单手旋转带动全长有限轴向扭转；双手合拢让扫描带消失。禁止扫描带自行运动，禁止超过0.25秒的空白停顿。
+[1.8–3.2秒] 双手同步抬高半张脸，再下压到衣领。切片跟随上下移动。某个区域只在切片覆盖时艺术化，切片离开后立即恢复真人，不留下任何变身轨迹。
 
-{DURATION}秒密集时间线
+[3.2–5.0秒] 一手抬高、一手压低，再交换高度，形成两道斜折痕和三个首尾相连的低矮梯形面板。中间面板向前翻折约35度再回正。五官在三段结构上保持连续，不复制。
 
-[0.0–0.6s] 捏线预备：双手已在胸口或下巴附近，指尖捏住一条头发丝般细的光线两端，立即开始拉动。真人全脸和身体清楚可见。
+[5.0–7.1秒] 双手短促向外弹开，横带分裂成三条薄切片，分别经过双眼、嘴和衣领，按左、右、左方向错开画面宽度5%至8%，停留少于0.2秒后滑回。切片之间全部是真人。
 
-[0.6–1.5s] 拉开窄带：双手快速向外拉开，只展开成画面高度12%–14%的无边框横带，位于臂展内、面积低于22%。在胸口或下半张脸首次出现完全对齐的变身切片。没有画框、没有传送门、没有第二个人。
+[7.1–9.0秒] 三条切片重新吸合成一条横带，完成一次浅S形斜向扫动后拉平。横带离开的所有区域立即恢复真人。
 
-[1.5–3.0s] 向上扫描变身：双手同步向上移动，扫描带从胸口依次经过颈部、嘴、鼻子和眼睛。每个被扫过的区域按原坐标转化为{TRANSFORMED_CHARACTER_CN}，已扫区域保持变身，形成清楚的移动变身分界线。表情与视线持续同步。
+[9.0–10.3秒] 双手合拢，横带从18%依次压缩到5%、2%、细缝和一个小点。替代身份只随切片缩小消失。
 
-[3.0–4.3s] 反向下扫与切片切换：扫描带向下经过脸部和肩膀，选择性恢复部分区域，让真人与变身形态短暂形成上下错落的横向切片。所有切片仍属于同一个身体，禁止复制脸、颈部或双手。
-
-[4.3–5.7s] 对角S形滑动：一只手抬高、另一只手压低，让窄带轻微倾斜并形成一个浅S形，斜向掠过脸和胸口。坐标保持锁定。真人做一次明确但短促的表情变化，变身形态同帧镜像。
-
-[5.7–7.2s] 紧凑手风琴折叠：捏住扫描带两端，沿相反对角方向向内移动，形成两条斜折痕，并翻转中间一块，构成低矮的三段式手风琴。这是最重要的折叠。扫描带仍保持画面高度8%–18%，绝不能变成菱形、巨大蝴蝶、纸张、胶片、卡片或硬玻璃。带内的人脸/身体切片随三段结构连续折叠。
-
-[7.2–8.6s] 展开与快速双扫：手风琴瞬间展开回一条窄带，立即完成一次快速上扫和一次快速下扫。每次经过都在真人与变身状态之间切换。背景完全不变，肢体保持连续。
-
-[8.6–9.9s] 有限轴向扭转与恢复：一只手稳定，另一只手旋转约90–140度，让整条窄带沿全长轴向扭转，不能只卷一角。保持低矮、位于臂展内。随后立刻反向解扭并向下扫描，从额头到胸口恢复真人形态。
-
-[9.9–{DURATION}s] 收线结尾：双手合拢，扫描带压缩成细线，再缩成一点。{ENDING_ACTION_CN}。除非用户明确要求，否则以真人完全恢复结束。
-
-一致性规则
-
-1. 全程只有一个人、一套身体、一套面部坐标。
-2. 扫描带穿过身体平面，不能浮在前方变成屏幕。
-3. 高度8%–18%，面积≤22%，宽度不超臂展。
-4. 边界视觉上无框，不出现霓虹矩形、画框、门洞或屏幕边框。
-5. 正向扫描转化对应身体区域，反向扫描恢复。
-6. 脸、头发、服装、手臂、手腕、手掌和手指逐点配准。
-7. SAME PERSON 约束同步与坐标，不约束物种或服装必须相同。
-8. 折叠必须是低矮三段手风琴，带有两条斜折痕，不能变成菱形。
-9. 有限扭转作用于整条扫描带，不能只卷曲局部。
-10. 现实背景、镜头、曝光和构图全程稳定。
-11. 每个时间段都有动作，空白停顿不得超过0.25秒。
+[10.3–{DURATION}] 小点消失。{ENDING_ACTION_CN}。以完整真人和稳定背景结束。
 
 负面约束
 
-严禁传送门、门洞、屏幕、画框；严禁霓虹矩形边框、发光外框、完整异世界窗口；严禁漂浮面板、实体卡片、胶片、纸张、硬玻璃；严禁复制人物、第二个完整角色、分屏、双重曝光；严禁五官坐标漂移、眼睛错位、嘴巴重复、颈部断层；严禁多余手指、手指粘连、手腕断裂、手臂脱离；严禁扫描带高度超过画面18%、面积超过22%或宽度超出臂展；严禁完全遮住整张脸；严禁空白停顿、扫描带自行运动、全屏变身转场、随机运镜、文字、水印、字幕、UI、Logo和频闪。
-```
-
-## Self-check report
-
-```text
-=== 自检报告 ===
-1. 占位符数量：PASS（0）/FAIL
-2. 时间段数量：PASS（9）/FAIL
-3. “borderless body-registered transformation ribbon”：PASS（≥1）/FAIL
-4. 扫描动作：PASS（scan/扫描 ≥6）/FAIL
-5. 负面约束：PASS（NOT/NEVER/NO ≥15）/FAIL
-6. 英文长度：PASS（约900–1600词）/FAIL
-7. 尺寸限制：PASS（8–18%高度、≤22%面积、臂展内）/FAIL
-8. 身体配准：PASS（脸/服装/手部坐标锁定）/FAIL
-9. 折叠形态：PASS（三段手风琴、无菱形）/FAIL
-10. 无大画框/传送门：PASS/FAIL
-11. 背景稳定、单一人物：PASS/FAIL
-12. 无版权敏感词：PASS/FAIL
+严禁全身变身、累计变身、切片外保留替代身份；严禁全身铠甲、皇冠、头盔、面具、超级英雄姿态、激光、光剑、能量束、闪电爆发、发光横线、轴向扭转和快速双扫；严禁传送门、门洞、屏幕、画框、完整异世界窗口、悬浮面板、纸张、胶片、卡片和硬玻璃；严禁第二人物、复制脸、分屏、双重曝光、五官漂移、眼睛错位、嘴巴重复、脖颈断层、手指增生、粘连和断腕；严禁切片超过画面高度22%或人物臂展；严禁切镜、推拉、随机运镜、文字、水印、字幕、UI、Logo和频闪。
 ```

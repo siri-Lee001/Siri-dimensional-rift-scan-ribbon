@@ -1,4 +1,4 @@
 interface:
   display_name: "Dimensional Rift Scan Ribbon"
   short_description: "Create dense body-registered rift prompts"
-  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second high-contrast transformation video prompt with scanning, folding, and axial twisting."
+  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second localized transformation-slice prompt with scanning, three-panel folding, layered strips, and immediate live-action restoration."
