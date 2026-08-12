@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mechanical quality gate for localized dimensional-slice prompts."""
+"""Mechanical quality gate for continuous coordinate-preserving ribbon prompts."""
 
 from __future__ import annotations
 
@@ -10,8 +10,12 @@ import sys
 from pathlib import Path
 
 
-PHRASE = "borderless body-registered transformation ribbon"
-LOCAL_ONLY = "transformed content exists only inside the currently visible ribbon"
+REQUIRED_PHRASES = (
+    "borderless body-registered transformation ribbon",
+    "full-frame coordinate-preserving alternate crop",
+    "one continuous connected ribbon, never separate portrait cards",
+)
+RANGE_SEP = r"[-–—]"
 
 
 def english_part(text: str) -> str:
@@ -22,17 +26,21 @@ def english_part(text: str) -> str:
     return match.group(1) if match else text
 
 
+def has_range(text: str, low: str, high: str) -> bool:
+    return bool(re.search(rf"{low}\s*{RANGE_SEP}\s*{high}\s*%", text))
+
+
 def measure(text: str) -> dict[str, object]:
     en = english_part(text)
+    low = en.lower()
     placeholders = re.findall(r"\{[A-Z][A-Z0-9_]*\}", text)
     timestamps = re.findall(
-        r"\[\s*\d+(?:\.\d+)?\s*[-–—]\s*\d+(?:\.\d+)?\s*(?:s|sec|seconds)?\s*\]",
+        rf"\[\s*\d+(?:\.\d+)?\s*{RANGE_SEP}\s*(?:\d+(?:\.\d+)?|DURATION)\s*(?:s|sec|seconds)?\s*\]",
         en,
         flags=re.I,
     )
     words = re.findall(r"\b[A-Za-z]+(?:[-'][A-Za-z]+)*\b", en)
     negatives = len(re.findall(r"\b(?:NOT|NEVER|NO)\b", en))
-    scans = len(re.findall(r"\bscan(?:s|ned|ning)?\b", en, flags=re.I))
     failures: list[str] = []
     warnings: list[str] = []
 
@@ -40,78 +48,111 @@ def measure(text: str) -> dict[str, object]:
         failures.append("Unfilled placeholders remain.")
     if len(timestamps) != 8:
         failures.append(f"Expected 8 timestamped beats in Part A; found {len(timestamps)}.")
-    if en.lower().count(PHRASE) < 1:
-        failures.append(f'Missing exact phrase: "{PHRASE}".')
-    if en.lower().count(LOCAL_ONLY) < 1:
-        failures.append(f'Missing exact local-only rule: "{LOCAL_ONLY}".')
-    if negatives < 12:
-        failures.append(f"Negative constraints are too sparse; found {negatives}, require 12.")
-    if not 650 <= len(words) <= 1200:
-        warnings.append(f"English word count is {len(words)}; target is 650-1200 for 11 seconds.")
 
-    size_ok = (
-        bool(re.search(r"1\s*[-–—]\s*2\s*%", en))
-        and bool(re.search(r"16\s*[-–—]\s*20\s*%", en))
-        and "22%" in en
-        and bool(re.search(r"arm\s+span", en, flags=re.I))
+    phrase_counts = {phrase: low.count(phrase) for phrase in REQUIRED_PHRASES}
+    for phrase, count in phrase_counts.items():
+        if count < 1:
+            failures.append(f'Missing exact phrase: "{phrase}".')
+
+    if negatives < 18:
+        failures.append(f"Negative constraints are too sparse; found {negatives}, require 18.")
+    if not 750 <= len(words) <= 1300:
+        warnings.append(f"English word count is {len(words)}; target is 750-1300 for 11 seconds.")
+
+    aspect_portrait = (
+        "9:16" in en
+        and has_range(en, "12", "18")
+        and has_range(en, "84", "96")
+        and has_range(en, "3", "6")
     )
-    if not size_ok:
-        failures.append("Missing slit, ribbon-height, maximum-height, or arm-span limits.")
+    aspect_landscape = (
+        "16:9" in en
+        and has_range(en, "24", "32")
+        and has_range(en, "78", "92")
+        and has_range(en, "5", "9")
+        and "35%" in en
+    )
+    slit_ok = has_range(en, "1", "2")
+    if not slit_ok or not (aspect_portrait or aspect_landscape):
+        failures.append("Missing 1-2% slit and one complete 9:16 or 16:9 geometry branch.")
 
-    registration_terms = [
-        r"body[- ]registered",
+    coordinate_patterns = (
+        r"exact (?:scale|screen-space rectangle)",
         r"screen coordinates?",
-        r"face",
-        r"wrists?",
-        r"five fingers",
+        r"corresponding background",
+        r"continuous (?:UV|image) coordinates?.{0,40}(?:hinge|fold)",
+        r"never recenter",
+        r"never (?:move|place).{0,40}(?:face|facial crop).{0,40}(?:chest|sternum)",
+    )
+    missing_coordinates = [
+        pattern for pattern in coordinate_patterns if not re.search(pattern, en, flags=re.I | re.S)
     ]
-    missing_registration = [
-        term for term in registration_terms if not re.search(term, en, flags=re.I)
-    ]
-    if missing_registration:
-        failures.append("Body registration is incomplete: " + ", ".join(missing_registration))
+    if missing_coordinates:
+        failures.append("Full-frame coordinate mapping is incomplete.")
 
     fold_ok = (
-        bool(re.search(r"three[- ]panel accordion", en, flags=re.I))
-        and bool(re.search(r"two diagonal creases", en, flags=re.I))
-        and bool(re.search(r"three thin horizontal slices", en, flags=re.I))
+        bool(re.search(r"(?:three|four|3|4).{0,30}connected trapezoid panels", en, flags=re.I))
+        and bool(re.search(r"two or three diagonal hinges", en, flags=re.I))
+        and bool(re.search(r"continuous.{0,50}(?:across|through).{0,30}hinges", en, flags=re.I | re.S))
+        and bool(re.search(r"NO independent stacked strips", en, flags=re.I))
     )
     if not fold_ok:
-        failures.append("Three-panel fold or three-strip split is missing.")
+        failures.append("Connected trapezoid fold or anti-strip rule is incomplete.")
 
-    restore_ok = bool(
-        re.search(r"restore.{0,60}immediately", en, flags=re.I | re.S)
-        or re.search(r"immediately return.{0,30}live action", en, flags=re.I | re.S)
+    active_ok = (
+        bool(re.search(r"(?:active|visible).{0,50}0\.5\s*s?.{0,40}10\.2\s*s?", en, flags=re.I | re.S))
+        or (
+            bool(re.search(r"\[\s*0\.5\s*[-–—]", en))
+            and bool(re.search(r"[-–—]\s*10\.2\s*s?\s*\]", en, flags=re.I))
+        )
     )
-    if not restore_ok:
-        failures.append("Immediate live-action restoration is missing.")
-
-    anti_full_body_ok = (
-        bool(re.search(r"NO full-body transformation", en, flags=re.I))
-        and bool(re.search(r"NO cumulative transformation", en, flags=re.I))
-        and bool(re.search(r"NO (?:armor takeover|laser|light sword)", en, flags=re.I))
+    ending_ok = (
+        bool(re.search(r"final\s+0\.8\s+seconds", en, flags=re.I))
+        or bool(re.search(r"no longer than\s+0\.8\s+seconds", en, flags=re.I))
     )
-    if not anti_full_body_ok:
-        failures.append("Full-body, cumulative, armor, or energy-beam guardrails are incomplete.")
+    if not active_ok or not ending_ok:
+        failures.append("Ribbon-active duration or maximum 0.8-second ending is missing.")
 
-    if not re.search(r"idle\s+(?:beat|pause).{0,24}0\.25\s*seconds", en, flags=re.I):
-        failures.append("Maximum 0.25-second idle interval is not stated.")
+    hand_ok = (
+        bool(re.search(r"18% of frame width", en, flags=re.I))
+        and bool(re.search(r"10% of frame height", en, flags=re.I))
+        and bool(re.search(r"1\.3\s*[-–—]\s*1\.6\s*[×x]", en, flags=re.I))
+        and bool(re.search(r"(?:foreshorten|parallax)", en, flags=re.I))
+        and bool(re.search(r"exchange.{0,35}(?:near/far|depth)", en, flags=re.I))
+    )
+    if not hand_ok:
+        failures.append("Hand travel, perspective scale, foreshortening, or depth exchange is incomplete.")
+
+    anti_card_patterns = (
+        r"NO portrait card",
+        r"NO (?:floating head|detached rectangle)",
+        r"NO (?:recentered face|resized face)",
+        r"NO (?:independent stacked strips|three separate rectangles)",
+        r"NO (?:flower ending|long particle ending)",
+        r"NO full-body transformation",
+    )
+    missing_guards = [
+        pattern for pattern in anti_card_patterns if not re.search(pattern, en, flags=re.I)
+    ]
+    if missing_guards:
+        failures.append("Portrait-card, stacked-strip, early-ending, or full-body guardrails are incomplete.")
 
     return {
         "status": "PASS" if not failures else "FAIL",
         "metrics": {
             "placeholder_count": len(placeholders),
             "timeline_beat_count": len(timestamps),
-            "exact_phrase_count": en.lower().count(PHRASE),
-            "local_only_phrase_count": en.lower().count(LOCAL_ONLY),
-            "scan_count": scans,
+            "required_phrase_counts": phrase_counts,
             "negative_constraint_count": negatives,
             "english_word_count": len(words),
-            "size_constraints_present": size_ok,
-            "body_registration_present": not missing_registration,
-            "compact_fold_and_split_present": fold_ok,
-            "immediate_restoration_present": restore_ok,
-            "anti_full_body_guardrails_present": anti_full_body_ok,
+            "slit_geometry_present": slit_ok,
+            "portrait_geometry_present": aspect_portrait,
+            "landscape_geometry_present": aspect_landscape,
+            "coordinate_mapping_present": not missing_coordinates,
+            "connected_fold_present": fold_ok,
+            "active_duration_and_ending_present": active_ok and ending_ok,
+            "hand_depth_choreography_present": hand_ok,
+            "anti_card_guardrails_present": not missing_guards,
         },
         "failures": failures,
         "warnings": warnings,
@@ -119,23 +160,24 @@ def measure(text: str) -> dict[str, object]:
 
 
 def self_test() -> None:
-    negatives = " ".join(["NO drift"] * 12)
-    padding = " ".join(["controlled local slice motion"] * 200)
-    for separator in ("-", "–", "—"):
-        beats = "\n".join(f"[{i}.0{separator}{i}.5s] local motion" for i in range(8))
-        sample = f"""# Part A
-{PHRASE}. {LOCAL_ONLY}. {beats}
-Start at 1-2%, open to 16-20%, never exceed 22%, within arm span.
-Exact screen coordinates, face, wrists, five fingers.
-Three-panel accordion with two diagonal creases; three thin horizontal slices.
-Restore every region immediately. No idle pause exceeds 0.25 seconds.
-NO full-body transformation. NO cumulative transformation. NO armor takeover. NO laser. NO light sword.
+    negatives = " ".join(["NO drift"] * 18)
+    padding = " ".join(["controlled coordinate-preserving ribbon motion"] * 170)
+    beats = "\n".join(f"[{i}.0-{i}.5s] connected motion" for i in range(8))
+    sample = f"""# Part A
+{'. '.join(REQUIRED_PHRASES)}. {beats}
+9:16 portrait. Start at 1-2%. Hero ribbon 12-18% high and 84-96% wide. Scan ribbon 3-6% high.
+Sample the exact screen-space rectangle with exact scale and screen coordinates and corresponding background.
+Never recenter the face. Never move the facial crop to the chest. Keep continuous UV coordinates across every hinge and fold.
+Use three connected trapezoid panels with two or three diagonal hinges; image remains continuous across all hinges. NO independent stacked strips.
+Keep the ribbon active from 0.5s through 10.2s. The ending is no longer than 0.8 seconds.
+Each wrist travels 18% of frame width or 10% of frame height. Foreground palm has 1.3-1.6x scale with foreshortening and parallax. Hands exchange near/far depth.
+NO portrait card. NO floating head. NO detached rectangle. NO recentered face. NO resized face. NO three separate rectangles. NO flower ending. NO long particle ending. NO full-body transformation.
 {negatives} {padding}
 # Part B
 Chinese reference.
 """
-        report = measure(sample)
-        assert report["status"] == "PASS", report
+    report = measure(sample)
+    assert report["status"] == "PASS", report
 
 
 def main() -> int:

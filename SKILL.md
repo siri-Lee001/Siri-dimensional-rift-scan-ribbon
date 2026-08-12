@@ -1,126 +1,124 @@
 ---
 name: dimensional-rift-scan-ribbon
-description: Generate production-ready text-to-video prompts for localized body-registered dimensional slices controlled by hand gestures. Use for 次元裂隙、横向局部扫描、人物局部艺术化替换、切片分层、三段折叠、手势拉开与收拢，以及要求真人脸部和身体坐标稳定的高反差短视频。
+description: Generate production-ready text-to-video prompts for body-embedded dimensional ribbons that reveal an alternate rendering of the same camera view, with coordinate-locked faces and hands, continuous perspective folds, scan sweeps, and gesture-controlled closure. Use for 次元裂隙、横向折叠带、真人与艺术身份局部切换、手势展开/折叠/扫描，以及需要避免肖像卡片、全身变身和坐标漂移的高反差短视频。
 ---
 
 # Dimensional Rift Prompt Generator
 
-Generate concise bilingual prompts for a localized transformation slice matching the supplied reference effect. Default to a **borderless body-registered transformation ribbon** whose alternate content exists only inside the currently visible slice.
+Generate bilingual prompts for a **body-embedded continuous folding ribbon**. Match the reference effect before maximizing character lore.
 
 ## 1. Collect inputs
 
 Require fields 1–6. Field 7 is optional.
 
-1. 时长
-2. 现实场景
-3. 现实主角
-4. 切片中的局部环境意象
-5. 切片中的身份
-6. 艺术风格
-7. 收尾动作，默认“释放消散”
+1. Duration
+2. Real scene
+3. Real subject
+4. Alternate-scene motifs
+5. Alternate identity
+6. Art style
+7. Ending action, default: close and restrained smile
 
 If the user grants creative freedom, choose a high-contrast pairing from `references/preset-dict.md`. Otherwise ask only for missing required fields.
 
-## 2. Use localized-slice mode by default
+## 2. Choose the effect mode
 
-Default to **LOCALIZED-SLICE MODE**:
+Default to **CONTINUOUS FOLDING-RIBBON MODE**:
 
-- One live-action person and one stable background.
-- Alternate identity appears only inside the visible ribbon or its child strips.
-- Any region immediately returns to live action when the ribbon leaves it.
-- Never accumulate transformation behind the scan.
-- Never complete a full-body transformation.
+- One live-action camera view and one person.
+- The ribbon contains an alternate rendering of the exact corresponding horizontal crop from that same camera view.
+- The ribbon remains body-embedded and intersects the face, neck, shoulders, torso, or hands while active.
+- The ribbon may widen, fold into connected panels, narrow into a scan strip, and reopen.
+- Content outside the ribbon stays live action unless the user explicitly requests an accumulating full transformation.
 
-Use an accumulating transformation frontier only when the user explicitly requests a full transformation. Use portal/window mode only when explicitly requested.
+Never default to a portrait card, handheld photo, detached screen, three independent rectangles, portal, or full-body transformation.
 
-When a reference video is supplied, match its spatial relation, scale, hand choreography, fold behavior, and compositing logic before choosing character lore.
+Read `references/target-effect-spec.md` after a failed test or whenever the user supplies a target video.
 
 ## 3. Load references
 
 Read before generating:
 
-- `references/prompt-template.md` — bilingual 8-beat localized-slice template
-- `references/preset-dict.md` — gestures, palettes, art styles, and contrast presets
+- `references/prompt-template.md` — bilingual 8-beat continuous-ribbon template
+- `references/preset-dict.md` — gestures, palettes, styles, contrast, timing
 - `references/checklist.md` — mandatory quality gate
+- `references/target-effect-spec.md` — geometry, aspect-ratio rules, and failure corrections
 
-## 4. Enforce the effect
+## 4. Enforce full-frame coordinate sampling
 
-### Local-only compositing
+Use these exact English phrases:
 
-- Use the exact English phrase `borderless body-registered transformation ribbon`.
-- Also state exactly: `transformed content exists only inside the currently visible ribbon`.
-- Intersect the subject's body plane; do not float the ribbon in front like a screen.
-- Lock transformed eyes, nose, mouth, jaw, hair, clothing, wrists, palms, and fingers to the same screen coordinates.
-- Outside the ribbon, preserve the original live-action person at all times.
-- When the ribbon moves away, restore the crossed region immediately on the same frames.
-- Do not describe armor, crowns, masks, lightning, or identity materials outside the ribbon.
+- `borderless body-registered transformation ribbon`
+- `full-frame coordinate-preserving alternate crop`
+- `one continuous connected ribbon, never separate portrait cards`
 
-### Geometry
+The ribbon samples the same screen-space rectangle that it covers. Its alternate face, hair, body, background, and hands keep the exact scale, crop, perspective, and coordinates of the live-action image beneath it.
 
-- Start as a 1–2% high slit.
-- Open to a 16–20% high ribbon; never exceed 22% of frame height.
-- Keep width within arm span.
-- A three-strip split uses three 4–7% high strips with live-action gaps between them.
-- Use sharp borderless alpha edges: no neon outline, bezel, portal frame, or glowing rectangle.
+- Never recenter a face inside the ribbon.
+- Never resize the face to fit a panel.
+- Never move a facial crop down onto the chest.
+- Never show a complete floating head inside a rectangle.
+- If the ribbon crosses background beside the face, show the alternate rendering of that corresponding background area—not blank filler and not a portrait backdrop.
+- Folding changes only panel orientation and perspective. UV/content coordinates remain continuous across every hinge.
+- The active ribbon must overlap the subject. It may not float entirely in empty space or sit wholly below the chin as a held card.
 
-### 11-second action grammar
+## 5. Geometry and aspect ratio
+
+### Landscape 16:9
+
+- Hairline slit: 1–2% of frame height.
+- Hero reveal ribbon: 24–32% of frame height, 78–92% of frame width.
+- Narrow scan ribbon: 5–9% of frame height.
+- Keep two or three connected diagonal hinges; never exceed 35% of frame height.
+
+### Portrait 9:16
+
+- Frame from waist or mid-torso upward; keep both hands visible.
+- Hairline slit: 1–2% of frame height.
+- Hero reveal ribbon: 12–18% of frame height, 84–96% of frame width.
+- Narrow scan ribbon: 3–6% of frame height.
+- Keep the ribbon centered between eye level and upper chest; never turn it into a short card at the sternum.
+
+Use borderless alpha edges with no glow, bezel, outline, or rigid thickness.
+
+## 6. 11-second motion grammar
 
 Use 8 continuous beats:
 
-1. Pinch a hairline slit
-2. Pull open a localized ribbon
-3. Move it up and down; leaving regions restore immediately
-4. Form a compact three-panel accordion with two diagonal creases
-5. Split into three thin horizontal slices and offset them laterally
-6. Rejoin, perform one shallow S-sweep, and flatten
-7. Compress ribbon to slit and point
-8. Finish with a small expression or hand action
+1. Pinch a dark slit
+2. Pull into a wide hero ribbon crossing the face
+3. Push one palm toward camera and create strong depth/parallax
+4. Fold the same ribbon into three or four connected trapezoid panels
+5. Sweep the connected zigzag ribbon diagonally while hands exchange depth
+6. Flatten into a thin scan strip and perform one up/down local scan
+7. Reopen once for a final wide alternate-identity reveal
+8. Compress and close in the final 0.8 seconds
 
-Do not add axial twist, energy sword motion, double scan, full-body conversion, or extra spectacle unless explicitly requested. Keep every hand motion readable; no idle pause longer than 0.25 seconds.
+Keep the ribbon visibly active from approximately 0.5s until 10.2s. Do not begin the ending early. Each wrist must travel visibly: at least 18% of frame width or 10% of frame height across the active sequence. Include one foreground palm with perspective foreshortening, approximately 1.3–1.6× the apparent size of the rear hand.
 
-### Identity and style
+Do not add independent strip stacking, axial twist, light-sword motion, armor takeover, lightning burst, or long decorative ending particles unless explicitly requested.
+
+## 7. Identity, hands, and style
 
 - Keep one person, one skeleton, one face coordinate system, and one pair of hands.
-- `SAME PERSON` means synchronized pose, expression, perspective, and coordinates.
-- For first-pass testing, change artistic medium and costume details inside the slice rather than changing the whole species or body silhouette.
-- Prefer beautiful, high-registration media: mineral-pigment mural, mother-of-pearl lacquer, stained glass, gold-leaf oil painting, porcelain enamel, mosaic, or woodblock print.
-- Keep environment motifs small and inside the ribbon.
+- Preserve gaze, expression timing, face angle, hair silhouette, shoulder line, wrists, palms, and exactly five fingers.
+- A hand crossing the ribbon may be artistic inside the ribbon and live action outside it, but it remains one continuous hand.
+- For first-pass testing, preserve the subject's silhouette and change art medium, makeup, garment surface, and local motifs inside the ribbon.
+- Prefer mineral-pigment mural, mother-of-pearl lacquer, stained glass, gold-leaf oil painting, porcelain enamel, mosaic, or woodblock print.
+- Keep the ending under 0.8 seconds. Prefer a small smile, blink, snap, or hand release over a flower, prop, or particle sequence.
 
-## 5. Prompt-writing rules
+## 8. Prompt writing and validation
 
-- Write executable commands, not lore-heavy narration.
-- For 11 seconds, target 650–1200 English words; prioritize motion and compositing constraints.
-- Write Chinese independently in natural storyboard language.
-- Include scene setup, local-only mechanism, exact body registration, 8-beat timeline, and negative constraints.
-- Replace every placeholder.
-- Avoid copyrighted character and franchise names.
+- For 11 seconds, target 750–1300 English words.
+- Use executable spatial and motion commands, not lore-heavy narration.
+- Author Chinese independently.
+- Include aspect ratio, full-frame coordinate sampling, 8 timestamps, hand trajectories, connected fold, scan, and negative constraints.
+- Replace every placeholder and avoid copyrighted character names.
 
-## 6. Mandatory negative constraints
-
-Include these concepts in both languages:
-
-- NO full-body transformation, NO cumulative transformation
-- NO armor takeover, crown, helmet, mask, superhero pose
-- NO laser, light sword, energy beam, lightning burst, glowing horizontal line
-- NOT a portal, doorway, screen, picture frame, or complete alternate world
-- NO detached panel, paper sheet, film strip, physical card, or rigid glass
-- NO duplicate person, second character, split screen, or double exposure
-- NO face-coordinate drift, extra fingers, fused fingers, or broken wrists
-- NEVER exceed 22% of frame height or the subject's arm span
-- NO camera cut, zoom, random movement, text, watermark, subtitle, UI, logo, or flashing
-
-## 7. Validate and deliver
-
-Run `references/checklist.md`. If the output is saved, run:
+Run `references/checklist.md`. If saved, run:
 
 ```bash
 python scripts/validate_prompt.py <prompt-file>
 ```
 
-Fix every `FAIL`. Deliver:
-
-- Part A — English copy-ready prompt
-- Part B — independently authored Chinese prompt
-- Part C — measured self-check
-
-If the user requests only one language, output only that language.
+Fix every `FAIL`. Deliver English prompt, independently authored Chinese prompt, and measured self-check unless the user asks for one language only.
