@@ -1,45 +1,141 @@
 #!/usr/bin/env python3
-"""V7 validator for concise visual-first dimensional image-slice prompts."""
+"""Validate concise borderless registered scan-ribbon prompts."""
 from __future__ import annotations
-import argparse,json,re,sys
+
+import argparse
+import json
+import re
+import sys
 from pathlib import Path
-REQ=("one opaque horizontal dimensional image slice","alternate-world imagery fills the slice edge to edge","the alternate face stays large and clearly visible inside the slice","the complete visual footprint, including glow and folded area, never exceeds 25% of the frame")
-SEP=r"[-–—]"
-FORBIDDEN_JARGON=(r"\bPlate A\b",r"\bPlate B\b",r"source plate",r"screen-space",r"landmark",r"registration tolerance",r"bounding box",r"UV mapping",r"pixel mapping")
-def ep(t):
- m=re.search(r"(?is)(?:^|\n)#{1,4}\s*Part\s*A\b(.*?)(?=\n#{1,4}\s*Part\s*B\b|\Z)",t);return m.group(1) if m else t
-def allp(t,ps):return all(re.search(p,t,re.I|re.S) for p in ps)
-def measure(t):
- en=ep(t);low=en.lower();fails=[];warn=[];ph=re.findall(r"\{[A-Z][A-Z0-9_]*\}",t);beats=re.findall(rf"\[\s*\d+(?:\.\d+)?\s*{SEP}\s*\d+(?:\.\d+)?\s*(?:s|sec|seconds)?\s*\]",en,re.I);words=re.findall(r"\b[A-Za-z]+(?:[-'][A-Za-z]+)*\b",en);counts={p:low.count(p) for p in REQ};neg=len(re.findall(r"\b(?:NO|NEVER)\b",en,re.I))
- if ph:fails.append("Unfilled placeholders.")
- if len(beats)!=6:fails.append(f"Expected 6 beats; found {len(beats)}.")
- for p,c in counts.items():
-  if not c:fails.append(f'Missing exact phrase: "{p}".')
- jargon=[p for p in FORBIDDEN_JARGON if re.search(p,en,re.I)]
- if jargon:fails.append("Forbidden production jargon present: "+", ".join(jargon))
- if not 450<=len(words)<=800:warn.append(f"English word count {len(words)}; target 450-800.")
- if neg<25:fails.append(f"Negative constraints too sparse: {neg}.")
- checks={
- "opaque_image_fill":allp(en,(r"opaque",r"edge to edge",r"real background.{0,30}(?:not|cannot).{0,20}(?:visible|seen)|cannot be seen through")),
- "wide_sharp_shape":allp(en,(r"74%.{0,20}26%",r"straight horizontal",r"sharp|crisp corners",r"cyan.{0,10}magenta")),
- "coherent_alternate_face":allp(en,(r"large head-and-shoulders|large alternate face",r"eyes.{0,50}nose.{0,50}mouth.{0,50}cheeks",r"hair|headdress",r"environment.{0,50}(?:left and right|both sides)")),
- "real_world_stable":allp(en,(r"outside.{0,40}(?:remains|stay).{0,60}(?:same|unchanged|real)",r"NO full-frame alternate")),
- "continuous_visibility":allp(en,(r"0\.6s.{0,80}10\.0s|from about 0\.6s until about 10\.0s",r"scan light.{0,60}inside",r"full image-filled slice remains open",r"NO empty light line before 10\.0s")),
- "hands":allp(en,(r"hands stay.{0,50}left and right|hands.{0,50}left and right ends",r"NO hands cupping",r"NO edge gripping")),
- "footprint":allp(en,(r"never exceeds 25%",r"NO transparent eye shield",r"NO oval lens",r"NO vertical black crack",r"NO isolated eye",r"NO floating lips",r"NO chest-level portrait")),
- }
- for n,ok in checks.items():
-  if not ok:fails.append("Missing rule set: "+n)
- if re.search(r"\b(?:9\s*:\s*16|16\s*:\s*9)\b|aspect[- ]ratio",en,re.I):fails.append("Output ratio prescribed.")
- return {"status":"PASS" if not fails else "FAIL","metrics":{"placeholder_count":len(ph),"timeline_beat_count":len(beats),"required_phrase_counts":counts,"english_word_count":len(words),"negative_constraint_count":neg,"forbidden_jargon_count":len(jargon),**checks},"failures":fails,"warnings":warn}
-def self_test():
- beats="\n".join(f"[{i}.0-{i}.5s] motion" for i in range(6));pad=" ".join(["vivid alternate world image"]*100)
- s=f"""# Part A
-{'. '.join(REQ)}. {beats} A 74% wide and 26% high opaque slice with straight horizontal edges, sharp crisp corners, cyan-magenta seam. Real background cannot be seen through it. Large head-and-shoulders alternate face: eyes, nose, mouth, cheeks, hair and headdress together; environment visible left and right. Everything outside remains the same unchanged real scene. Keep imagery visible from about 0.6s until about 10.0s. A scan light moves inside while the full image-filled slice remains open.
-Hands stay near left and right ends. NO hands cupping. NO edge gripping. NO transparent eye shield. NO clear glass panel. NO oval lens. NO capsule. NO eye-shaped aperture. NO vertical black crack. NO centered vertical seam. NO vertical slit. NO isolated eye. NO floating lips. NO detached face. NO chest-level portrait. NO blank strip. NO empty light line before 10.0s. NO HUD. NO screen. NO card. NO book. NO butterfly. NO duplicate person. NO miniature figure. NO picture-in-picture. NO recursive image. NO full-frame alternate takeover. NO text. NO logo. NO cut. NO zoom. {pad}""";r=measure(s);assert r["status"]=="PASS",r
-def main():
- p=argparse.ArgumentParser();p.add_argument("prompt_file",nargs="?",type=Path);p.add_argument("--self-test",action="store_true");a=p.parse_args()
- if a.self_test:self_test();print("Self-test passed.");return 0
- if not a.prompt_file:p.error("prompt_file required")
- r=measure(a.prompt_file.read_text(encoding="utf-8"));print(json.dumps(r,ensure_ascii=False,indent=2));return 0 if r["status"]=="PASS" else 1
-if __name__=="__main__":sys.exit(main())
+
+TIME_RE = re.compile(r"\[\s*(\d+(?:\.\d+)?)\s*[-–—]\s*(\d+(?:\.\d+)?)\s*(?:s|sec|seconds)?\s*\]", re.I)
+FORBIDDEN_JARGON = (
+    r"\bPlate [AB]\b", r"source plate", r"matte", r"mask layer",
+    r"screen-space", r"coordinates?", r"landmarks?", r"bounding box",
+    r"pixel mapping", r"UV mapping",
+)
+CORE = (
+    ("borderless ribbon", r"one opaque borderless horizontal dimensional scan ribbon"),
+    ("footprint cap", r"(?:never|does not) exceed(?:s)? 25%|never over 25%"),
+    ("registered counterpart", r"same apparent body position.{0,100}(?:scale|size)|same apparent scale.{0,100}body position"),
+    ("local body zone", r"only the (?:body )?(?:zone|region|part).{0,40}(?:crosses|intersects)|replaces only the body zone"),
+    ("unchanged exterior", r"outside (?:the|this) (?:ribbon|effect).{0,80}(?:unchanged|photoreal|real)"),
+    ("hands outside", r"hands? remain(?:s)? (?:wholly )?outside.{0,50}(?:ends|ribbon)"),
+    ("no frame", r"no visible (?:outline|border|frame)|NO visible border"),
+)
+
+
+def measure(text: str) -> dict:
+    failures: list[str] = []
+    warnings: list[str] = []
+    beats = [(float(a), float(b)) for a, b in TIME_RE.findall(text)]
+    duration_match = re.search(r"Create a (\d+(?:\.\d+)?)-second", text, re.I)
+    duration = float(duration_match.group(1)) if duration_match else None
+    words = re.findall(r"\b[A-Za-z]+(?:[-'][A-Za-z]+)*\b", text)
+    placeholders = re.findall(r"\{[A-Z][A-Z0-9_]*\}", text)
+    negative_block = re.search(r"(?is)\bNEGATIVE\s*:(.*)$", text)
+    negative_count = len(re.findall(r"\b(?:NO|NEVER)\b", negative_block.group(1), re.I)) if negative_block else 0
+
+    if placeholders:
+        failures.append("Unfilled placeholders remain.")
+    if duration is None:
+        failures.append("Missing duration declaration.")
+    if duration is not None and duration <= 6 and len(beats) != 5:
+        failures.append(f"A 4-6 second prompt requires exactly 5 beats; found {len(beats)}.")
+    if beats:
+        if abs(beats[0][0]) > 0.01:
+            failures.append("First beat must start at 0.00 seconds.")
+        if duration is not None and abs(beats[-1][1] - duration) > 0.05:
+            failures.append("Final beat must end at the declared duration.")
+        for index, ((start, end), following) in enumerate(zip(beats, beats[1:]), 1):
+            if end <= start or abs(end - following[0]) > 0.05:
+                failures.append(f"Invalid continuity around beat {index}.")
+
+    for label, pattern in (("Real action", r"Real action:"), ("Ribbon response", r"Ribbon response:"), ("Alternate response", r"Alternate response:")):
+        if beats and len(re.findall(pattern, text, re.I)) < len(beats):
+            failures.append(f"Every beat needs {label}.")
+
+    for name, pattern in CORE:
+        if not re.search(pattern, text, re.I | re.S):
+            failures.append(f"Missing core rule: {name}.")
+
+    fold_requested = bool(re.search(r"\b(?:fold|bow-tie|diagonal creases?)\b", text, re.I))
+    if fold_requested:
+        required_fold = (
+            ("inward wrist cause", r"wrists? rotate inward|inward wrist"),
+            ("joined surface", r"(?:one|remain) (?:joined|continuous).{0,30}(?:surface|image)|remain joined"),
+            ("readable hold", r"hold.{0,30}(?:0\.2|0\.3|brief|readable)"),
+            ("full flatten", r"flatten(?:s|ed|ing)? (?:fully|completely)|fully flat"),
+            ("no fold travel", r"no (?:vertical|lateral|ribbon )?(?:travel|scan)|does not (?:travel|scan)"),
+        )
+        for name, pattern in required_fold:
+            if not re.search(pattern, text, re.I | re.S):
+                failures.append(f"Missing fold rule: {name}.")
+        if re.search(r"\bNO fold\b", text, re.I):
+            failures.append("Prompt requests and forbids folding.")
+
+    if duration is not None and duration <= 6:
+        if not 260 <= len(words) <= 430:
+            warnings.append(f"English word count is {len(words)}; target 260-430 for 5 seconds.")
+        if not 10 <= negative_count <= 18:
+            failures.append(f"Use 10-18 high-value negatives for 5 seconds; found {negative_count}.")
+        if len(re.findall(r"\b(?:tilt|pulse|diagonal sweep|scan light|glow burst)\b", text, re.I)) > 1:
+            failures.append("Five-second prompt exceeds the interaction budget.")
+
+    jargon = [p for p in FORBIDDEN_JARGON if re.search(p, text, re.I)]
+    if jargon:
+        failures.append("Forbidden production jargon present: " + ", ".join(jargon))
+    if re.search(r"\b(?:9\s*:\s*16|16\s*:\s*9|1\s*:\s*1)\b|aspect[- ]ratio", text, re.I):
+        failures.append("Output ratio must not be prescribed.")
+
+    return {
+        "status": "PASS" if not failures else "FAIL",
+        "metrics": {
+            "duration_seconds": duration,
+            "timeline_beats": len(beats),
+            "english_word_count": len(words),
+            "negative_constraint_count": negative_count,
+            "placeholder_count": len(placeholders),
+            "forbidden_jargon_count": len(jargon),
+        },
+        "failures": failures,
+        "warnings": warnings,
+    }
+
+
+def self_test() -> None:
+    beats = []
+    edges = ((0, .6), (.6, 1.5), (1.5, 2.7), (2.7, 4.3), (4.3, 5))
+    for start, end in edges:
+        beats.append(
+            f"[{start:.2f}-{end:.2f}s]\nReal action: hands remain outside both ends; wrists rotate inward then change trajectory.\n"
+            "Ribbon response: one continuous motion; during the fold there is no travel or scan, the one joined surface forms diagonal creases, holds briefly for 0.25 seconds, then flattens completely.\n"
+            "Alternate response: it mirrors the visible corresponding body zone."
+        )
+    sample = f"""Create a 5-second fixed frontal-camera photorealistic one-take video.
+Create one opaque borderless horizontal dimensional scan ribbon. It never exceeds 25% of the frame and has no visible outline. One counterpart occupies the same apparent body position and scale. The ribbon replaces only the body zone it crosses. Everything outside the ribbon remains photoreal and unchanged. Both hands remain wholly outside both ends. Both wrists rotate inward; the image remains one joined surface, holds briefly for 0.25 seconds, then flattens completely; there is no travel or scan during the fold.
+{chr(10).join(beats)}
+NEGATIVE: NO frame. NO monitor. NO glass. NO oversized face. NO traveling portrait. NO hand contact. NO gripping. NO duplicate subject. NO detached pieces. NO center crack. NO text. NO cut. NO zoom. NO pan.
+""" + " natural motion" * 20
+    result = measure(sample)
+    assert result["status"] == "PASS", result
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("prompt_file", nargs="?", type=Path)
+    parser.add_argument("--self-test", action="store_true")
+    args = parser.parse_args()
+    if args.self_test:
+        self_test()
+        print("Self-test passed.")
+        return 0
+    if not args.prompt_file:
+        parser.error("prompt_file required")
+    result = measure(args.prompt_file.read_text(encoding="utf-8"))
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if result["status"] == "PASS" else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

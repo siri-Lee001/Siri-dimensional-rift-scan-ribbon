@@ -1,119 +1,73 @@
 ---
 name: dimensional-rift-prompt
-description: "Generate concise bilingual text-to-video prompts for a hand-controlled, sharp horizontal dimensional image slice containing a large clear alternate-world version of the real subject, with vivid edge-to-edge imagery and a strict 25% complete-footprint cap. Use for 次元裂隙、横向异世界影像切片、真人与动画角色反差、手势拉伸扭转和扫描效果，并避免透明眼罩、HUD、竖缝、椭圆透镜、孤立五官与技术说明可视化。"
+description: "Generate concise duration-adaptive bilingual video prompts for a photoreal performer remotely puppeteering one borderless horizontal dimensional scan ribbon. The ribbon replaces only the body region it crosses with a registered alternate-world counterpart, supports readable folding and multi-axis gestures, and keeps its full footprint under 25%. Use for 次元裂隙、二次元X光扫描、局部异世界替换、手势折叠、横扫、对位角色以及5/10/15/30秒脚本。"
 ---
 
-# Visual-First Dimensional Rift Prompt
+# Borderless Registered Scan Ribbon
 
-Generate a short, model-friendly prompt for one vivid horizontal dimensional image slice. Describe only visible things and actions. Do not explain post-production or compositing.
+Build prompts around one visible causal chain:
+
+`real hand motion -> ribbon motion or fold -> matching alternate body region -> synchronized response`
+
+The effect is a borderless moving strip of alternate rendering attached to the real composition, not a framed screen carrying a portrait.
 
 ## Inputs
 
-Collect:
+Collect or infer duration, real scene, real subject and wardrobe, alternate identity, alternate-world counterpart of the immediate scene, art style, and optional ending. Accept any gender, species, or body plan. Never prescribe output ratio.
 
-1. Duration
-2. Real scene
-3. Real subject
-4. Alternate scene
-5. Alternate identity
-6. Alternate art style
-7. Optional ending action
+## Required reading
 
-Never prescribe an output ratio.
+- `references/target-effect-spec.md`: visual model and learned failures
+- `references/action-library.md`: reliable complete action units
+- `references/duration-composer.md`: complexity budget by duration
+- `references/prompt-template.md`: concise output grammar
+- `references/checklist.md`: delivery gate
 
-## Read before writing
+Read `references/preset-dict.md` only when creative inputs are delegated.
 
-- `references/prompt-template.md`
-- `references/target-effect-spec.md`
-- `references/checklist.md`
+## Core visual model
 
-## Core visual
+- Use exactly one opaque, borderless, wide horizontal ribbon with straight cut boundaries and sharp corners.
+- Show no drawn frame, neon outline, white border, glass panel, card, or UI.
+- Keep the complete footprint, including deformation, at or below 25% of the frame.
+- Imagine one alternate counterpart occupying the same apparent body position, scale, pose, and facing direction as the real subject.
+- The ribbon reveals only the alternate body zone it crosses. Chest shows alternate chest/costume; eye level shows alternate eyes/upper face. Never carry a complete portrait between body heights.
+- Continue the subject silhouette through both horizontal boundaries. The alternate head and shoulders must not grow to fill the ribbon.
+- Restyle the corresponding local background within the ribbon instead of inserting a separate framed vista.
+- Keep everything outside the ribbon photoreal and unchanged.
 
-Use these exact English phrases:
+## Remote hand control
 
-- `one opaque horizontal dimensional image slice`
-- `alternate-world imagery fills the slice edge to edge`
-- `the alternate face stays large and clearly visible inside the slice`
-- `the complete visual footprint, including glow and folded area, never exceeds 25% of the frame`
+- Keep both hands outside the left and right ends with clear air gaps. Any hand entering, crossing, covering, gripping, or supporting the ribbon is a failure.
+- Make elbows, forearms, wrists, and fingers visibly initiate each response.
+- Change hand trajectory or finger shape every beat; do not hold a static open-palm framing pose.
+- Keep the ribbon centered between the hands and responsive without showing wires.
 
-Describe the effect as follows:
+## Duration and priority
 
-- One long, wide, shallow rectangle floating in front of the subject.
-- Approximate filled size: 72–76% of frame width and 24–28% of frame height. Keep the complete effect, including glow and deformation, at or below 25% of frame area.
-- Two straight horizontal long edges, short straight end edges, sharp corners.
-- A thin crisp cyan–magenta edge seam. No thick frame.
-- The inside is opaque, saturated alternate-world footage. The real background is not visible through it.
-- A large alternate face fills most of the slice height. It is recognizable at first glance, not a tiny person or isolated facial feature.
-- The alternate person performs the same expression and hand rhythm as the real person.
-- The real subject, wardrobe, and setting outside the slice remain unchanged.
+Apply the complexity budget in `duration-composer.md`. In 5 seconds use five beats and at most four effect verbs. When folding is requested, use exactly:
 
-The target is an image-filled spatial slice, not a literal glass object and not an empty cut in the face.
+`open -> registered rise -> hero fold and flatten -> one return/sweep -> close`
 
-## Plain-language rule
+Do not add another tilt, pulse, diagonal path, scan light, expression sequence, or decorative effect to that 5-second version. The fold is the hero action, not an optional clause.
 
-Never put these production terms in the generated prompt:
+For each beat write `Real action`, `Ribbon response`, and `Alternate response`.
 
-- Plate A, Plate B, source plate
-- matte, mask, compositing layer
-- screen-space, coordinates, landmarks, registration tolerance
-- bounding box, pixel mapping, UV mapping
+## Folding rule
 
-Video generators may draw these terms literally as transparent panels, targeting lines, face guides, or seams. Describe the finished picture instead.
+Use one joined bow-tie fold only when requested: the left and right sections hinge in depth along two clean diagonal creases; their inner acute tips meet at the center while all image content remains one continuous surface. Hold the readable folded shape briefly, then reverse the exact wrist motion and flatten fully.
 
-## Alternate character
+Do not describe paper, grabbing corners, detached triangles, split pieces, a center crack, or duplicate characters. During the fold, suspend scanning; resume only after the ribbon is flat.
 
-- Show one large alternate head-and-shoulders image inside the slice.
-- Keep the alternate face near the center of the slice and at roughly the same apparent scale as the real face.
-- Include the eyes, nose, mouth, cheeks, hair or headdress together. Never crop down to one eye or floating lips.
-- Use three bold identity cues that survive motion: one face cue, one silhouette cue, and one costume cue.
-- Keep the alternate environment visible on both sides of the face.
-- Do not demand perfect anatomical coordinate matching. Ask for visual alignment when the slice crosses the real face.
+## Prompt economy
 
-## Material and shape
-
-- Use an opaque, taut, image-filled surface with no physical thickness.
-- Art style describes the image inside, not the material of the slice.
-- If the art style resembles glass, paper, collage, mosaic, metal, or fabric, say it is a painted/rendered look only.
-- No transparency, refraction, reflection, clear glass, lens, oval, capsule, eye shape, vertical line, black crack, or empty wireframe.
-- No HUD, interface, monitor frame, card, book, butterfly, paper sheet, or held prop.
-
-## Hand control
-
-- Hands remain near the left and right ends.
-- Fingers pull, stretch, tilt, twist, and release with visible energy.
-- Hands may approach the ends but do not hold the slice like a card or support it from below.
-- The effect responds immediately to each gesture.
-
-## 11-second motion grammar
-
-Use six continuous beats:
-
-1. A thin colored seam opens immediately into the full image-filled rectangle.
-2. Hold the clear alternate face long enough to read it.
-3. Pull one end slightly forward and the other slightly back for perspective.
-4. Add one shallow off-center fold or elastic wave while preserving the wide silhouette and visible face.
-5. Raise or tilt the slice across the real face; run one bright scan line **inside the alternate image** without shrinking the whole slice into a line.
-6. Snap back to a flat rectangle, then close only in the final second.
-
-Keep alternate imagery clearly visible from about 0.6s until about 10.0s. Do not let the effect vanish or become a bare light line in the middle.
-
-## Mandatory exclusions
-
-Explicitly ban:
-
-- transparent eye shield, clear glass panel, oval lens, capsule, eye-shaped aperture
-- vertical black crack, centered vertical seam, vertical slit
-- isolated eye, floating lips, detached face, chest-level portrait
-- empty light line before the final second, blank strip, outline-only shape
-- full-frame alternate-world takeover or changes to the real subject outside the slice
-- duplicate people, miniature full-body character, recursive picture, picture-in-picture
-- hands cupping from below, card holding, edge gripping
-- text, logo, subtitles, cuts, zooms, random camera movement, excessive rays or particles
+- For 5 seconds, target 260–430 English words and 5 timestamped beats.
+- Use 10–18 high-value negative constraints, not a wall of repeated prohibitions.
+- State each invariant once, then devote most words to visible hand choreography.
+- Do not include post-production jargon, coordinates, percentages for anatomy, or implementation explanations.
 
 ## Output and validation
 
-- Keep English around 450–750 words for 11 seconds.
-- Write Chinese naturally, not as a literal translation.
-- Use six timestamps.
-- Run `python scripts/validate_prompt.py <prompt-file>` and fix every failure.
-- Deliver English, Chinese, and a short self-check.
+Return separate natural Chinese and English prompts plus a compact diagnosis/self-check. Tell the user to submit only one language version.
+
+Run `python scripts/validate_prompt.py <english-prompt-file>` and fix every failure before delivery.

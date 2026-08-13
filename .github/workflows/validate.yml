@@ -22,6 +22,9 @@ jobs:
       - name: Run prompt validator self-test
         run: python scripts/validate_prompt.py --self-test
 
+      - name: Validate V8 five-second fold example
+        run: python scripts/validate_prompt.py examples/V19_5s_EN_borderless_hero_fold_test.txt
+
       - name: Validate skill metadata
         shell: python
         run: |

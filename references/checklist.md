@@ -1,16 +1,17 @@
-# V7 Visual-First Self-Check
+# Borderless Ribbon Delivery Gate
 
-- [ ] Six timestamps; no placeholders or output ratio.
-- [ ] English is approximately 450–750 words.
-- [ ] No Plate A/B, matte, mask, coordinate, landmark, registration, or bounding-box jargon.
-- [ ] One opaque horizontal dimensional image slice.
-- [ ] Filled size is roughly 72–76% wide and 24–28% high; complete footprint stays ≤25%.
-- [ ] Straight horizontal long edges, sharp corners, thin cyan–magenta seam.
-- [ ] Alternate imagery fills edge to edge; real background is not visible through it.
-- [ ] One large coherent alternate face with eyes, nose, mouth, cheeks, and hair/headdress together.
-- [ ] Alternate environment appears on both sides of the face.
-- [ ] Real subject, wardrobe, and setting stay unchanged outside the slice.
-- [ ] Hands remain active at left/right; no cupping, card holding, or support from below.
-- [ ] Effect stays image-filled from about 0.6s to 10.0s.
-- [ ] Scan light moves inside the image without collapsing the slice.
-- [ ] No transparent visor, oval lens, vertical crack, isolated eye, floating lips, chest portrait, blank strip, HUD, book, or picture-in-picture.
+- [ ] Exact duration; 5-second prompts use exactly five beats.
+- [ ] Five-second fold prompts use at most four effect verbs.
+- [ ] One borderless opaque horizontal ribbon; complete footprint ≤25%.
+- [ ] No visible outline, white/neon frame, glass, card, monitor, portal, or thickness.
+- [ ] Alternate counterpart stays at real body position, scale, pose, and facing direction.
+- [ ] Ribbon reveals only the intersected body zone; no traveling full portrait.
+- [ ] Subject silhouette continues through the horizontal boundaries.
+- [ ] Local background becomes the corresponding alternate version, not a separate panorama.
+- [ ] Both hands stay wholly outside the ends with visible gaps in every beat.
+- [ ] Every beat changes forearm/wrist trajectory or finger shape.
+- [ ] No static open-palm pose longer than 0.35 seconds.
+- [ ] Fold, if requested, owns one beat: inward wrist roll -> joined bow-tie -> short hold -> complete flatten.
+- [ ] No fold and scan/travel occur simultaneously.
+- [ ] English 5-second prompt is 260–430 words with 10–18 high-value negatives.
+- [ ] No output ratio or production jargon.

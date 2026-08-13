@@ -1,0 +1,34 @@
+Create a 5-second fixed frontal-camera photorealistic one-take video.
+
+REAL: One young East Asian woman with long black hair wears a gray hoodie in a bright living room. Keep her and the room unchanged outside the effect. Frame her waist-up with both forearms, wrists, and fingers visible.
+
+EFFECT: Create one opaque borderless horizontal dimensional scan ribbon, about 60% wide and 14% high; it never exceeds 25% of the frame. It has straight cut boundaries, no outline or thickness. Both hands remain wholly outside its ends with clear air gaps.
+
+REGISTERED COUNTERPART: One black-haired fantasy comic warrior in black-red clothing occupies the same apparent body position and scale, matching head size, shoulders, pose, and facing direction. The ribbon replaces only the body zone it crosses. Her silhouette continues through both horizontal boundaries. Side areas show the same nearby room restyled as fantasy art, not a separate vista. Everything outside the ribbon remains photoreal and unchanged.
+
+[0.00-0.60s]
+Real action: From frame zero, forearms pull outward at chest level while fingers unfurl.
+Ribbon response: A short chest strip opens quickly into the full borderless ribbon.
+Alternate response: Show corresponding black-red chest clothing matching real breathing; no face.
+
+[0.60-1.55s]
+Real action: Forearms rise together; palms rotate inward and fingers curve.
+Ribbon response: The fully flat ribbon follows from chest to eye level without resizing.
+Alternate response: Chest, collar, jaw, mouth, then same-scale eyes appear in sequence; no portrait travels.
+
+[1.55-2.75s]
+Real action: Elbows stay wide and hands stay outside the ends. Both wrists rotate inward; fingers tighten, then wrists reverse.
+Ribbon response: There is no travel or scan. Two diagonal creases hinge both sections backward into one joined continuous bow-tie surface; inner acute tips meet at center. Hold the fold for 0.25 seconds, then flatten completely.
+Alternate response: The eye-band image bends continuously in depth, then returns to its original scale.
+
+[2.75-4.30s]
+Real action: After flattening, forearms descend; fingers open and the head tilts slightly.
+Ribbon response: The flat ribbon returns through eyes, mouth, jaw, collar, and chest.
+Alternate response: Each matching region appears at fixed scale; no face remains at chest height.
+
+[4.30-5.00s]
+Real action: Forearms converge while hands stay outside; thumbs and index fingers close remotely.
+Ribbon response: The chest ribbon contracts into one short strip and vanishes.
+Alternate response: The chest-clothing region compresses and disappears.
+
+NEGATIVE: NO visible border. NO monitor, card, glass, or portal. NO oversized face. NO traveling portrait. NO hand entering the ribbon. NO hand contact. NO gripping. NO static open-palm hold. NO duplicate subject. NO detached fold pieces. NO center crack. NO text or logo. NO cut. NO zoom. NO pan.

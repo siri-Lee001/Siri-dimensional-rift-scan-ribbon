@@ -1,4 +1,4 @@
 interface:
   display_name: "Dimensional Rift Scan Ribbon"
-  short_description: "Create visual-first dimensional image-slice prompts"
-  default_prompt: "Use $dimensional-rift-prompt to create an 11-second prompt with one opaque horizontal dimensional image slice, edge-to-edge alternate-world imagery, a large coherent alternate face, lateral hand control, shallow elastic folding, one internal scan sweep, a stable real world outside the slice, and a complete visual footprint no larger than 25% of the frame. Do not prescribe the video ratio."
+  short_description: "Create borderless registered scan-ribbon prompts"
+  default_prompt: "Use $dimensional-rift-prompt to create a duration-adaptive bilingual prompt for one borderless opaque horizontal scan ribbon, registered alternate body regions, hands always outside both ends, readable gesture-driven folding when requested, and a complete footprint no larger than 25% of the frame. Do not prescribe the video ratio."
