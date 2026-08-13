@@ -1,4 +1,4 @@
 interface:
   display_name: "Dimensional Rift Scan Ribbon"
-  short_description: "Create co-registered dual-plate rift prompts"
-  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second prompt using two co-registered full-size source plates under one continuously visible horizontal moving matte, with readable alternate identity anchors, lateral hand control, zero alternate pixels outside, and a strict 25% complete-footprint cap."
+  short_description: "Create face-anchored registered rift prompts"
+  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second face-anchored dimensional-rift prompt with stationary screen-space registered real and alternate plates, landmark-locked facial alignment, a straight 72% x 29% horizontal matte that stays on the face, lateral no-contact hand control, and a <=25% complete visual footprint."

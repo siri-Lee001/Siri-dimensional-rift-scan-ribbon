@@ -10,6 +10,8 @@ The target is two co-registered source plates and one moving matte:
 
 It is a local replacement in one continuous image—not a screen showing another shot.
 
+Plate A and Plate B remain stationary in screen coordinates. Only the matte moves or deforms. The alternate pupils, nose, mouth, jaw, and face center stay locked to corresponding real landmarks; they never ride along with the matte.
+
 ## Non-negotiable world separation
 
 - At least 75% of every frame remains the recognizable real subject and real environment.
@@ -27,13 +29,16 @@ It is a local replacement in one continuous image—not a screen showing another
 - A slit across the torso contains only the alternate torso band, not a miniature full person.
 - Uncovered regions restore immediately to the real identity.
 - Never place a second character, portrait, inset shot, or recursive copy inside the slit.
+- Keep the slit within a face corridor from slightly above eyebrows to just below chin throughout every open frame.
+- Every visible alternate feature remains embedded in a connected face crop. No single eye, floating lips, disembodied face, or face placed at chest level.
 
 ## Temporal and directional invariants
 
 - From roughly 0.6s to 10.2s, the rift remains continuously open, alternate-image-filled, and causally controlled.
 - Its long axis stays within 12 degrees of horizontal.
 - Width remains at least 3.5 times height until final closure.
-- Hero state is 18–22% frame height; scan state is 10–14% height.
+- Hero and motion states are 28–30% frame height and 70–74% width, about 20–22% filled area. The complete effect remains ≤25%.
+- Top and bottom edges are straight and end caps vertical; no ellipse, oval lens, capsule, eye shape, or curved glass silhouette.
 - A fold is a shallow Z-depth kink in one still-wide connected strip, never a detached shard, diamond, isolated triangle, or empty outline.
 - Both hand centers stay to the left and right; neither palm cups or presents the effect from below.
 
@@ -93,6 +98,24 @@ Correction: lock the long axis within 12 degrees of horizontal, keep width:heigh
 Cause: ballet, magic, offering, or presentation gestures invite an object-holding pose.
 
 Correction: place both hand centers laterally, forbid upward-facing palms below the slit, and require one side hand to cross in front while the other remains behind.
+
+### Alternate face appears at chest level
+
+Cause: the model centers Plate B's face inside the moving slit instead of registering it to Plate A's face.
+
+Correction: lock alternate face center and landmarks to the real face in stationary screen coordinates; require the slit to overlap the real face throughout all open frames; ban chest-level face placement.
+
+### Single eye or floating mouth
+
+Cause: the slit becomes too thin or carries facial features as attached content while moving.
+
+Correction: maintain 28–30% frame height and keep any eye, nose, or mouth embedded in an anatomically connected facial crop. Plates stay fixed; only the matte moves.
+
+### Oval glass lens
+
+Cause: depth, stained-glass, or portal language curves the long edges and adds transparency.
+
+Correction: require two straight horizontal long edges, vertical end caps, zero transparency, zero refraction, and no ellipse, oval, capsule, lens, or eye-shaped aperture.
 
 ### HUD or transparent display
 
