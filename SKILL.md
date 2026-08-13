@@ -5,7 +5,7 @@ description: "Generate production-ready bilingual prompts for hand-controlled ho
 
 # Dimensional Rift Prompt Generator
 
-Generate bilingual text-to-video prompts for a **single-subject, dual-world moving matte**. The target is not a screen displaying another shot. It is a shallow moving cut that locally replaces only the body and background fragments it currently covers.
+Generate bilingual text-to-video prompts for a **single-subject, dual-world moving matte**. Use two co-registered source plates: an immutable real take and a synchronized alternate take. One horizontal matte reveals only the aligned crop of the alternate take. The target is neither a screen nor a physical art object.
 
 ## 1. Collect inputs
 
@@ -37,23 +37,25 @@ Use these exact English phrases:
 - `immutable live-action base plate outside the slit`
 - `single-subject dual-world moving matte`
 - `inside the matte only, restyle the exact currently covered body and background fragments`
+- `two co-registered source plates under one moving horizontal matte`
+- `the alternate source plate remains fully invisible outside the matte`
 - `the complete visual footprint of the rift, including edge light and every folded facet, never exceeds 25% of the full video frame`
 
 Define the layers in this order, before describing alternate-world beauty:
 
-1. **Layer 0 — immutable base plate:** the real subject and real environment occupy the full shot first. At least 75% of the frame remains visibly and recognizably this live-action reality on every frame. Outside the slit, 100% of pixels remain the original real subject and scene. The base plate never changes style, wardrobe, architecture, color world, or identity.
-2. **Layer 1 — one moving matte:** one long, shallow, borderless horizontal slit, including all folds and edge effects, stays at or below 25% of the frame.
-3. **Layer 2 — alternate treatment:** visible only through Layer 1. Apply alternate identity, costume, art style, light, and environment to the exact screen-space fragments currently covered by the slit. Zero alternate-world pixels may appear outside it.
+1. **Plate A — immutable real take:** the real subject and real environment fill the shot. At least 75% remains visibly this live-action reality on every frame. Outside the slit, 100% of pixels remain Plate A.
+2. **Plate B — co-registered alternate take:** precompose the same subject at the same size, screen coordinates, camera, head angle, gaze, expression, pose, and timing, but with alternate identity, setting, palette, and rendering. Plate B may be a complete synchronized take internally, yet it is never independently visible.
+3. **Matte M — one moving horizontal reveal:** show Plate B only where Matte M overlaps Plate A. All pixels outside M show Plate A. The matte, including folds and edge effects, stays at or below 25% of frame.
 
 The two worlds are mutually exclusive. The alternate world is forbidden globally and forbidden outside the matte. Never promote the alternate scene into the full-frame setting.
 
 ## 4. Enforce one body, not a second portrait
 
-The rift must transform the **same continuous body**, not contain another person:
+The rift must reveal a registered crop of the **same continuous performance**, not contain another person:
 
 - Render one subject, one body, one head, one pose, and one performance in the entire frame.
-- Do not compose a complete alternate character inside the slit.
-- Do not show a self-contained alternate shot, portrait, miniature person, or full figure inside the slit.
+- Do not scale Plate B down or place it inside a framed composition. It stays full-frame and co-registered behind the matte.
+- Do not show a self-contained portrait, miniature person, full figure, or separate shot inside the slit.
 - When the slit crosses the eyes, restyle only the covered eye-and-brow band; the forehead above and nose below remain real.
 - When it crosses the mouth, restyle only the covered mouth-and-cheek band.
 - When it crosses clothing, restyle only that covered clothing band.
@@ -61,7 +63,9 @@ The rift must transform the **same continuous body**, not contain another person
 - A fragment returns immediately to the real base plate when the slit uncovers it.
 - Keep face scale, gaze, expression, head angle, pose, and gesture continuous across the boundary.
 
-Never use `show a character inside the rift`, `alternate portrait`, `full alternate face`, `face-and-upper-torso crop`, or `mirrored person`. Those phrases invite picture-in-picture and duplicate people. Say **local identity/material replacement of the currently covered fragment**.
+The alternate identity must remain legible through the crop. Give Plate B three large facial anchors that survive a horizontal eye/cheek crop—distinct eye treatment, hair or headdress silhouette, and one high-contrast costume/background cue. Do not rely on tiny ornament, abstract pattern, or decorative texture.
+
+Never use `show a character inside the rift`, `alternate portrait`, `face-and-upper-torso card`, or `miniature mirrored person`. Those phrases invite picture-in-picture. Say **co-registered alternate source plate revealed only through the current matte coordinates**.
 
 ## 5. Define the rift silhouette and material
 
@@ -70,11 +74,15 @@ The rift is a nonphysical horizontal cut in the camera image:
 - Alternate color and texture reach the cut itself. No transparent margin, glass, empty center, frame body, bezel, interface, or chassis.
 - The boundary is only a single-pixel cyan–magenta chromatic seam where realities meet. It is not a luminous outline.
 - Straight state: long shallow rectangle or slight trapezoid with two roughly parallel long edges.
-- Fold state: one off-center diagonal crease forming two unequal connected planes. No centered vertical spine, symmetrical wings, or book shape.
+- At every open state, the long axis remains within 12 degrees of horizontal and width remains at least 3.5 times height. Never become vertical, square, diamond-shaped, or a single triangle.
+- Hero state: approximately 70–76% wide and 18–22% high so the aligned alternate face remains readable. Scan state remains 10–14% high. Do not collapse to a tiny strip until final closure.
+- Fold state: one shallow off-center Z-depth kink forming two unequal connected planes while the overall silhouette remains a wide filled horizontal strip. Left and right ends stay at least 55% of frame width apart. No centered spine, symmetrical wings, book shape, detached shard, or outline-only triangle.
 - Every visible folded facet obeys the same local matte mapping. It does not display a duplicated shot.
 - Zero HUD, dashboard, circuitry, corner brackets, reticle, book, butterfly, glass, fabric, ribbon, paper, card, photo, or filmstrip cues.
 
 Do not call it a `window`, `screen`, `panel`, `HUD`, `monitor`, `membrane`, `ribbon`, or `portal`. Use `dimensional image slit`, `reality cut`, `spatial image slice`, or `moving matte`.
+
+Treat the requested art style as **image rendering only**, never as literal rift material. If the style mentions stained glass, paper cut, ink, collage, mosaic, metal engraving, fabric, or ceramics, explicitly state that the alternate footage is rendered with those visual qualities but the rift is not physically made from glass, paper, cloth, tile, metal, or any hand-held object.
 
 ## 6. Enforce the 25% total visual-footprint cap
 
@@ -83,7 +91,7 @@ This is a hard per-frame rule:
 > The complete envelope—including alternate treatment, seam, localized spill, distortion, corners, motion blur, and all folded facets—must remain at or below 25% of the full frame.
 
 - Keep the envelope inside one horizontal bounding box no wider than 78% and no taller than 22% of the frame.
-- A narrow scan state may be about 68–76% wide by 5–9% high.
+- A scan state may be about 68–76% wide by 10–14% high; use 18–22% height for the main identity reveal.
 - Add the projected areas of every folded face; folding creates no extra allowance.
 - No seam, ray, glow, corner, or distortion escapes the bounding box.
 - Repeat the cap in the mechanism, timeline, and negative constraints.
@@ -91,6 +99,7 @@ This is a hard per-frame rule:
 ## 7. Hand interaction and motion
 
 - Hands hover near the lateral ends with visible air gaps; they do not grip corners or support an object.
+- Keep both hand centers left and right of the slit, never beneath its lower edge. Palms do not face upward in a cupping or presentation pose.
 - One hand may pass in front while the other stays behind to establish occlusion depth.
 - Pull apart → widen; opposite vertical movement → controlled shear; push/pull → depth shift; inward diagonal gesture → one off-center fold; pinch together → close.
 - Keep gestures asymmetrical and causal. No visible strings.
@@ -106,6 +115,8 @@ For 11 seconds use six connected beats:
 6. Contract to the seam; reveal the unchanged real base plate.
 
 No reset, second opening, edit, or idle hold longer than 0.25 seconds.
+
+Keep the rift continuously open and image-filled from approximately 0.6 seconds until approximately 10.2 seconds. It may shear, kink, flatten, and scan, but it must never disappear, turn into an empty wireframe, lose its alternate footage, break into detached pieces, or shrink below 10% frame height before the final closing beat.
 
 ## 8. Preserve contrast without global takeover
 
@@ -123,6 +134,8 @@ Explicitly ban:
 
 - full-frame alternate-world takeover, background replacement, global art-style transfer, or real subject becoming the alternate identity outside the slit
 - picture-in-picture, inset video, framed copy, recursive image, Droste effect, nested slit, duplicate face, duplicate body, second person, miniature portrait, or complete alternate character composition
+- vertical slit, diamond, square, isolated triangle, detached shard, outline-only polygon, empty wireframe, decorative stained-glass strip, ornamental border, or early disappearance
+- hands cupping from below, palms presenting the slit, or slit resting above the hands
 - HUD, dashboard, monitor, screen, interface, bezel, luminous frame, circuit border, corner brackets, reticle, glass panel, book, butterfly, center spine, equal wings
 - fabric, ribbon, tape, paper, card, photo, filmstrip, black backface, transparent margin, empty center
 - any total visual footprint above 25%, anything outside the 78% × 22% bounding box, or alternate pixels outside the matte

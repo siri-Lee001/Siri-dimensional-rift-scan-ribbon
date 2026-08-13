@@ -1,51 +1,48 @@
-# Dimensional Rift Self-Check
+# V5 Dimensional Rift Self-Check
 
-Fix every failed item before delivery.
+Fix every failed item.
 
-## Structure
+## Structure and registration
 
-- [ ] No placeholders remain.
-- [ ] English and Chinese share six timestamps and the same mechanics.
-- [ ] English is approximately 650–1200 words for 11 seconds.
-- [ ] No output ratio is prescribed.
-
-## Immutable base plate
-
+- [ ] No placeholders or output ratio.
+- [ ] Six timestamps; English and Chinese mechanics match.
 - [ ] `immutable live-action base plate outside the slit` appears.
-- [ ] At least 75% of every frame remains the real subject and real environment.
-- [ ] Outside the slit, 100% of pixels remain the original real scene.
-- [ ] Zero alternate-world pixels appear outside the matte.
-- [ ] The alternate scene is explicitly forbidden from global takeover.
+- [ ] `two co-registered source plates under one moving horizontal matte` appears.
+- [ ] `the alternate source plate remains fully invisible outside the matte` appears.
+- [ ] Plate B matches Plate A's scale, coordinates, face size, gaze, expression, pose, timing, and camera.
+- [ ] Plate B is never scaled down, framed, or composed as a portrait.
+- [ ] Plate B has three large identity anchors: eyes, hair/headdress silhouette, costume/background cue.
 
-## Local dual-world matte
+## World separation
 
-- [ ] `single-subject dual-world moving matte` appears.
-- [ ] `inside the matte only, restyle the exact currently covered body and background fragments` appears.
-- [ ] One subject, one head, one body, one pose.
-- [ ] The prompt gives eye-band, clothing-band, or background-fragment examples.
-- [ ] Covered fragments restore immediately when uncovered.
-- [ ] No second person, complete alternate shot, portrait, duplicate, inset, recursion, or miniature figure.
+- [ ] At least 75% remains real; outside the slit 100% comes from Plate A.
+- [ ] Zero alternate pixels outside the matte; no global alternate style or background replacement.
+- [ ] Same-coordinate eye, clothing, and background crops restore immediately when uncovered.
 
-## Rift appearance and footprint
+## Horizontal shape and temporal continuity
 
-- [ ] Long shallow borderless slit with a single-pixel cyan–magenta chromatic seam.
-- [ ] No transparent margin, frame body, bezel, glass, or empty center.
-- [ ] One off-center diagonal crease creates two unequal connected planes.
-- [ ] The exact complete-footprint sentence appears.
-- [ ] The whole effect stays inside one box no wider than 78% and no taller than 22%.
-- [ ] Folded projected areas are summed and stay at or below 25%.
-- [ ] No ray, glow, corner, or distortion escapes the box.
+- [ ] Long axis remains within 12 degrees of horizontal.
+- [ ] Width:height stays at least 3.5:1 while open.
+- [ ] Hero state is 18–22% high; scan state is 10–14% high.
+- [ ] The rift remains open and image-filled from about 0.6s to 10.2s.
+- [ ] Fold is a shallow off-center Z-depth kink in one wide connected strip; ends stay at least 55% apart.
+- [ ] No vertical strip, square, diamond, isolated triangle, detached shard, decorative strip, wireframe, or early disappearance.
 
-## Choreography
+## Art style is not object material
 
-- [ ] Hands hover with visible air gaps and never grip matching corners.
-- [ ] One hand passes in front while the other remains behind.
-- [ ] Scan changes only covered fragments and restores them immediately.
-- [ ] No second opening, cut, reset, or idle hold longer than 0.25 seconds.
+- [ ] Art style applies only to Plate B's image rendering.
+- [ ] Rift has zero material thickness and is not physical glass, paper, cloth, ribbon, mosaic, metal, ceramic, card, or ornament.
+- [ ] Alternate footage reaches the cut; no frame, transparent margin, glass panel, bezel, or empty center.
 
-## Exclusions
+## Hands
 
-- [ ] No global alternate-world scene, global style transfer, or background replacement.
-- [ ] No picture-in-picture, nested frame, recursive image, Droste effect, or duplicate person.
-- [ ] No HUD, monitor, screen, interface, circuitry, book, butterfly, glass, fabric, ribbon, paper, card, or black backface.
-- [ ] No text, watermark, subtitle, logo, random camera motion, broad bloom, rays, sparks, lightning, or particles.
+- [ ] Hands hover laterally with visible air gaps.
+- [ ] Both hand centers remain left/right, never below the slit.
+- [ ] No upward-facing cupped or presentation palms.
+- [ ] One hand passes in front and the other stays behind.
+
+## Footprint and exclusions
+
+- [ ] Exact 25% footprint sentence appears.
+- [ ] Complete envelope stays within 78% × 22%; folded projected areas sum to ≤25%.
+- [ ] No picture-in-picture, recursion, duplicate subject, HUD, screen, book, butterfly, text, random camera motion, broad bloom, rays, sparks, or particles.

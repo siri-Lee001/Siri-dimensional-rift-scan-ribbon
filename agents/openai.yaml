@@ -1,4 +1,4 @@
 interface:
   display_name: "Dimensional Rift Scan Ribbon"
-  short_description: "Create local dual-world moving-matte rift prompts"
-  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second dimensional-rift prompt with an immutable live-action base plate, one single-subject dual-world moving matte, local body-and-background fragment replacement, zero alternate-world pixels outside the slit, and a strict 25% complete visual-footprint cap."
+  short_description: "Create co-registered dual-plate rift prompts"
+  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second prompt using two co-registered full-size source plates under one continuously visible horizontal moving matte, with readable alternate identity anchors, lateral hand control, zero alternate pixels outside, and a strict 25% complete-footprint cap."

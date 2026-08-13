@@ -1,87 +1,107 @@
-# Single-Subject Dual-World Moving-Matte Template
+# V5 Co-Registered Dual-Plate Template
 
 Use for an 11-second clip. Do not prescribe output ratio.
 
 ## English template
 
 ```text
-BASE PLATE — LOCK BEFORE ALL EFFECTS
+REAL PLATE A — IMMUTABLE BASE
 
-{REAL_CHARACTER}. {REAL_SCENE}. Fixed frontal medium shot, waist-up, both hands visible, stable background, one uninterrupted take. Build an immutable live-action base plate outside the slit. At least 75% of every frame must remain visibly and recognizably this real person and real place. Outside the slit, 100% of pixels remain the original live-action base plate. The real identity, wardrobe, architecture, lighting, and palette never transform outside the slit. Zero alternate-world pixels appear outside the matte; {ALTERNATE_SCENE} and {ALTERNATE_CHARACTER} are forbidden as a global or full-frame scene.
+{REAL_CHARACTER}. {REAL_SCENE}. Fixed frontal waist-up shot, both hands visible, stable background, one uninterrupted take. Build an immutable live-action base plate outside the slit. At least 75% of every frame remains this real person and place. Outside the slit, 100% of pixels remain Plate A. Zero alternate-world pixels appear outside the matte. {ALTERNATE_CHARACTER}, {ALTERNATE_SCENE}, and {ART_STYLE} are forbidden globally.
 
-COMPOSITING MECHANISM
+ALTERNATE PLATE B — HIDDEN BUT FULL-SIZE
 
-Use a single-subject dual-world moving matte. Create one long, shallow, horizontal borderless dimensional image slit. Inside the matte only, restyle the exact currently covered body and background fragments. Render one subject, one head, one continuous body, one pose, and one performance in the entire frame. The slit does not contain a second person or a self-contained alternate shot.
+Use two co-registered source plates under one moving horizontal matte. Plate B is a complete synchronized alternate take of the same person at identical full-frame scale, screen coordinates, face size, gaze, expression, head angle, pose, hand timing, and camera. In Plate B the identity is {ALTERNATE_CHARACTER}, the setting is {ALTERNATE_SCENE}, and the image rendering is {ART_STYLE}. The alternate source plate remains fully invisible outside the matte. Never scale Plate B down, frame it, or compose it as a portrait.
 
-When the slit crosses the eyes, only that narrow eye-and-brow band becomes {ALTERNATE_CHARACTER} in {ART_STYLE}; the real forehead above and real nose below remain unchanged. When it crosses the clothing, only the covered clothing band changes. Covered fragments of {REAL_SCENE} locally become cropped fragments of {ALTERNATE_SCENE}; never show the complete alternate setting. Every fragment returns immediately to the real base plate the instant the slit uncovers it. Preserve facial scale, anatomy, gaze, expression, head angle, pose, and gesture continuously across the cut.
+Give Plate B three large readable anchors that survive a horizontal crop: a distinctive eye treatment, a bold hair/headdress silhouette crossing the eye band, and one high-contrast costume/background cue. Do not rely on tiny ornament or abstract pattern.
 
-RIFT APPEARANCE AND LIMITS
+MOVING MATTE
 
-Alternate texture reaches the cut itself with no transparent glass margin. There is no frame body, bezel, panel, monitor, interface, or empty center. The only boundary is a single-pixel cyan–magenta chromatic seam where the realities meet; it is not a luminous outline and emits no rays. Straight state: long shallow rectangle or mild trapezoid with roughly parallel long edges. Fold state: one off-center diagonal crease creates two unequal connected planes. Every facet remains the same local moving matte, never a nested image.
+Use a single-subject dual-world moving matte. Create one long, shallow, horizontal borderless dimensional image slit. Inside the matte only, restyle the exact currently covered body and background fragments by revealing the same-coordinate crop of Plate B. The same continuous performance crosses both boundaries. When the matte crosses eyes, reveal only the aligned alternate eye band; when it crosses clothing, reveal only the registered clothing band. Each fragment immediately returns to Plate A when uncovered.
 
-The complete visual footprint of the rift, including edge light and every folded facet, never exceeds 25% of the full video frame. Keep alternate treatment, seam, localized spill, distortion, corners, motion blur, and all folded facets inside one horizontal bounding box no wider than 78% and no taller than 22% of frame. Sum every folded facet's projected area; the combined total remains at or below 25%. No ray, glow, corner, or distortion escapes the box.
+RIFT SHAPE AND MATERIAL
 
-HANDS
+Alternate footage reaches the cut edge with no transparent margin, frame body, bezel, panel, glass, empty center, or interface. The boundary is one single-pixel cyan–magenta chromatic seam, not a neon frame. At every open moment, the long axis stays within 12 degrees of horizontal and width remains at least 3.5 times height. Hero state is 70–76% wide by 18–22% high. Scan state remains 10–14% high. Never become vertical, square, diamond-shaped, a detached shard, isolated triangle, decorative strip, or empty outline.
 
-Both hands hover near the lateral ends with visible air gaps; they never grip matching corners or support an object. One hand passes in front while the other remains behind. Pull apart widens; opposite vertical motion shears; push and pull shifts depth; an inward diagonal gesture creates one off-center fold; fingertips approaching closes. Keep fingers active and asymmetrical; avoid a persistent two-handed rectangular framing pose.
+Folding means one shallow off-center Z-depth kink in one still-wide, connected, image-filled strip. Left and right ends stay at least 55% of frame width apart. No centered spine, matching wings, book, butterfly, physical fold, or separated facets.
+
+{ART_STYLE} affects Plate B's image rendering only. The slit itself is not physically made from glass, paper, fabric, ribbon, mosaic tile, metal, ceramic, or any hand-held material. It has zero material thickness and no object affordance.
+
+The complete visual footprint of the rift, including edge light and every folded facet, never exceeds 25% of the full video frame. Keep alternate footage, seam, local spill, distortion, corners, motion blur, and every facet inside one box no wider than 78% and no taller than 22%. Sum all projected facets; total remains at or below 25%. Nothing escapes the box.
+
+HANDS AND CONTINUITY
+
+Both hands hover near the lateral ends with visible air gaps. Both hand centers stay left and right of the slit, never below its lower edge. Palms never face upward in a cupping, offering, or presentation pose. Hands never grip corners or support an object. One hand passes in front while the other remains behind. Pull apart widens; opposite vertical movement shears; push/pull shifts depth; inward diagonal motion makes the shallow Z-kink; fingertips approaching closes.
+
+The rift stays continuously open and filled with registered alternate footage from 0.6s until 10.2s. It may shear, kink, flatten, and scan, but never disappears early, loses image fill, becomes wireframe, breaks apart, turns vertical, or shrinks below 10% frame height before final closure.
 
 11-SECOND TIMELINE
 
-[0.0–1.0s] REALITY LOCK + ACTIVATE: Begin with the entire frame unmistakably {REAL_SCENE} and {REAL_CHARACTER}. Hands hover in empty air. A 1–2 pixel cyan–magenta chromatic seam appears; no alternate setting exists elsewhere.
+[0.0–1.0s] LOCK + OPEN: Establish Plate A. At 0.2s a 1–2 pixel seam appears; by 0.6s it is already one horizontal image-filled slit. Hands remain lateral, not below.
 
-[1.0–3.0s] LOCAL OPEN: The seam opens into one shallow slit, approximately 72–76% wide and 14–18% high. Only the exact fragments beneath it change to {ART_STYLE}, {ALTERNATE_CHARACTER}, and cropped {ALTERNATE_SCENE} details. At least 75% remains real; zero alternate pixels appear outside.
+[1.0–3.0s] HERO REVEAL: Hold approximately 74% width × 20% height across the eyes and upper cheeks. Reveal Plate B's aligned alternate eyes, hair/headdress silhouette, and one background cue clearly. The surrounding 75%+ remains Plate A.
 
-[3.0–4.8s] DEPTH SHEAR: One hand passes in front while the other stays behind. One end advances and the other recedes into a mild trapezoid, then one controlled oblique shear. The subject outside the slit remains {REAL_CHARACTER}; there is no second character inside it.
+[3.0–4.8s] DEPTH SHEAR: One hand crosses in front and the other stays behind. Apply a mild trapezoid and one oblique shear while remaining horizontal, connected, image-filled, and at least 3.5:1.
 
-[4.8–6.5s] ASYMMETRIC FOLD: One inward diagonal gesture creates an off-center hard crease and two unequal connected planes. Both facets display only the locally covered body/background fragments. No self-contained portrait, nested image, centered spine, equal wings, or book shape. Combined footprint stays at or below 25%.
+[4.8–6.5s] SHALLOW Z-KINK: Form one off-center depth kink in the still-wide strip; left and right ends remain at least 55% apart. Do not form a diamond, triangle, shard, book, or outline.
 
-[6.5–9.5s] FLATTEN + SCAN: Flatten, narrow to 5–9% height, and scan once across eyes, cheeks, mouth, and clothing. Each band becomes the alternate treatment only during contact and snaps back to the real base plate immediately after the slit passes. One continuous body remains anatomically aligned.
+[6.5–9.5s] FLATTEN + SCAN: Flatten to 10–14% height and scan across eyes, mouth, collar, and clothing. Plate B remains legible and registered; each uncovered region immediately returns to Plate A. Reverse hand occlusion once.
 
-[9.5–11.0s] CLOSE + VERIFY: Compress to the chromatic seam and close between approaching fingertips. Reveal the unchanged {REAL_CHARACTER} in the unchanged {REAL_SCENE}. {ENDING_ACTION}. No second opening or particle finale.
+[9.5–11.0s] CLOSE ONLY NOW: Keep the image-filled slit open through 10.2s, then compress directly into the one-pixel seam and close by 10.7s. Reveal unchanged Plate A. {ENDING_ACTION}.
 
 NEGATIVE CONSTRAINTS
 
-NO full-frame alternate world. NO global alternate art style. NO background replacement. NO alternate costume outside the slit. NO alternate architecture outside the slit. NO picture-in-picture. NO inset video. NO framed copy. NO recursive image. NO Droste effect. NO nested slit. NO duplicate face. NO duplicate body. NO second person. NO complete alternate character. NO miniature portrait. NO full figure inside the slit. NO HUD. NO holographic dashboard. NO transparent monitor. NO screen. NO panel. NO digital interface. NO frame body. NO bezel. NO circuit border. NO corner brackets. NO reticle. NO glass. NO transparent margin. NO open book. NO butterfly wings. NO centered spine. NO equal wings. NO bilateral corner gripping. NO black fabric. NO ribbon. NO paper. NO card. NO photo. NO filmstrip. NEVER exceed 78% × 22%. NEVER exceed 25% total visual footprint. NO alternate pixels outside the matte. NO text, watermark, subtitle, logo, cut, zoom, pan, orbit, random camera motion, rays, broad bloom, sparks, lightning, or explosive particles.
+NO early disappearance. NO vertical slit. NO square. NO diamond. NO isolated triangle. NO detached shard. NO empty wireframe. NO decorative stained-glass strip. NO ornamental border. NO physical card. NO hands cupping from below. NO palms presenting the slit. NO full-frame alternate world. NO global alternate art style. NO background replacement. NO alternate pixels outside the matte. NO picture-in-picture. NO inset portrait. NO recursive image. NO nested slit. NO duplicate person. NO miniature figure. NO HUD. NO screen. NO panel. NO interface. NO frame body. NO book. NO butterfly. NO ribbon. NO paper. NO glass object. NO text, logo, cut, zoom, pan, orbit, rays, broad bloom, sparks, lightning, or particles. NEVER exceed 78% × 22%. NEVER exceed 25% total visual footprint.
 ```
 
 ## 中文模板
 
 ```text
-现实底片锁定
+现实A底片
 
-{REAL_CHARACTER_CN}，身处{REAL_SCENE_CN}。固定正面中景，腰部以上，双手完整入画，背景稳定，一镜到底。先建立完整、稳定的真人现实底片：每一帧至少75%的画面必须清楚保留现实人物与现实环境。裂隙之外的所有像素始终是原本的真人、服装、建筑、灯光和色彩，绝不发生风格或身份变化。{ALTERNATE_SCENE_CN}和{ALTERNATE_CHARACTER_CN}只允许出现在裂隙覆盖区，严禁扩散成全画面主场景。
+{REAL_CHARACTER_CN}，身处{REAL_SCENE_CN}。固定正面腰部以上中景，双手完整入画，背景稳定，一镜到底。建立不可改变的真人现实底片。每帧至少75%保留现实人物与环境；裂隙外100%像素始终来自A底片。裂隙外异世界像素为零，{ALTERNATE_CHARACTER_CN}、{ALTERNATE_SCENE_CN}和{ART_STYLE_CN}严禁扩散成全局画面。
 
-合成机制
+异世界B底片
 
-采用“单一人物、双重世界、移动蒙版”的合成逻辑。生成一条横向、狭长、无实体边框的次元影像切口。只在蒙版内部，把它当前盖住的身体碎片和背景碎片局部替换成异世界形态。整幅画面只能有一个人、一颗头、一个连续身体、一套同步动作；裂隙内部不是另一段视频，也不能另放一个人物。
+使用“两套严格配准的视频底片＋一个横向移动蒙版”。B底片是同一人物在异世界中的完整同步表演，人物比例、屏幕坐标、脸部大小、视线、表情、头部角度、姿势、手势时间和机位都与A底片一致。B底片中的身份是{ALTERNATE_CHARACTER_CN}，环境是{ALTERNATE_SCENE_CN}，画面渲染采用{ART_STYLE_CN}。B底片默认完全隐藏，只能被蒙版局部揭示；严禁缩小、加框或排成肖像。
 
-裂隙扫过眼睛时，只把它盖住的眼睛与眉骨窄带变成{ART_STYLE_CN}的{ALTERNATE_CHARACTER_CN}局部，裂隙上方的额头和下方的鼻子仍是真人。扫过衣服时，只替换被覆盖的那一条衣料。现实背景被覆盖的位置，只出现{ALTERNATE_SCENE_CN}的对应局部纹理，不得拼成完整异世界全景。裂隙一离开，刚才被覆盖的区域立刻恢复现实底片。边界两侧的人脸比例、五官位置、视线、表情、头部角度和动作必须连续对齐。
+B底片必须有三项能在横向裁切中清楚识别的大特征：醒目的眼部设计、横跨眼部区域的发型或头饰轮廓，以及一项高反差服装或背景标志。不能只依赖细小花纹或抽象装饰。
 
-裂隙外观与面积
+移动蒙版
 
-异世界材质一直铺到切口边缘，没有透明玻璃留白，没有框体、屏幕、面板、边框、界面或空心区域。两重现实的交界处，只保留一像素宽的青—洋红轻微色差缝；它不是霓虹描边，也不向外放射光线。平直时是狭长横向矩形或轻微梯形；折叠时只允许一条偏离中心的斜折痕，形成两个面积不等但相连的平面。每个折面都仍然执行同一套局部蒙版替换，绝不显示嵌套画面。
+生成一条横向、狭长、无实体边框的次元影像切口。只在蒙版内部显示B底片同坐标的裁切区域。裂隙扫过眼睛时，只揭示对齐的异世界眼部窄带；扫过衣服时，只揭示对齐的衣料窄带。裂隙一离开，该区域立即恢复A底片。整幅画面始终是一套连续、对齐的表演。
 
-裂隙的完整视觉包络——包括异世界替换区、色差缝、局部溢色、形变、尖角、运动模糊和全部折面——每一帧都不得超过整幅画面的25%。所有效果必须收在同一个横向包围盒内：宽不超过画面78%，高不超过22%。折叠时所有可见面的投影面积相加，仍不得超过25%；任何光线、辉光、尖角或形变都不得越界。
+裂隙形状与材质
 
-手部动作
+异世界影像一直铺到切口边缘，没有透明留白、框体、边框、面板、玻璃、空心区或界面。边界只是一像素青—洋红轻微色差缝，不是霓虹框。任何展开时刻，长轴与水平线夹角不超过12度，宽高比不低于3.5:1。主体状态约宽70–76%、高18–22%；扫描状态高10–14%。严禁变成竖条、正方形、菱形、单独三角形、脱落碎片、装饰彩条或空心轮廓。
 
-双手在裂隙两端附近隔空操控，与边缘始终保留清楚空气间隙，不能抓住对称角点，也不能托着一个物体。一只手可从裂隙前方掠过，另一只留在后方。外拉对应展开，上下错位对应错切，前推后拉对应景深变化，向内斜压对应偏心折叠，指尖靠拢对应闭合。手势始终不对称并持续变化，避免双手长期摆出矩形取景框姿势。
+折叠只能表现为一条仍然宽阔、连通、内部充满影像的横带产生浅幅偏心Z向景深折点。左右两端始终至少相距画面宽度55%。严禁中央书脊、对称双翼、书本、蝴蝶、实体对折或分离折片。
+
+{ART_STYLE_CN}只描述B底片的画面渲染方式，不代表裂隙由真实玻璃、纸、布、丝带、马赛克、金属、陶瓷或任何可拿取材料制成。裂隙没有实体厚度，也不能被手托住。
+
+裂隙完整视觉包络，包括异世界影像、色差缝、局部溢色、形变、尖角、运动模糊和全部折面，每帧不得超过画面25%。所有效果收在宽不超过78%、高不超过22%的横向包围盒内；折面投影面积相加仍不得超过25%。
+
+双手与连续性
+
+双手在裂隙左右两端附近隔空操控，保持清楚空气间隙。双手中心始终位于裂隙左侧和右侧，绝不能跑到裂隙下方；掌心不得向上做托举、献上或展示物体的姿势。双手不抓角、不托物。一手从裂隙前方掠过，另一手留在后方。外拉展开，上下错位产生错切，前推后引产生景深，向内斜压产生浅幅Z向折点，指尖靠拢闭合。
+
+裂隙从约0.6秒到10.2秒必须连续展开，内部始终有清楚、配准的异世界人物影像。期间可以错切、折出景深、拉平和扫描，但严禁提前消失、丢失影像、变成线框、断裂、转为竖向，或在最终闭合前缩到画面高度10%以下。
 
 11秒时间线
 
-[0.0–1.0秒] 锁定现实并激活：开场整幅画面必须明确是{REAL_SCENE_CN}中的{REAL_CHARACTER_CN}。双手悬在空气中，一条1–2像素青—洋红色差缝出现；其他位置不出现任何异世界元素。
+[0.0–1.0秒] 锁定并展开：先呈现完整A底片；0.2秒出现1–2像素色差缝，0.6秒前已展开成内部有影像的横向裂隙。双手只在两侧，不在下方。
 
-[1.0–3.0秒] 局部展开：色差缝展开为一条约宽72–76%、高14–18%的狭长切口。只有它正下方的身体和背景碎片变成{ART_STYLE_CN}、{ALTERNATE_CHARACTER_CN}与{ALTERNATE_SCENE_CN}的局部。每帧至少75%仍是真实现实，裂隙外异世界像素为零。
+[1.0–3.0秒] 主体展示：裂隙约宽74%、高20%，经过眼睛和上半张脸。清楚显示B底片中对齐的异世界眼睛、发型或头饰轮廓以及一项背景标志。周围至少75%仍是A底片。
 
-[3.0–4.8秒] 景深错切：一只手从裂隙前方掠过，另一只保持在后方；近端前移、远端后退，形成轻微梯形并完成一次受控斜向错切。裂隙外始终是{REAL_CHARACTER_CN}，裂隙内不得出现第二个人。
+[3.0–4.8秒] 景深错切：一手从前方掠过，另一手留在后方。形成轻微梯形和一次斜向错切，但裂隙始终水平、连通、内部有影像，宽高比不低于3.5:1。
 
-[4.8–6.5秒] 非对称折叠：向内斜压产生一条偏心硬折痕，形成两个面积不等的相连平面。两个折面都只替换当前覆盖到的身体与背景碎片，不出现完整肖像、嵌套画面、中央书脊、对称双翼或展开书本。总面积始终不超过25%。
+[4.8–6.5秒] 浅幅Z向折点：在仍然宽阔的横带上形成一个偏心景深折点，左右两端至少相距画面宽度55%。严禁菱形、三角形、碎片、书本和空心轮廓。
 
-[6.5–9.5秒] 拉平扫描：把裂隙拉平并压窄到画面高度的5–9%，依次扫过眼睛、面颊、嘴部和衣服。每个部位只在被覆盖的瞬间变成异世界形态；裂隙一移开便立即恢复真人。始终只有一个连续、对齐的人体。
+[6.5–9.5秒] 拉平扫描：拉平并保持画面高度10–14%，依次扫过眼睛、嘴部、衣领和衣服。B底片持续清晰并严格配准；裂隙移开后立即恢复A底片。双手交换一次前后遮挡关系。
 
-[9.5–11.0秒] 闭合验收：裂隙压缩成一像素色差缝，在靠近的指尖之间闭合。最后完整露出未被改变的{REAL_CHARACTER_CN}和{REAL_SCENE_CN}。{ENDING_ACTION_CN}。不二次展开，不使用粒子收尾。
+[9.5–11.0秒] 只在此时闭合：裂隙保持内部有影像直到10.2秒，随后直接压缩成一像素色差缝，于10.7秒前闭合。露出未改变的A底片。{ENDING_ACTION_CN}。
 
 负面约束
 
-严禁全画面异世界；严禁全局艺术风格替换；严禁背景整体变成异世界；严禁裂隙外出现异世界服装、建筑或色彩；严禁画中画、内嵌视频、带框复制画面、递归图像、套娃、嵌套裂隙、重复人脸、重复身体、第二个人、完整异世界人物、微缩肖像和裂隙内全身小人；严禁HUD、全息仪表盘、透明显示器、屏幕、面板、数字界面、框体、边框、线路边框、角标、准星、玻璃、透明留白、展开书本、蝴蝶翅膀、中央书脊、对称双翼和双手抓住对称角点；严禁黑布、丝带、纸张、卡片、照片和胶片；完整效果绝不超过78%×22%包围盒，总视觉面积绝不超过25%，裂隙外异世界像素必须为零；严禁文字、水印、字幕、Logo、切镜、推拉、摇移、环绕、随机运镜、放射光线、大面积泛光、火花、闪电和爆炸粒子。
+严禁提前消失、竖条、正方形、菱形、单独三角形、脱落碎片、空心线框、装饰彩绘玻璃条、装饰边框和实体卡片；严禁双手从下方托举，严禁掌心向上展示裂隙；严禁全画面异世界、全局艺术风格、整体背景替换、裂隙外异世界像素、画中画、内嵌肖像、递归图像、嵌套裂隙、重复人物和微缩小人；严禁HUD、屏幕、面板、界面、框体、书本、蝴蝶、丝带、纸张和玻璃物体；严禁文字、Logo、切镜、推拉、摇移、环绕、放射光线、大面积泛光、火花、闪电和粒子；完整包围盒绝不超过78%×22%，总视觉面积绝不超过25%。
 ```
