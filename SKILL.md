@@ -42,7 +42,7 @@ Read before generating:
 - `references/prompt-template.md` — bilingual 8-beat continuous-ribbon template
 - `references/preset-dict.md` — gestures, palettes, styles, contrast, timing
 - `references/checklist.md` — mandatory quality gate
-- `references/target-effect-spec.md` — geometry, aspect-ratio rules, and failure corrections
+- `references/target-effect-spec.md` — geometry, framing rules, and failure corrections
 
 ## 4. Enforce full-frame coordinate sampling
 
@@ -62,22 +62,14 @@ The ribbon samples the same screen-space rectangle that it covers. Its alternate
 - Folding changes only panel orientation and perspective. UV/content coordinates remain continuous across every hinge.
 - The active ribbon must overlap the subject. It may not float entirely in empty space or sit wholly below the chin as a held card.
 
-## 5. Geometry and aspect ratio
+## 5. Adaptive geometry
 
-### Landscape 16:9
-
-- Hairline slit: 1–2% of frame height.
-- Hero reveal ribbon: 24–32% of frame height, 78–92% of frame width.
-- Narrow scan ribbon: 5–9% of frame height.
-- Keep two or three connected diagonal hinges; never exceed 35% of frame height.
-
-### Portrait 9:16
-
-- Frame from waist or mid-torso upward; keep both hands visible.
-- Hairline slit: 1–2% of frame height.
-- Hero reveal ribbon: 12–18% of frame height, 84–96% of frame width.
-- Narrow scan ribbon: 3–6% of frame height.
-- Keep the ribbon centered between eye level and upper chest; never turn it into a short card at the sternum.
+- Frame from waist or mid-torso upward and keep both hands visible throughout the active sequence.
+- Begin with a 1–2% high hairline slit.
+- Open the hero ribbon across both eyes, nose, cheeks, and upper mouth; extend it toward opposite lateral hand positions so it occupies most of the available frame width.
+- Compress the scan ribbon to roughly one eye-height while keeping it wide enough to intersect the face and both hand trajectories.
+- Keep the ribbon between eye level and upper chest. Never turn it into a short card at the sternum.
+- Use two or three connected diagonal hinges. No panel may become large enough to contain a complete independently composed head.
 
 Use borderless alpha edges with no glow, bezel, outline, or rigid thickness.
 
@@ -112,7 +104,7 @@ Do not add independent strip stacking, axial twist, light-sword motion, armor ta
 - For 11 seconds, target 750–1300 English words.
 - Use executable spatial and motion commands, not lore-heavy narration.
 - Author Chinese independently.
-- Include aspect ratio, full-frame coordinate sampling, 8 timestamps, hand trajectories, connected fold, scan, and negative constraints.
+- Include full-frame coordinate sampling, adaptive framing, 8 timestamps, hand trajectories, connected fold, scan, and negative constraints.
 - Replace every placeholder and avoid copyrighted character names.
 
 Run `references/checklist.md`. If saved, run:

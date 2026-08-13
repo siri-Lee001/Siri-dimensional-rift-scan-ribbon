@@ -5,7 +5,7 @@ Fix every failed item before delivery.
 ## Structure
 
 - [ ] No placeholder remains.
-- [ ] English and Chinese share the same aspect ratio, 8 timestamps, and mechanics.
+- [ ] English and Chinese share the same 8 timestamps and mechanics.
 - [ ] Timeline contains slit, hero reveal, depth push, connected fold, zigzag sweep, thin scan, final reopen, close.
 - [ ] English is approximately 750–1300 words for 11 seconds.
 
@@ -21,7 +21,7 @@ Fix every failed item before delivery.
 
 ## Geometry and choreography
 
-- [ ] Aspect ratio is explicit and uses matching landscape or portrait limits.
+- [ ] Framing keeps both hands visible and leaves enough lateral room for a wide face-crossing ribbon.
 - [ ] Ribbon is active from about 0.5s to 10.2s; ending does not start early.
 - [ ] Wide reveal crosses the face and spans most of the frame width.
 - [ ] Ribbon always intersects face, neck, shoulders, torso, or hands.
@@ -40,4 +40,4 @@ Fix every failed item before delivery.
 
 ## Mechanical report
 
-Report placeholder count, timeline beats, exact phrase counts, active-duration rule, aspect-ratio geometry, coordinate continuity, connected-fold rule, hand-depth choreography, forbidden-card cues, English word count, and negative constraints.
+Report placeholder count, timeline beats, exact phrase counts, active-duration rule, adaptive geometry, coordinate continuity, connected-fold rule, hand-depth choreography, forbidden-card cues, English word count, and negative constraints.

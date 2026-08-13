@@ -68,7 +68,9 @@ Correction:
 - Limit closure and reaction to final 0.8 seconds.
 - Ban flower props and long particle endings by default.
 
-## Aspect-ratio correction
+## Framing correction
 
-- Landscape can support a taller 24–32% hero band and large side-to-side hand arcs.
-- Portrait needs an 84–96% wide but 12–18% high hero band; keep both hands near the lateral frame edges and use depth rather than excessive vertical expansion.
+- Use a waist-up or mid-torso-up composition with both hands visible.
+- Let the hero ribbon cross the life-size face and reach toward opposite lateral hand positions.
+- Adapt the hand arcs and ribbon width to the available frame without naming or prescribing an output ratio.
+- Use camera depth and palm foreshortening when lateral room is limited.

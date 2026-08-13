@@ -1,13 +1,13 @@
 # Continuous Coordinate-Preserving Folding-Ribbon Template
 
-Use this template for an 11-second reference-matching clip. Select exactly one aspect-ratio branch and delete the other. Scale timestamps proportionally for other durations.
+Use this template for an 11-second reference-matching clip. Scale timestamps proportionally for other durations. Do not prescribe an output ratio; the user selects it in the video tool.
 
 ## English template
 
 ```text
 SCENE AND CAMERA
 
-{REAL_CHARACTER}. {REAL_SCENE}. {ASPECT_RATIO} vertical or horizontal frame, fixed frontal medium shot, framed from {FRAMING}, chest-level lens, one uninterrupted take. Keep one stable live-action identity, one skeleton, one face coordinate system, one pair of coherent hands, and an unchanged background. No cut, zoom, pan, orbit, reframing, or camera shake. {REAL_LIGHTING}. Keep the subject centered while preserving generous lateral space for both hands.
+{REAL_CHARACTER}. {REAL_SCENE}. Fixed frontal medium shot, framed from waist or mid-torso upward, chest-level lens, one uninterrupted take. Keep one stable live-action identity, one skeleton, one face coordinate system, one pair of coherent hands, and an unchanged background. No cut, zoom, pan, orbit, reframing, or camera shake. {REAL_LIGHTING}. Keep the subject centered, keep both hands visible, and preserve generous lateral space for their movement.
 
 CORE EFFECT
 
@@ -17,11 +17,9 @@ This is not a picture placed inside a strip. The alternate eyes, nose, mouth, ja
 
 The ribbon stays embedded in and overlapping the face, neck, shoulders, torso, or hands while active. It must not float entirely in empty space, sit wholly below the chin, or behave like an object held at the sternum. Its borderless alpha edges have no frame, bezel, outline, glow, paper thickness, glass thickness, shadow, or handle. Folding changes only the ribbon's three-dimensional orientation and perspective. Preserve continuous UV/image coordinates across every hinge so one facial feature may extend naturally across adjacent trapezoid panels without duplication, new crops, or collage composition.
 
-GEOMETRY — KEEP ONLY THE MATCHING BRANCH
+ADAPTIVE GEOMETRY
 
-For 9:16 portrait: frame from waist or mid-torso upward with both hands visible. Begin at 1–2% of frame height. The hero ribbon is 12–18% of frame height and 84–96% of frame width. The narrow scan ribbon is 3–6% of frame height. Keep the ribbon between eye level and upper chest, never as a short chest card. Use depth and foreshortening rather than excessive vertical growth.
-
-For 16:9 landscape: frame waist-up with both arms visible. Begin at 1–2% of frame height. The hero ribbon is 24–32% of frame height and 78–92% of frame width. The narrow scan ribbon is 5–9% of frame height. Never exceed 35% of frame height. Use large lateral hand arcs.
+Begin at 1–2% of frame height. Open the hero ribbon across both eyes, nose, cheeks, and upper mouth, extending toward opposite lateral hand positions and occupying most of the available frame width. Keep it tall enough to reveal the face crop clearly but too shallow to contain a complete independently composed head. Compress the narrow scan ribbon to roughly one eye-height while keeping it wide enough to intersect the face and both hand trajectories. Keep all active ribbon geometry between eye level and upper chest, never as a short chest card. Adapt lateral hand arcs to the available frame and use depth and foreshortening whenever side space is limited.
 
 HAND CHOREOGRAPHY
 
@@ -31,7 +29,7 @@ Every deformation is visibly driven by the hands on the same frames. Each wrist 
 
 [0.0–0.5s] PINCH THE SLIT: Both hands are already raised near mouth level. Thumb and index finger of each hand pinch opposite ends of a 1–2% high dark slit that crosses the lower face and extends laterally. Start pulling immediately. The slit is borderless and body-registered, not a glowing line.
 
-[0.5–1.6s] HERO FACE REVEAL: Pull rapidly toward the lateral frame edges. Expand the same slit into the aspect-ratio-correct hero ribbon, crossing both eyes, nose, cheeks, and upper mouth while spanning most of the frame width. Reveal only the exact alternate crop inside it. The face remains life-size and aligned; alternate background fills the side portions. Hair above and jaw below remain live action.
+[0.5–1.6s] HERO FACE REVEAL: Pull rapidly toward the lateral frame edges. Expand the same slit into a wide hero ribbon crossing both eyes, nose, cheeks, and upper mouth while spanning most of the available frame width. Reveal only the exact alternate crop inside it. The face remains life-size and aligned; alternate background fills the side portions. Hair above and jaw below remain live action.
 
 [1.6–2.8s] DEPTH PUSH: Keep the ribbon crossing the face. Push one palm toward camera until it appears 1.3–1.6× the rear hand while the opposite hand retreats toward the shoulder. The near edge of the ribbon advances with that palm and the far edge recedes, creating strong parallax. Do not shrink or move the alternate face; change only the ribbon plane's perspective.
 
@@ -39,7 +37,7 @@ Every deformation is visibly driven by the hands on the same frames. Each wrist 
 
 [4.6–6.7s] DIAGONAL ZIGZAG SWEEP: Sweep the connected accordion diagonally from upper left across the eyes toward lower right across the neck and upper chest, then reverse once. Exchange which hand is nearer the camera. The panels breathe open and closed while remaining joined edge-to-edge. Every screen region restores to live action immediately behind the moving ribbon; no transformed trail accumulates.
 
-[6.7–8.3s] FLATTEN AND SCAN: Pull both hands apart to flatten the accordion back into one ribbon, then compress it into the aspect-ratio-correct narrow scan height. Guide one deliberate up/down scan from eye line to collar and back toward the mouth. Keep it full-width enough to intersect face and both hand trajectories. This is one connected band, not several eye/mouth/costume strips.
+[6.7–8.3s] FLATTEN AND SCAN: Pull both hands apart to flatten the accordion back into one ribbon, then compress it to roughly one eye-height. Guide one deliberate up/down scan from eye line to collar and back toward the mouth. Keep it wide enough to intersect face and both hand trajectories. This is one connected band, not several eye/mouth/costume strips.
 
 [8.3–10.2s] FINAL WIDE REOPEN: Snap both wrists outward and reopen the same scan band into one final hero-width ribbon crossing the face. Hold the strongest alternate identity for only 0.35 seconds, then perform one shallow diagonal fold and flatten again. Preserve the live-action body outside the band. Keep active hand motion and visible coordinate registration through 10.2 seconds.
 
@@ -55,7 +53,7 @@ NO portrait card, handheld photo, floating head, detached rectangle, separate sc
 ```text
 场景与镜头
 
-{REAL_CHARACTER_CN}，身处{REAL_SCENE_CN}。采用{ASPECT_RATIO}画幅，固定正面中景，构图从{FRAMING_CN}开始，胸口高度平视镜头，全程一镜到底。人物身份、骨骼、脸部坐标、双手、背景和曝光始终稳定；不切镜、不推拉、不摇移、不绕拍、不重新构图。{REAL_LIGHTING_CN}。人物居中，左右为双手动作留出空间。
+{REAL_CHARACTER_CN}，身处{REAL_SCENE_CN}。固定正面中景，从腰部或半身以上构图，胸口高度平视镜头，全程一镜到底。人物身份、骨骼、脸部坐标、双手、背景和曝光始终稳定；不切镜、不推拉、不摇移、不绕拍、不重新构图。{REAL_LIGHTING_CN}。人物居中，双手始终入画，并为动作保留充足的横向空间。
 
 核心机制
 
@@ -65,11 +63,9 @@ NO portrait card, handheld photo, floating head, detached rectangle, separate sc
 
 裂隙活动期间始终与脸、颈部、肩膀、躯干或手掌相交，不能悬在空处，不能完全落到下巴以下变成胸前手持卡片。边缘使用锐利透明遮罩，不发光、无边框、无描边、无纸张或玻璃厚度、无投影、无把手。折叠只改变同一条横带的空间朝向和透视；图像坐标必须连续跨过每一道折痕，不能在每个面板里重新取景或生成新肖像。
 
-画幅尺寸——只保留对应分支
+自适应几何
 
-9:16竖屏：腰部或半身以上构图，双手完整入画。起始细缝为画面高度1–2%；主展示带为高度12–18%、宽度84–96%；扫描带为高度3–6%。横带始终在眼睛到上胸之间活动，不能缩成胸口短卡片，以手掌前后纵深制造冲击。
-
-16:9横屏：腰部以上并保留完整手臂。起始细缝为画面高度1–2%；主展示带为高度24–32%、宽度78–92%；扫描带为高度5–9%；任何时候不超过画面高度35%，动作以大幅横向手势为主。
+起始细缝为画面高度1–2%。主展示带横穿双眼、鼻子、脸颊和上半张嘴，并向两侧手掌位置延伸，占据当前画面可用宽度的大部分；高度既要清楚展示脸部切片，又不能容纳一颗重新构图的完整人头。扫描带压窄到约一只眼睛的高度，同时保持足够宽，与脸部和双手运动轨迹相交。横带始终在眼睛到上胸之间活动，不能缩成胸口短卡片。根据当前画面的可用空间调整横向手势；横向空间有限时，使用手掌前后纵深和透视缩短制造冲击。
 
 手部动作
 
@@ -79,7 +75,7 @@ NO portrait card, handheld photo, floating head, detached rectangle, separate sc
 
 [0.0–0.5秒] 捏出细缝：双手已经抬到嘴部附近，拇指和食指分别捏住一条横穿下半张脸、向两侧延伸的1–2%高暗色细缝，立即向外拉。细缝无边框、贴合身体坐标，不是发光线。
 
-[0.5–1.6秒] 主脸部揭示：双手迅速拉向画面两侧，把同一条细缝展开成符合画幅尺寸的主横带，横穿双眼、鼻子、脸颊和上半张嘴，并占据画面大部分宽度。只在横带内显示对应位置的艺术身份。脸保持真人原尺寸和原坐标，两侧显示对应异世界背景；上方头发和下方下颌仍是真人。
+[0.5–1.6秒] 主脸部揭示：双手迅速拉向画面两侧，把同一条细缝展开成宽幅主横带，横穿双眼、鼻子、脸颊和上半张嘴，并占据当前画面可用宽度的大部分。只在横带内显示对应位置的艺术身份。脸保持真人原尺寸和原坐标，两侧显示对应异世界背景；上方头发和下方下颌仍是真人。
 
 [1.6–2.8秒] 手掌纵深推进：横带继续穿过脸部。一只手掌伸向镜头，视觉尺寸达到后方手掌的1.3–1.6倍，另一只手退向肩部。横带近端随前景手掌前移，远端后退，产生强烈视差；只改变横带平面的透视，不能缩放或移动内部人脸。
 
@@ -87,7 +83,7 @@ NO portrait card, handheld photo, floating head, detached rectangle, separate sc
 
 [4.6–6.7秒] 斜向锯齿扫动：连接在一起的折叠带从左上方穿过眼睛，斜扫到右下方的颈部和上胸，再反向一次；双手交换前后景深。面板在扫动中开合，但始终边缘相连。横带离开的区域立即恢复真人，不留下变身轨迹。
 
-[6.7–8.3秒] 拉平并扫描：双手外拉，把折叠面重新拉平成一条横带，再压窄到对应画幅的扫描高度。从眼线向衣领下扫一次，再回到嘴部附近。横带仍需足够宽，并与脸部及双手运动路径相交。它是一条完整连接带，不是眼睛、嘴巴、服装三张照片。
+[6.7–8.3秒] 拉平并扫描：双手外拉，把折叠面重新拉平成一条横带，再压窄到约一只眼睛的高度。从眼线向衣领下扫一次，再回到嘴部附近。横带仍需足够宽，并与脸部及双手运动路径相交。它是一条完整连接带，不是眼睛、嘴巴、服装三张照片。
 
 [8.3–10.2秒] 最终宽幅重开：双腕向外一弹，把同一条扫描带再次展开成横穿脸部的主展示宽带。最强艺术身份只短暂停留约0.35秒，随后完成一次浅斜折并重新拉平。横带外始终保留真人，持续动作和坐标对齐保持到10.2秒。
 

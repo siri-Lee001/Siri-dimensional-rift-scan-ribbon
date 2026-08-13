@@ -59,22 +59,18 @@ def measure(text: str) -> dict[str, object]:
     if not 750 <= len(words) <= 1300:
         warnings.append(f"English word count is {len(words)}; target is 750-1300 for 11 seconds.")
 
-    aspect_portrait = (
-        "9:16" in en
-        and has_range(en, "12", "18")
-        and has_range(en, "84", "96")
-        and has_range(en, "3", "6")
-    )
-    aspect_landscape = (
-        "16:9" in en
-        and has_range(en, "24", "32")
-        and has_range(en, "78", "92")
-        and has_range(en, "5", "9")
-        and "35%" in en
-    )
     slit_ok = has_range(en, "1", "2")
-    if not slit_ok or not (aspect_portrait or aspect_landscape):
-        failures.append("Missing 1-2% slit and one complete 9:16 or 16:9 geometry branch.")
+    adaptive_geometry_ok = (
+        bool(re.search(r"both hands visible", en, flags=re.I))
+        and bool(re.search(r"most of the available frame width", en, flags=re.I))
+        and bool(re.search(r"one eye[- ]height", en, flags=re.I))
+        and bool(re.search(r"(?:eye level|eye line).{0,40}upper chest", en, flags=re.I | re.S))
+    )
+    if not slit_ok or not adaptive_geometry_ok:
+        failures.append("Missing 1-2% slit or ratio-independent adaptive framing rules.")
+
+    if re.search(r"\b(?:9\s*:\s*16|16\s*:\s*9)\b|aspect[- ]ratio", en, flags=re.I):
+        failures.append("Prompt prescribes an output aspect ratio; leave ratio selection to the user.")
 
     coordinate_patterns = (
         r"exact (?:scale|screen-space rectangle)",
@@ -146,8 +142,10 @@ def measure(text: str) -> dict[str, object]:
             "negative_constraint_count": negatives,
             "english_word_count": len(words),
             "slit_geometry_present": slit_ok,
-            "portrait_geometry_present": aspect_portrait,
-            "landscape_geometry_present": aspect_landscape,
+            "adaptive_geometry_present": adaptive_geometry_ok,
+            "output_ratio_unspecified": not bool(
+                re.search(r"\b(?:9\s*:\s*16|16\s*:\s*9)\b|aspect[- ]ratio", en, flags=re.I)
+            ),
             "coordinate_mapping_present": not missing_coordinates,
             "connected_fold_present": fold_ok,
             "active_duration_and_ending_present": active_ok and ending_ok,
@@ -165,7 +163,7 @@ def self_test() -> None:
     beats = "\n".join(f"[{i}.0-{i}.5s] connected motion" for i in range(8))
     sample = f"""# Part A
 {'. '.join(REQUIRED_PHRASES)}. {beats}
-9:16 portrait. Start at 1-2%. Hero ribbon 12-18% high and 84-96% wide. Scan ribbon 3-6% high.
+Keep both hands visible. Start at 1-2%. Hero ribbon spans most of the available frame width. Compress the scan ribbon to one eye-height and keep it between eye level and upper chest.
 Sample the exact screen-space rectangle with exact scale and screen coordinates and corresponding background.
 Never recenter the face. Never move the facial crop to the chest. Keep continuous UV coordinates across every hinge and fold.
 Use three connected trapezoid panels with two or three diagonal hinges; image remains continuous across all hinges. NO independent stacked strips.

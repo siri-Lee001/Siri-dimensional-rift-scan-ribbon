@@ -5,7 +5,7 @@ Use this as a behavioral target, not a fixed character template.
 ## Recommended first test
 
 - Duration: 11 seconds
-- Aspect ratio: explicitly choose 9:16 or 16:9
+- Output ratio: do not prescribe it; the user selects it in the video tool
 - Real subject: one attractive live-action person, waist-up, both hands visible
 - Alternate identity: a visually contrasting artistic version of the same subject
 - Art medium: mineral-pigment mural, mother-of-pearl lacquer, stained glass, gold-leaf oil painting, porcelain enamel, or mosaic
@@ -29,7 +29,7 @@ Use this as a behavioral target, not a fixed character template.
 - Keep the alternate face at the same scale and coordinates as the live-action face. Never move it to the chest.
 - A fold changes panel orientation only. The image must remain continuous across every hinge.
 - Do not split the effect into independent eye, mouth, and costume strips; generators often interpret them as stacked photos.
-- Keep a wide band crossing the face for visual authority, especially in portrait video.
+- Keep a wide band crossing the face and adapt it to the available frame.
 - Hands need depth, not just corner holding: one palm should be 1.3–1.6× the rear hand, then the hands should exchange near/far position.
 - Keep the ribbon active until about 10.2 seconds. Decorative flowers and particles should not replace the core effect.
 
@@ -39,7 +39,7 @@ Use this as a behavioral target, not a fixed character template.
 - Exact required phrases: all present
 - Full-frame coordinate mapping: present
 - Connected fold and hinge continuity: present
-- 9:16 or 16:9 geometry branch: present
+- Ratio-independent adaptive geometry: present
 - Hand travel and foreshortening: present
 - Portrait-card and stacked-strip exclusions: present
 - Validator status: `PASS`
