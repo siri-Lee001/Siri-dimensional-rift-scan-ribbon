@@ -34,10 +34,10 @@ jobs:
           assert match, "SKILL.md must start with YAML frontmatter"
           metadata = yaml.safe_load(match.group(1))
           assert set(metadata) == {"name", "description"}
-          assert metadata["name"] == "dimensional-rift-scan-ribbon"
+          assert metadata["name"] == "dimensional-rift-prompt"
           assert metadata["description"].strip()
 
           ui = yaml.safe_load(Path("agents/openai.yaml").read_text(encoding="utf-8"))
           prompt = ui["interface"]["default_prompt"]
-          assert "$dimensional-rift-scan-ribbon" in prompt
+          assert "$dimensional-rift-prompt" in prompt
           print("Skill metadata valid.")
