@@ -1,43 +1,51 @@
-# Horizontal Dimensional Image-Slit Self-Check
+# Dimensional Rift Self-Check
 
 Fix every failed item before delivery.
 
 ## Structure
 
-- [ ] No placeholder remains.
-- [ ] English and Chinese share the same 6 timestamps and mechanics.
-- [ ] English is approximately 600–950 words for 11 seconds.
-- [ ] Output ratio is not prescribed.
+- [ ] No placeholders remain.
+- [ ] English and Chinese share six timestamps and the same mechanics.
+- [ ] English is approximately 650–1200 words for 11 seconds.
+- [ ] No output ratio is prescribed.
 
-## Rift appearance
+## Immutable base plate
 
-- [ ] Exact phrase `horizontal borderless dimensional image slit` appears.
-- [ ] Exact phrase `alternate-world imagery reaches every edge with no transparent glass margin` appears.
-- [ ] The effect is a long, shallow horizontal rectangle or slight trapezoid.
-- [ ] The only boundary is a single-pixel cyan-magenta chromatic seam, not a neon frame.
-- [ ] Alternate imagery fills the entire slit; no transparent empty margin, frame body, bezel, or black backface.
-- [ ] One off-center diagonal crease creates two unequal planes; no centered spine or symmetric wings.
+- [ ] `immutable live-action base plate outside the slit` appears.
+- [ ] At least 75% of every frame remains the real subject and real environment.
+- [ ] Outside the slit, 100% of pixels remain the original real scene.
+- [ ] Zero alternate-world pixels appear outside the matte.
+- [ ] The alternate scene is explicitly forbidden from global takeover.
 
-## Footprint cap
+## Local dual-world matte
 
-- [ ] Exact phrase `the complete visual footprint of the rift, including edge light and every folded facet, never exceeds 25% of the full video frame` appears.
-- [ ] The complete envelope includes imagery, seams, glow, distortion, corners, motion blur, and folded faces.
-- [ ] The entire effect stays inside one horizontal box no wider than 78% and no taller than 22% of the frame.
-- [ ] Folded-face projected areas are summed and remain ≤25%.
-- [ ] No ray, glow, corner, or distortion escapes the bounding box.
+- [ ] `single-subject dual-world moving matte` appears.
+- [ ] `inside the matte only, restyle the exact currently covered body and background fragments` appears.
+- [ ] One subject, one head, one body, one pose.
+- [ ] The prompt gives eye-band, clothing-band, or background-fragment examples.
+- [ ] Covered fragments restore immediately when uncovered.
+- [ ] No second person, complete alternate shot, portrait, duplicate, inset, recursion, or miniature figure.
 
-## Identity and choreography
+## Rift appearance and footprint
 
-- [ ] Exactly one life-size alternate version of the subject appears in the slit.
-- [ ] No miniature full-body person, multiple mecha figures, or distant hangar character appears.
-- [ ] Alternate face, gaze, expression, head angle, pose, and gestures mirror the real subject.
-- [ ] Hands hover with visible air gaps; they do not grip matching corners or hold a book/screen.
-- [ ] At least one hand passes in front of the slit to establish occlusion depth.
-- [ ] No reset, second opening, or idle hold longer than 0.25 seconds.
+- [ ] Long shallow borderless slit with a single-pixel cyan–magenta chromatic seam.
+- [ ] No transparent margin, frame body, bezel, glass, or empty center.
+- [ ] One off-center diagonal crease creates two unequal connected planes.
+- [ ] The exact complete-footprint sentence appears.
+- [ ] The whole effect stays inside one box no wider than 78% and no taller than 22%.
+- [ ] Folded projected areas are summed and stay at or below 25%.
+- [ ] No ray, glow, corner, or distortion escapes the box.
+
+## Choreography
+
+- [ ] Hands hover with visible air gaps and never grip matching corners.
+- [ ] One hand passes in front while the other remains behind.
+- [ ] Scan changes only covered fragments and restores them immediately.
+- [ ] No second opening, cut, reset, or idle hold longer than 0.25 seconds.
 
 ## Exclusions
 
-- [ ] No HUD, dashboard, monitor, screen, interface, circuit border, corner brackets, reticle, glass, book, butterfly, central spine, panel, card, paper, filmstrip, fabric, or ribbon.
-- [ ] No radiating neon lines, broad bloom, sparks, lightning, or explosive particles.
-- [ ] No symmetrical V-shaped fold, two matching wings, or centered electronic-book composition.
-- [ ] No text, watermark, subtitle, UI, logo, cut, zoom, or random camera movement.
+- [ ] No global alternate-world scene, global style transfer, or background replacement.
+- [ ] No picture-in-picture, nested frame, recursive image, Droste effect, or duplicate person.
+- [ ] No HUD, monitor, screen, interface, circuitry, book, butterfly, glass, fabric, ribbon, paper, card, or black backface.
+- [ ] No text, watermark, subtitle, logo, random camera motion, broad bloom, rays, sparks, lightning, or particles.

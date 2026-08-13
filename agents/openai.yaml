@@ -1,4 +1,4 @@
 interface:
   display_name: "Dimensional Rift Scan Ribbon"
-  short_description: "Create borderless dimensional image-slit prompts"
-  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second horizontal borderless dimensional image slit with edge-to-edge alternate imagery, one life-size synchronized alternate identity, an asymmetric off-center fold, air-gap hand control, and a strict 25% complete visual-footprint cap."
+  short_description: "Create local dual-world moving-matte rift prompts"
+  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second dimensional-rift prompt with an immutable live-action base plate, one single-subject dual-world moving matte, local body-and-background fragment replacement, zero alternate-world pixels outside the slit, and a strict 25% complete visual-footprint cap."

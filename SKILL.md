@@ -1,11 +1,11 @@
 ---
 name: dimensional-rift-scan-ribbon
-description: "Generate production-ready bilingual text-to-video prompts for hand-controlled horizontal dimensional image slits: border-to-border alternate imagery, single-pixel chromatic seams, asymmetrical depth folding, synchronized alternate identities, and a strict 25% total visual-footprint cap. Use for 次元裂隙、横向时空切面、手势操控、异世界人物同步、扫描、透视折叠，以及必须避免HUD屏幕、展开书页、玻璃面板和黑色丝带的高反差短视频。"
+description: "Generate production-ready bilingual prompts for hand-controlled horizontal dimensional rifts using an immutable live-action base plate, a strict <=25% moving matte, and local alternate-world replacement. Use for 次元裂隙、横向时空切片、手势扫描、错切折叠、现实与艺术世界强反差，以及避免HUD屏幕、画中画、递归人物、内外同世界和全局场景替换。"
 ---
 
-# Geometric Dimensional Rift Prompt Generator
+# Dimensional Rift Prompt Generator
 
-Generate bilingual prompts for a **hand-controlled horizontal dimensional image slit**. Prioritize its silhouette, screen footprint, and occlusion before character lore.
+Generate bilingual text-to-video prompts for a **single-subject, dual-world moving matte**. The target is not a screen displaying another shot. It is a shallow moving cut that locally replaces only the body and background fragments it currently covers.
 
 ## 1. Collect inputs
 
@@ -16,118 +16,124 @@ Require fields 1–6. Field 7 is optional.
 3. Real subject
 4. Alternate scene
 5. Alternate identity
-6. Art style
+6. Alternate art style
 7. Ending action, default: close and restrained smile
 
-If the user grants creative freedom, choose a strong visual contrast. Never prescribe an output ratio; the user chooses it in the generation tool.
+If the user grants creative freedom, choose visually incompatible worlds, identities, materials, and palettes. Never prescribe an output ratio.
 
 ## 2. Load references
 
 Read before generating:
 
-- `references/prompt-template.md` — bilingual material-first template
-- `references/checklist.md` — mandatory quality gate
-- `references/target-effect-spec.md` — observed effect mechanics and failure corrections
-- `references/preset-dict.md` — optional identity, palette, and gesture ideas
+- `references/prompt-template.md`
+- `references/checklist.md`
+- `references/target-effect-spec.md`
+- `references/preset-dict.md` when ideas are needed
 
-## 3. Define the rift before its content
+## 3. Build the shot as three compositing layers
 
 Use these exact English phrases:
 
-- `horizontal borderless dimensional image slit`
-- `alternate-world imagery reaches every edge with no transparent glass margin`
+- `immutable live-action base plate outside the slit`
+- `single-subject dual-world moving matte`
+- `inside the matte only, restyle the exact currently covered body and background fragments`
 - `the complete visual footprint of the rift, including edge light and every folded facet, never exceeds 25% of the full video frame`
+
+Define the layers in this order, before describing alternate-world beauty:
+
+1. **Layer 0 — immutable base plate:** the real subject and real environment occupy the full shot first. At least 75% of the frame remains visibly and recognizably this live-action reality on every frame. Outside the slit, 100% of pixels remain the original real subject and scene. The base plate never changes style, wardrobe, architecture, color world, or identity.
+2. **Layer 1 — one moving matte:** one long, shallow, borderless horizontal slit, including all folds and edge effects, stays at or below 25% of the frame.
+3. **Layer 2 — alternate treatment:** visible only through Layer 1. Apply alternate identity, costume, art style, light, and environment to the exact screen-space fragments currently covered by the slit. Zero alternate-world pixels may appear outside it.
+
+The two worlds are mutually exclusive. The alternate world is forbidden globally and forbidden outside the matte. Never promote the alternate scene into the full-frame setting.
+
+## 4. Enforce one body, not a second portrait
+
+The rift must transform the **same continuous body**, not contain another person:
+
+- Render one subject, one body, one head, one pose, and one performance in the entire frame.
+- Do not compose a complete alternate character inside the slit.
+- Do not show a self-contained alternate shot, portrait, miniature person, or full figure inside the slit.
+- When the slit crosses the eyes, restyle only the covered eye-and-brow band; the forehead above and nose below remain real.
+- When it crosses the mouth, restyle only the covered mouth-and-cheek band.
+- When it crosses clothing, restyle only that covered clothing band.
+- Covered background fragments become matching fragments of the alternate environment; they must not form a complete establishing shot.
+- A fragment returns immediately to the real base plate when the slit uncovers it.
+- Keep face scale, gaze, expression, head angle, pose, and gesture continuous across the boundary.
+
+Never use `show a character inside the rift`, `alternate portrait`, `full alternate face`, `face-and-upper-torso crop`, or `mirrored person`. Those phrases invite picture-in-picture and duplicate people. Say **local identity/material replacement of the currently covered fragment**.
+
+## 5. Define the rift silhouette and material
 
 The rift is a nonphysical horizontal cut in the camera image:
 
-- Alternate-world color and texture fill the slit from edge to edge; there is no transparent glass margin, empty center, frame body, bezel, or interface decoration.
-- The perimeter is only a single-pixel chromatic seam, visible as a subtle cyan-magenta color split where the two realities meet. It is not a neon outline or luminous frame.
-- The straight state is a long, shallow horizontal rectangle or slight trapezoid with two parallel long edges.
-- Folded states use one off-center diagonal crease, creating two unequal connected planes. Never use a centered vertical spine or symmetrical left/right wings.
-- Every visible face continues to show the same alternate person and environment; there is no black backface.
-- The effect has zero glass, HUD, dashboard, interface, book, butterfly, paper, fabric, rubber, tape, scarf, ribbon, filmstrip, or card cues.
+- Alternate color and texture reach the cut itself. No transparent margin, glass, empty center, frame body, bezel, interface, or chassis.
+- The boundary is only a single-pixel cyan–magenta chromatic seam where realities meet. It is not a luminous outline.
+- Straight state: long shallow rectangle or slight trapezoid with two roughly parallel long edges.
+- Fold state: one off-center diagonal crease forming two unequal connected planes. No centered vertical spine, symmetrical wings, or book shape.
+- Every visible folded facet obeys the same local matte mapping. It does not display a duplicated shot.
+- Zero HUD, dashboard, circuitry, corner brackets, reticle, book, butterfly, glass, fabric, ribbon, paper, card, photo, or filmstrip cues.
 
-Do not call it a `window`, `screen`, `panel`, `HUD`, `membrane`, `ribbon`, or `portal` in the generated prompt. Use `dimensional image slit`, `reality cut`, or `spatial image slice`.
+Do not call it a `window`, `screen`, `panel`, `HUD`, `monitor`, `membrane`, `ribbon`, or `portal`. Use `dimensional image slit`, `reality cut`, `spatial image slice`, or `moving matte`.
 
-## 4. Enforce the 25% projected-area cap
+## 6. Enforce the 25% total visual-footprint cap
 
-This is the highest-priority geometry rule:
+This is a hard per-frame rule:
 
-> The complete visual footprint—including alternate imagery, seams, glow, distortion, protruding corners, and all folded faces—must remain at or below 25% of the full frame on every frame.
+> The complete envelope—including alternate treatment, seam, localized spill, distortion, corners, motion blur, and all folded facets—must remain at or below 25% of the full frame.
 
-- Measure the entire visible envelope, not only the filled center.
-- Keep the complete rift envelope inside one horizontal bounding box no wider than 78% of frame width and no taller than 22% of frame height. This conservative box occupies at most 17.16% and leaves room for motion blur while preserving the 25% hard cap.
-- A narrow scan state may be approximately 68–78% wide by 5–8% high.
-- When folded, add the projected area of all visible facets; the combined total still remains ≤25%, and every facet remains inside the same 78% × 22% bounding box.
-- Foreshortening may reduce projected area as a plane turns toward camera depth.
-- No seam, glow ray, corner, or distortion may escape the bounding box.
-- Never expand into a half-frame or full-frame display.
+- Keep the envelope inside one horizontal bounding box no wider than 78% and no taller than 22% of the frame.
+- A narrow scan state may be about 68–76% wide by 5–9% high.
+- Add the projected areas of every folded face; folding creates no extra allowance.
+- No seam, ray, glow, corner, or distortion escapes the bounding box.
+- Repeat the cap in the mechanism, timeline, and negative constraints.
 
-Repeat the 25% cap in the mechanism section, timeline, and negative constraints.
+## 7. Hand interaction and motion
 
-## 5. Alternate image and identity synchronization
+- Hands hover near the lateral ends with visible air gaps; they do not grip corners or support an object.
+- One hand may pass in front while the other stays behind to establish occlusion depth.
+- Pull apart → widen; opposite vertical movement → controlled shear; push/pull → depth shift; inward diagonal gesture → one off-center fold; pinch together → close.
+- Keep gestures asymmetrical and causal. No visible strings.
+- Avoid a persistent two-handed rectangular framing pose; change hand depth and finger configuration continuously.
 
-- Show one alternate version of the same person inside the slit, at approximately the same face scale as the real subject, with matching facial structure, gaze, expression timing, head angle, pose, and hand gesture.
-- The alternate character is not an unrelated portrait and does not act independently.
-- Show the alternate environment behind that person, filling all remaining slit pixels.
-- Never show a miniature full-body character, multiple mecha figures, or a distant person standing inside a hangar.
-- Let the alternate face appear at life-size only when the legal slit crosses the real face; do not resize it into a chest display.
-- The alternate image deforms with the spatial cut during shear, folding, and foreshortening.
-- Preserve temporal synchronization and recognizable identity rather than demanding software-like pixel-perfect UV registration.
+For 11 seconds use six connected beats:
 
-## 6. Hand interaction and spatial behavior
+1. Establish the full real base plate, then activate a 1–2 pixel seam.
+2. Open one legal slit; only covered fragments switch worlds.
+3. Apply one depth shear with foreground/background hand occlusion.
+4. Apply one off-center fold into unequal planes.
+5. Flatten and scan across face and clothing; each fragment changes only while covered and restores immediately after.
+6. Contract to the seam; reveal the unchanged real base plate.
 
-- Keep hands separated from the slit by visible air gaps whenever possible. One hand may pass in front of the slit while the other controls from behind; avoid both hands gripping matching corners.
-- Hands act like a puppeteer controlling invisible tension lines. No visible strings.
-- The rift responds immediately and causally: pull apart → widen; opposite vertical movement → twist or diagonal shear; push/pull → move in depth; inward diagonal gesture → hard-crease fold; pinch together → contract.
-- Hands do not maintain physical contact with any edge. They hover beside or pass across the slit and control it through gestures.
-- Include one strong foreground palm and clear hand depth, but do not let hands obscure the rift for long.
-- Keep fingers expressive and moving; no prolonged corner-holding pose.
+No reset, second opening, edit, or idle hold longer than 0.25 seconds.
 
-## 7. Compact 11-second motion grammar
+## 8. Preserve contrast without global takeover
 
-Use 6 continuous beats; do not overload the clip:
+Describe the real world first and repeat its lock in the timeline. Then express the alternate world as **local substitutions**, for example:
 
-1. Activate a 1–2 pixel chromatic reality seam
-2. Expand into a long shallow legal slit containing edge-to-edge alternate imagery
-3. Push one side into depth and perform one controlled oblique shear
-4. Make one off-center diagonal fold into two unequal connected planes
-5. Flatten and scan across the face while the life-size alternate identity mirrors the subject
-6. Contract to the chromatic seam and close
+- covered silk robe fragment → etched ceramic mecha armor fragment
+- covered palace column fragment → cropped hangar rib and cold vapor fragment
+- covered warm skin/eye band → graphic ink-and-metal engineer treatment
 
-Keep the rift visible and active through most of the clip. Each phase must flow directly into the next with no reset, no second opening, and no idle hold longer than 0.25 seconds.
-
-## 8. Light interaction
-
-- The single-pixel chromatic seam casts only a faint matching tint onto fingertips or cheek where they come very close.
-- Keep spill localized and physically plausible.
-- Add faint internal parallax to establish depth without glass reflections.
-- Avoid radiating neon lines, circuit graphics, corner brackets, smoke, sparks, lightning, explosive particles, or bloom.
+Use incompatible palette pairs, but confine the alternate palette to the matte. The real-world lighting and palette must remain unchanged outside it.
 
 ## 9. Mandatory exclusions
 
 Explicitly ban:
 
-- HUD, holographic dashboard, transparent monitor, digital interface, screen bezel, circuit border, corner brackets, targeting reticle, book, open book, butterfly wings, central spine, glass panel, black fabric, ribbon, paper, card, photo, or filmstrip
-- rounded corners, soft organic outline, drooping, fluttering, cloth wrinkles, cloth folds, sagging, or an opaque black backface
-- hands holding or supporting an object from below
-- a chest-level portrait card or independently composed portrait
-- disconnected stacked strips or separate photo panels
-- any visual footprint larger than 25% of the frame, any geometry outside the 78% × 22% bounding box, full-frame takeover, or background replacement
-- uncontrolled glow, lightning, laser sword, explosive particles, text, logos, subtitles, cuts, zooms, or random camera motion
+- full-frame alternate-world takeover, background replacement, global art-style transfer, or real subject becoming the alternate identity outside the slit
+- picture-in-picture, inset video, framed copy, recursive image, Droste effect, nested slit, duplicate face, duplicate body, second person, miniature portrait, or complete alternate character composition
+- HUD, dashboard, monitor, screen, interface, bezel, luminous frame, circuit border, corner brackets, reticle, glass panel, book, butterfly, center spine, equal wings
+- fabric, ribbon, tape, paper, card, photo, filmstrip, black backface, transparent margin, empty center
+- any total visual footprint above 25%, anything outside the 78% × 22% bounding box, or alternate pixels outside the matte
+- text, logo, subtitle, cuts, zooms, pans, orbiting camera, random camera motion, sparks, lightning, explosive particles, rays, or broad bloom
 
 ## 10. Write and validate
 
-- For 11 seconds, target 650–1050 English words.
-- Use concrete visual and motion commands.
-- Write Chinese independently and naturally.
-- Include 6 timestamps, material stack, projected-area cap, gesture causality, identity synchronization, and exclusions.
-- Replace every placeholder and avoid copyrighted character names unless the user explicitly supplies one.
-
-Run `references/checklist.md`. If saved, run:
-
-```bash
-python scripts/validate_prompt.py <prompt-file>
-```
-
-Fix every `FAIL`. Deliver English prompt, Chinese prompt, and measured self-check unless the user asks for one language only.
+- For 11 seconds, target 650–1200 English words.
+- Use six timestamps and concrete screen-space examples.
+- Write Chinese independently and naturally; do not mechanically translate English syntax.
+- Replace every placeholder.
+- Run `references/checklist.md`.
+- If saved, run `python scripts/validate_prompt.py <prompt-file>` and fix every `FAIL`.
+- Deliver English prompt, Chinese prompt, and a short measured self-check unless the user asks for one language only.

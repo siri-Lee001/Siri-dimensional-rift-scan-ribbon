@@ -2,67 +2,78 @@
 
 ## Correct mental model
 
-The target is a horizontal cut where one reality replaces another inside a shallow strip. It is not a visible object with a chassis.
+The target is a three-layer composite:
 
-- Alternate imagery reaches the boundary itself.
-- The boundary is a single-pixel cyan-magenta chromatic seam, not a luminous frame.
-- There is no transparent glass margin, HUD ornament, corner bracket, central hinge housing, or empty panel area.
-- The strip may shear or fold in depth while remaining a single connected image slice.
+1. An immutable live-action base plate fills the full frame.
+2. One shallow moving matte covers no more than 25% of the frame.
+3. Alternate identity, style, and environment are visible only where that matte overlaps the existing subject and background.
 
-## Target silhouette
+It is a local replacement in one continuous image—not a screen showing another shot.
 
-- Long and shallow; horizontal width dominates height.
-- Straight state: rectangle or mild trapezoid.
-- Depth state: one end approaches camera and the other recedes.
-- Fold state: one off-center diagonal crease creates two unequal planes.
-- Never form a symmetric V, butterfly, open book, double door, or two matching monitor wings.
+## Non-negotiable world separation
+
+- At least 75% of every frame remains the recognizable real subject and real environment.
+- Every pixel outside the matte remains real-world imagery.
+- Alternate-world content has zero visibility outside the matte.
+- The real and alternate scenes must be visually and semantically incompatible.
+- The base plate never adopts the alternate costume, architecture, palette, or rendering style.
+
+## Subject representation
+
+- One subject, one head, one body, one pose.
+- The same anatomical region changes locally at the matte boundary.
+- A slit across the eyes contains only the alternate eye band, not a complete alternate face.
+- A slit across the torso contains only the alternate torso band, not a miniature full person.
+- Uncovered regions restore immediately to the real identity.
+- Never place a second character, portrait, inset shot, or recursive copy inside the slit.
+
+## Rift silhouette and material
+
+- Long, shallow horizontal reality cut.
+- Alternate treatment reaches the cut edge; no transparent glass margin.
+- Boundary is a single-pixel cyan–magenta chromatic seam, not a luminous frame.
+- One off-center diagonal fold may create two unequal connected facets.
+- Every facet remains part of the same local moving matte.
+- No HUD, screen, panel, chassis, book, butterfly, ribbon, fabric, or black backface.
 
 ## Footprint rule
 
 On every frame:
 
-1. Enclose alternate imagery, seams, color spill, distortion, corners, motion blur, and all folded faces in one screen-space bounding box.
-2. Keep that complete box no wider than 78% and no taller than 22% of the frame.
-3. Keep the total visible footprint ≤25% of full-frame area.
-4. Sum all folded-face projected areas; a fold does not create extra allowance.
-5. No ray, line, corner, or glow may escape the box.
-
-## Subject representation
-
-- Show one life-size crop of the same subject, never a miniature full-body figure.
-- Match face scale, gaze, expression timing, head angle, pose, and gesture.
-- Fill remaining pixels with the corresponding alternate environment.
-- For a mecha-engineer identity, show the engineer's face and upper torso at the same scale as the real subject—not mecha robots standing in a hangar.
-
-## Hand relationship
-
-- Hands control from nearby space with visible air gaps.
-- Avoid bilateral corner gripping; it creates a monitor or book.
-- One hand may cross in front of the slice while the other remains behind it, creating clear occlusion depth.
-- Use asymmetrical gestures and off-center folds.
+1. Enclose alternate treatment, seam, spill, distortion, corners, motion blur, and folded facets in one screen-space box.
+2. Keep the box no wider than 78% and no taller than 22% of frame.
+3. Keep the total visible footprint at or below 25%.
+4. Sum the projected areas of all folded facets.
+5. Let no ray, line, corner, or glow escape the box.
 
 ## Failure corrections
 
+### Inside and outside become the same alternate world
+
+Cause: the alternate scene is described as a stronger full scene than the real base plate, so the model promotes it globally.
+
+Correction: define and repeat the immutable real base plate first; require at least 75% real-world visibility; state zero alternate-world pixels outside the matte; express alternate details only as local substitutions.
+
+### Recursive picture-in-picture
+
+Cause: asking for an alternate person, portrait, mirrored character, or face-and-torso crop inside the slit.
+
+Correction: render no second person and no self-contained alternate shot. Restyle only the exact eye, skin, hair, clothing, or background fragment currently covered by the moving matte.
+
 ### HUD or transparent display
 
-Cause: holographic window, membrane, neon perimeter, glass, diagnostic, interface, sharp corner frame.
+Cause: window, hologram, membrane, neon perimeter, glass, diagnostic, interface, corner frame.
 
-Correction: use borderless dimensional image slit, image-to-edge fill, single-pixel chromatic seam, no transparent margin, no circuitry, no brackets, no interface graphics.
+Correction: use a borderless reality cut with a single-pixel chromatic seam and no transparent margin or circuitry.
 
 ### Electronic book or butterfly
 
-Cause: two hands at matching corners, centered vertical crease, two equal panels, symmetrical fold.
+Cause: two hands gripping matching corners, a centered crease, two equal planes.
 
-Correction: visible hand-edge gaps, one off-center diagonal crease, two unequal planes, asymmetrical depth, no central spine.
+Correction: visible hand-edge gaps, asymmetrical hand depth, one off-center diagonal crease, two unequal planes.
 
-### Oversized visual footprint
+### Oversized effect
 
-Cause: width × height calculation ignores glow, rays, sharp protrusions, and motion blur.
+Cause: counting the inner image but ignoring glow, fold faces, rays, and blur.
 
-Correction: constrain the entire visible envelope to 78% × 22%, then retain the ≤25% hard cap.
-
-### Miniature character inside the slit
-
-Cause: describing a hangar, robot, or full alternate character instead of a matching crop.
-
-Correction: require one life-size face-and-upper-torso crop of the same subject; ban distant figures and multiple mecha.
+Correction: constrain the complete envelope to 78% × 22% and preserve the ≤25% hard cap in every state.
