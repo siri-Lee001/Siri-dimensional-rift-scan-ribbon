@@ -1,4 +1,4 @@
-# Scan-Ribbon Preset Dictionary
+# Geometric Rift Preset Dictionary
 
 Use presets only when the user leaves a choice open. Do not override explicit user input.
 
@@ -69,17 +69,17 @@ Avoid ordinary anime/cel shading unless explicitly requested.
 | 中文 | English title | English action |
 |---|---|---|
 | 释放消散（默认） | RELEASE + DISSOLVE | releases both hands, lets the line vanish, returns to a natural stance |
-| 打响指 | SNAP + CLEAN CUT | snaps once; the ribbon collapses instantly into a point |
-| 竖起大拇指 | THUMBS UP | gives one clear thumbs-up after the ribbon disappears |
+| 打响指 | SNAP + CLEAN CUT | snaps once; the holographic window collapses instantly into a point |
+| 竖起大拇指 | THUMBS UP | gives one clear thumbs-up after the holographic window disappears |
 | 比耶微笑 | PEACE SIGN + SMILE | raises a peace sign and gives a restrained smile |
 | 比心眨眼 | HEART FINGER + WINK | forms a small finger heart and gives one playful wink |
 
-## Continuous folding-ribbon timing scale
+## Six-beat geometric-window timing scale
 
 For duration `D`, use these normalized boundaries:
 
-`0, .045D, .145D, .255D, .418D, .609D, .755D, .927D, D`
+`0, .091D, .255D, .409D, .591D, .864D, D`
 
 For 11 seconds:
 
-`0.0, 0.5, 1.6, 2.8, 4.6, 6.7, 8.3, 10.2, 11.0`
+`0.0, 1.0, 2.8, 4.5, 6.5, 9.5, 11.0`

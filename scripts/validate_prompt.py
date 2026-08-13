@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mechanical quality gate for continuous coordinate-preserving ribbon prompts."""
+"""Quality gate for geometric holographic dimensional-rift prompts."""
 
 from __future__ import annotations
 
@@ -9,148 +9,116 @@ import re
 import sys
 from pathlib import Path
 
-
-REQUIRED_PHRASES = (
-    "borderless body-registered transformation ribbon",
-    "full-frame coordinate-preserving alternate crop",
-    "one continuous connected ribbon, never separate portrait cards",
+REQUIRED = (
+    "sharp-edged geometric dimensional window",
+    "flat smooth taut semi-transparent holographic membrane",
+    "the total visible projected area of all rift surfaces never exceeds 25% of the full video frame",
 )
-RANGE_SEP = r"[-–—]"
+SEP = r"[-–—]"
 
 
 def english_part(text: str) -> str:
-    match = re.search(
-        r"(?is)(?:^|\n)#{1,4}\s*Part\s*A\b(.*?)(?=\n#{1,4}\s*Part\s*B\b|\Z)",
-        text,
-    )
-    return match.group(1) if match else text
-
-
-def has_range(text: str, low: str, high: str) -> bool:
-    return bool(re.search(rf"{low}\s*{RANGE_SEP}\s*{high}\s*%", text))
+    m = re.search(r"(?is)(?:^|\n)#{1,4}\s*Part\s*A\b(.*?)(?=\n#{1,4}\s*Part\s*B\b|\Z)", text)
+    return m.group(1) if m else text
 
 
 def measure(text: str) -> dict[str, object]:
     en = english_part(text)
     low = en.lower()
     placeholders = re.findall(r"\{[A-Z][A-Z0-9_]*\}", text)
-    timestamps = re.findall(
-        rf"\[\s*\d+(?:\.\d+)?\s*{RANGE_SEP}\s*(?:\d+(?:\.\d+)?|DURATION)\s*(?:s|sec|seconds)?\s*\]",
-        en,
-        flags=re.I,
-    )
+    beats = re.findall(rf"\[\s*\d+(?:\.\d+)?\s*{SEP}\s*(?:\d+(?:\.\d+)?|DURATION)\s*(?:s|sec|seconds)?\s*\]", en, re.I)
     words = re.findall(r"\b[A-Za-z]+(?:[-'][A-Za-z]+)*\b", en)
-    negatives = len(re.findall(r"\b(?:NOT|NEVER|NO)\b", en))
+    negatives = len(re.findall(r"\b(?:NO|NEVER|NOT)\b", en))
     failures: list[str] = []
     warnings: list[str] = []
 
     if placeholders:
         failures.append("Unfilled placeholders remain.")
-    if len(timestamps) != 8:
-        failures.append(f"Expected 8 timestamped beats in Part A; found {len(timestamps)}.")
-
-    phrase_counts = {phrase: low.count(phrase) for phrase in REQUIRED_PHRASES}
+    if len(beats) != 6:
+        failures.append(f"Expected 6 timestamped beats; found {len(beats)}.")
+    phrase_counts = {p: low.count(p) for p in REQUIRED}
     for phrase, count in phrase_counts.items():
         if count < 1:
             failures.append(f'Missing exact phrase: "{phrase}".')
-
+    if not 650 <= len(words) <= 1050:
+        warnings.append(f"English word count is {len(words)}; target is 650-1050.")
     if negatives < 18:
         failures.append(f"Negative constraints are too sparse; found {negatives}, require 18.")
-    if not 750 <= len(words) <= 1300:
-        warnings.append(f"English word count is {len(words)}; target is 750-1300 for 11 seconds.")
 
-    slit_ok = has_range(en, "1", "2")
-    adaptive_geometry_ok = (
-        bool(re.search(r"both hands visible", en, flags=re.I))
-        and bool(re.search(r"most of the available frame width", en, flags=re.I))
-        and bool(re.search(r"one eye[- ]height", en, flags=re.I))
-        and bool(re.search(r"(?:eye level|eye line).{0,40}upper chest", en, flags=re.I | re.S))
+    material_terms = (
+        r"thin.{0,25}crisp.{0,25}linear.{0,40}cyan.{0,15}magenta.{0,15}violet",
+        r"straight (?:top and bottom )?edges?",
+        r"sharp corners?",
+        r"hard.{0,20}crease",
+        r"planar.{0,25}(?:triangular|trapezoid)",
+        r"no opaque black backface",
+        r"subtle.{0,35}(?:light|rim).{0,40}(?:finger|cheek|skin|hair|clothing)",
     )
-    if not slit_ok or not adaptive_geometry_ok:
-        failures.append("Missing 1-2% slit or ratio-independent adaptive framing rules.")
+    material_ok = all(re.search(p, en, re.I | re.S) for p in material_terms)
+    if not material_ok:
+        failures.append("Rift material stack or light interaction is incomplete.")
 
-    if re.search(r"\b(?:9\s*:\s*16|16\s*:\s*9)\b|aspect[- ]ratio", en, flags=re.I):
-        failures.append("Prompt prescribes an output aspect ratio; leave ratio selection to the user.")
-
-    coordinate_patterns = (
-        r"exact (?:scale|screen-space rectangle)",
-        r"screen coordinates?",
-        r"corresponding background",
-        r"continuous (?:UV|image) coordinates?.{0,40}(?:hinge|fold)",
-        r"never recenter",
-        r"never (?:move|place).{0,40}(?:face|facial crop).{0,40}(?:chest|sternum)",
+    area_ok = (
+        len(re.findall(r"(?:≤|at or below|never exceed|remains?).{0,20}25%|25%.{0,35}(?:area|frame)", en, re.I)) >= 3
+        and bool(re.search(r"screen[- ]space area", en, re.I))
+        and bool(re.search(r"(?:sum|add).{0,60}(?:facet|surface|face).{0,60}25%", en, re.I | re.S))
+        and bool(re.search(r"NO half-frame portal", en, re.I))
+        and bool(re.search(r"NO full-frame takeover", en, re.I))
     )
-    missing_coordinates = [
-        pattern for pattern in coordinate_patterns if not re.search(pattern, en, flags=re.I | re.S)
-    ]
-    if missing_coordinates:
-        failures.append("Full-frame coordinate mapping is incomplete.")
-
-    fold_ok = (
-        bool(re.search(r"(?:three|four|3|4).{0,30}connected trapezoid panels", en, flags=re.I))
-        and bool(re.search(r"two or three diagonal hinges", en, flags=re.I))
-        and bool(re.search(r"continuous.{0,50}(?:across|through).{0,30}hinges", en, flags=re.I | re.S))
-        and bool(re.search(r"NO independent stacked strips", en, flags=re.I))
-    )
-    if not fold_ok:
-        failures.append("Connected trapezoid fold or anti-strip rule is incomplete.")
-
-    active_ok = (
-        bool(re.search(r"(?:active|visible).{0,50}0\.5\s*s?.{0,40}10\.2\s*s?", en, flags=re.I | re.S))
-        or (
-            bool(re.search(r"\[\s*0\.5\s*[-–—]", en))
-            and bool(re.search(r"[-–—]\s*10\.2\s*s?\s*\]", en, flags=re.I))
-        )
-    )
-    ending_ok = (
-        bool(re.search(r"final\s+0\.8\s+seconds", en, flags=re.I))
-        or bool(re.search(r"no longer than\s+0\.8\s+seconds", en, flags=re.I))
-    )
-    if not active_ok or not ending_ok:
-        failures.append("Ribbon-active duration or maximum 0.8-second ending is missing.")
+    if not area_ok:
+        failures.append("The repeated 25% projected-area cap or folded-facet sum rule is incomplete.")
 
     hand_ok = (
-        bool(re.search(r"18% of frame width", en, flags=re.I))
-        and bool(re.search(r"10% of frame height", en, flags=re.I))
-        and bool(re.search(r"1\.3\s*[-–—]\s*1\.6\s*[×x]", en, flags=re.I))
-        and bool(re.search(r"(?:foreshorten|parallax)", en, flags=re.I))
-        and bool(re.search(r"exchange.{0,35}(?:near/far|depth)", en, flags=re.I))
+        bool(re.search(r"hands remain beside.{0,60}(?:left/right|left and right).{0,40}(?:upper corners|edges)", en, re.I | re.S))
+        and bool(re.search(r"never underneath.{0,30}support", en, re.I))
+        and bool(re.search(r"invisible tension", en, re.I))
+        and bool(re.search(r"no strings are visible", en, re.I))
     )
     if not hand_ok:
-        failures.append("Hand travel, perspective scale, foreshortening, or depth exchange is incomplete.")
+        failures.append("Hand position or invisible-tension control is incomplete.")
 
-    anti_card_patterns = (
-        r"NO portrait card",
-        r"NO (?:floating head|detached rectangle)",
-        r"NO (?:recentered face|resized face)",
-        r"NO (?:independent stacked strips|three separate rectangles)",
-        r"NO (?:flower ending|long particle ending)",
-        r"NO full-body transformation",
+    sync_ok = all(re.search(p, en, re.I | re.S) for p in (
+        r"same person",
+        r"gaze",
+        r"expression timing",
+        r"head angle",
+        r"hand gestures",
+        r"mirrors?.{0,35}(?:real|subject|person)",
+    ))
+    if not sync_ok:
+        failures.append("Alternate-identity synchronization is incomplete.")
+
+    anti_material = (
+        r"NO black fabric",
+        r"NO black ribbon",
+        r"NO silk",
+        r"NO opaque black backface",
+        r"NO cloth wrinkles",
+        r"NO hands supporting",
+        r"NO chest-level portrait card",
+        r"NO disconnected stacked strips",
     )
-    missing_guards = [
-        pattern for pattern in anti_card_patterns if not re.search(pattern, en, flags=re.I)
-    ]
-    if missing_guards:
-        failures.append("Portrait-card, stacked-strip, early-ending, or full-body guardrails are incomplete.")
+    if not all(re.search(p, en, re.I) for p in anti_material):
+        failures.append("Forbidden-material or portrait-card guardrails are incomplete.")
+
+    ratio_unspecified = not bool(re.search(r"\b(?:9\s*:\s*16|16\s*:\s*9)\b|aspect[- ]ratio", en, re.I))
+    if not ratio_unspecified:
+        failures.append("Prompt prescribes an output ratio; leave it to the user.")
 
     return {
         "status": "PASS" if not failures else "FAIL",
         "metrics": {
             "placeholder_count": len(placeholders),
-            "timeline_beat_count": len(timestamps),
+            "timeline_beat_count": len(beats),
             "required_phrase_counts": phrase_counts,
-            "negative_constraint_count": negatives,
             "english_word_count": len(words),
-            "slit_geometry_present": slit_ok,
-            "adaptive_geometry_present": adaptive_geometry_ok,
-            "output_ratio_unspecified": not bool(
-                re.search(r"\b(?:9\s*:\s*16|16\s*:\s*9)\b|aspect[- ]ratio", en, flags=re.I)
-            ),
-            "coordinate_mapping_present": not missing_coordinates,
-            "connected_fold_present": fold_ok,
-            "active_duration_and_ending_present": active_ok and ending_ok,
-            "hand_depth_choreography_present": hand_ok,
-            "anti_card_guardrails_present": not missing_guards,
+            "negative_constraint_count": negatives,
+            "rift_material_stack_present": material_ok,
+            "projected_area_cap_present": area_ok,
+            "hand_control_present": hand_ok,
+            "alternate_identity_synchronized": sync_ok,
+            "forbidden_material_guardrails_present": all(re.search(p, en, re.I) for p in anti_material),
+            "output_ratio_unspecified": ratio_unspecified,
         },
         "failures": failures,
         "warnings": warnings,
@@ -158,21 +126,17 @@ def measure(text: str) -> dict[str, object]:
 
 
 def self_test() -> None:
-    negatives = " ".join(["NO drift"] * 18)
-    padding = " ".join(["controlled coordinate-preserving ribbon motion"] * 170)
-    beats = "\n".join(f"[{i}.0-{i}.5s] connected motion" for i in range(8))
+    beats = "\n".join(f"[{i}.0-{i}.5s] motion" for i in range(6))
+    padding = " ".join(["controlled holographic geometry"] * 150)
     sample = f"""# Part A
-{'. '.join(REQUIRED_PHRASES)}. {beats}
-Keep both hands visible. Start at 1-2%. Hero ribbon spans most of the available frame width. Compress the scan ribbon to one eye-height and keep it between eye level and upper chest.
-Sample the exact screen-space rectangle with exact scale and screen coordinates and corresponding background.
-Never recenter the face. Never move the facial crop to the chest. Keep continuous UV coordinates across every hinge and fold.
-Use three connected trapezoid panels with two or three diagonal hinges; image remains continuous across all hinges. NO independent stacked strips.
-Keep the ribbon active from 0.5s through 10.2s. The ending is no longer than 0.8 seconds.
-Each wrist travels 18% of frame width or 10% of frame height. Foreground palm has 1.3-1.6x scale with foreshortening and parallax. Hands exchange near/far depth.
-NO portrait card. NO floating head. NO detached rectangle. NO recentered face. NO resized face. NO three separate rectangles. NO flower ending. NO long particle ending. NO full-body transformation.
-{negatives} {padding}
+{'. '.join(REQUIRED)}. {beats}
+A thin crisp linear cyan-magenta-violet contour. Straight top and bottom edges, sharp corners, hard diagonal crease, planar acute triangular facets. Every face carries imagery; no opaque black backface. Subtle colored rim light reaches nearby fingers and cheeks.
+This is a screen-space area limit. Keep at or below 25% in opening, remains at or below 25% while folding, and never exceed 25% in scanning. Add the projected area of every visible facet; the sum of all facets remains at or below 25%. NO half-frame portal. NO full-frame takeover.
+Hands remain beside the left/right edges or upper corners, never underneath in a supporting pose. Invisible tension controls it; no strings are visible.
+The same person matches gaze, expression timing, head angle, pose, and hand gestures; the alternate person mirrors the real subject.
+NO black fabric. NO black ribbon. NO silk. NO scarf. NO rubber. NO tape. NO paper. NO card. NO photo. NO filmstrip. NO sprocket holes. NO rigid glass. NO opaque black backface. NO cloth wrinkles. NO soft folds. NO drooping. NO fluttering. NO sagging. NO rounded corners. NO hands supporting the rift from below. NO chest-level portrait card. NO disconnected stacked strips. {padding}
 # Part B
-Chinese reference.
+中文。
 """
     report = measure(sample)
     assert report["status"] == "PASS", report
@@ -183,7 +147,6 @@ def main() -> int:
     parser.add_argument("prompt_file", nargs="?", type=Path)
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
-
     if args.self_test:
         self_test()
         print("Self-test passed.")

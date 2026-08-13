@@ -1,76 +1,73 @@
-# Target Effect Specification and Failure Corrections
+# Target Effect Specification
 
-Use after every generated-video review.
+## Correct mental model
 
-## Observable target mechanics
+Treat the rift as a sharp geometric holographic image field suspended in air, not a ribbon or physical prop.
 
-- A wide horizontal band crosses the face and extends toward both hands.
-- The band contains the alternate rendering of the exact covered camera crop, including subject and corresponding background.
-- One hand often advances toward camera, producing strong palm foreshortening and asymmetrical depth.
-- The wide band bends into connected trapezoid panels with diagonal hinges.
-- The alternate image stays continuous across folds; hinges do not create new crops.
-- The band narrows and scans across eyes, mouth, neck, and chest, then may reopen.
-- Real and alternate rendering can coexist in one frame without introducing a second person.
+Material stack:
 
-## Failure: full-face style spills outside the ribbon
+1. Thin cyan-magenta-violet linear energy perimeter
+2. Flat, smooth, taut, semi-transparent holographic membrane
+3. Synchronized alternate person and environment carried on the membrane
+4. Local colored light spill on nearby skin, hair, and clothes
+5. Faint internal parallax or refractive shimmer
 
-Cause: describing a transformed identity more strongly than spatial masking.
+## Geometry
 
-Correction:
+- Straight state: clean rectangle or trapezoid, straight edges, sharp corners.
+- Depth state: one side advances and the opposite side recedes; perspective forms a trapezoid.
+- Shear state: one controlled S-shaped spatial deformation while edge tension remains visible.
+- Fold state: one or two hard straight crease lines create connected acute triangular facets.
+- Scan state: narrow horizontal window crossing eyes, face, or upper chest.
+- Closing state: planar window snaps flat, contracts to a thin energy line, then disappears.
 
-- Repeat that outside-ribbon pixels remain original live action.
-- Preserve hair ornaments, makeup, and costume outside the band.
-- Keep radical identity details subordinate to ribbon geometry.
+## Non-negotiable area rule
 
-## Failure: held portrait card
+On every frame, sum the screen-space projected area of every visible rift face. The total must remain ≤25% of the full frame area. This applies during opening, twisting, folding, splitting, scanning, and closing. A split does not grant each piece its own 25% allowance.
 
-Symptoms: a complete alternate head appears inside a small rectangle at chest height; face is resized or recentered.
+## Correct hand relationship
 
-Cause: phrases such as “show the alternate character inside the ribbon” without full-frame coordinate mapping.
+- Hands hover beside the left/right edges or upper corners.
+- Hands act through invisible tension; no visible string.
+- Hands may briefly approach a corner but do not continuously pinch and hold a physical object.
+- Both hands never move below the rift to support it.
+- Gesture direction and rift deformation match on the same frames.
 
-Correction:
+## Alternate identity behavior
 
-- State `full-frame coordinate-preserving alternate crop`.
-- Require the band to sample the exact covered screen-space area.
-- Require background continuation beside the face.
-- Ban complete heads, portrait composition, recentering, and resizing.
-- Keep the wide band crossing the face or neck, not floating at the sternum.
+- The alternate person is the same individual in another world/style.
+- Match face structure, gaze, expression timing, head angle, body pose, and gestures.
+- The alternate image deforms together with the membrane.
+- Do not treat the alternate person as a static portrait or independent actor.
 
-## Failure: stacked photo strips
+## Failure corrections
 
-Symptoms: two or three independent horizontal rectangles show eyes, mouth, and costume like a collage.
+### Black ribbon or cloth
 
-Cause: requesting a three-strip split as a primary action.
+Cause: words such as ribbon, dark slit, pinch ends, accordion, soft fold.
 
-Correction:
+Correction: use geometric dimensional window, taut holographic membrane, linear energy perimeter, hard crease, zero fabric behavior, and no black backface.
 
-- Use one continuous zigzag ribbon with connected trapezoid panels.
-- Allow narrowing, but do not detach the panels.
-- Specify continuous UV/image coordinates across hinges.
+### Portrait card
 
-## Failure: static hands
+Cause: a small opaque rectangle held at chest height with a centered face.
 
-Symptoms: hands only hold edges near the torso; no depth, scale change, or sweeping gesture.
+Correction: keep hands at the sides, use semi-transparency and colored edge light, make the alternate person mirror live movement, and move the legal ≤25% window through face space rather than placing it on the sternum.
 
-Correction:
+### Oversized portal
 
-- Require one foreground palm 1.3–1.6× the rear hand.
-- Require each wrist to travel at least 18% of frame width or 10% of frame height.
-- Exchange hand depth during the zigzag sweep.
+Cause: describing a giant reveal or giving only a height limit.
 
-## Failure: effect ends too early
+Correction: repeat that the sum of all projected rift faces is ≤25% of full-frame area. Reduce width, height, or projected depth whenever needed.
 
-Symptoms: ribbon disappears around 7–8 seconds and decorative particles occupy the ending.
+### Soft organic deformation
 
-Correction:
+Cause: fabric, ribbon, silk, flutter, elastic sheet, or accordion language.
 
-- Keep ribbon visible from about 0.5s through 10.2s.
-- Limit closure and reaction to final 0.8 seconds.
-- Ban flower props and long particle endings by default.
+Correction: use straight edges, sharp corners, planar facets, hard diagonal crease lines, and controlled spatial shear.
 
-## Framing correction
+### Weak spatial integration
 
-- Use a waist-up or mid-torso-up composition with both hands visible.
-- Let the hero ribbon cross the life-size face and reach toward opposite lateral hand positions.
-- Adapt the hand arcs and ribbon width to the available frame without naming or prescribing an output ratio.
-- Use camera depth and palm foreshortening when lateral room is limited.
+Cause: no light interaction or depth cue.
+
+Correction: add localized cyan-magenta rim light on fingers and cheeks, one foreground-palm pass, membrane parallax, and perspective foreshortening.

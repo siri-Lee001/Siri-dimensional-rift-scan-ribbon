@@ -1,11 +1,11 @@
 ---
 name: dimensional-rift-scan-ribbon
-description: Generate production-ready text-to-video prompts for body-embedded dimensional ribbons that reveal an alternate rendering of the same camera view, with coordinate-locked faces and hands, continuous perspective folds, scan sweeps, and gesture-controlled closure. Use for 次元裂隙、横向折叠带、真人与艺术身份局部切换、手势展开/折叠/扫描，以及需要避免肖像卡片、全身变身和坐标漂移的高反差短视频。
+description: "Generate production-ready bilingual text-to-video prompts for hand-controlled geometric dimensional rifts: sharp linear neon energy borders, a flat taut semi-transparent holographic membrane, synchronized alternate identities, spatial twisting and hard-crease folding, with total visible projected rift area strictly capped at 25% of the video frame. Use for 次元裂隙、几何全息窗口、手势操控、异世界人物同步、锐角折叠、扫描与高反差身份短视频。"
 ---
 
-# Dimensional Rift Prompt Generator
+# Geometric Dimensional Rift Prompt Generator
 
-Generate bilingual prompts for a **body-embedded continuous folding ribbon**. Match the reference effect before maximizing character lore.
+Generate bilingual prompts for a **hand-controlled geometric holographic rift**. Prioritize the rift's physical appearance and motion before character lore.
 
 ## 1. Collect inputs
 
@@ -14,98 +14,115 @@ Require fields 1–6. Field 7 is optional.
 1. Duration
 2. Real scene
 3. Real subject
-4. Alternate-scene motifs
+4. Alternate scene
 5. Alternate identity
 6. Art style
 7. Ending action, default: close and restrained smile
 
-If the user grants creative freedom, choose a high-contrast pairing from `references/preset-dict.md`. Otherwise ask only for missing required fields.
+If the user grants creative freedom, choose a strong visual contrast. Never prescribe an output ratio; the user chooses it in the generation tool.
 
-## 2. Choose the effect mode
-
-Default to **CONTINUOUS FOLDING-RIBBON MODE**:
-
-- One live-action camera view and one person.
-- The ribbon contains an alternate rendering of the exact corresponding horizontal crop from that same camera view.
-- The ribbon remains body-embedded and intersects the face, neck, shoulders, torso, or hands while active.
-- The ribbon may widen, fold into connected panels, narrow into a scan strip, and reopen.
-- Content outside the ribbon stays live action unless the user explicitly requests an accumulating full transformation.
-
-Never default to a portrait card, handheld photo, detached screen, three independent rectangles, portal, or full-body transformation.
-
-Read `references/target-effect-spec.md` after a failed test or whenever the user supplies a target video.
-
-## 3. Load references
+## 2. Load references
 
 Read before generating:
 
-- `references/prompt-template.md` — bilingual 8-beat continuous-ribbon template
-- `references/preset-dict.md` — gestures, palettes, styles, contrast, timing
+- `references/prompt-template.md` — bilingual material-first template
 - `references/checklist.md` — mandatory quality gate
-- `references/target-effect-spec.md` — geometry, framing rules, and failure corrections
+- `references/target-effect-spec.md` — observed effect mechanics and failure corrections
+- `references/preset-dict.md` — optional identity, palette, and gesture ideas
 
-## 4. Enforce full-frame coordinate sampling
+## 3. Define the rift before its content
 
 Use these exact English phrases:
 
-- `borderless body-registered transformation ribbon`
-- `full-frame coordinate-preserving alternate crop`
-- `one continuous connected ribbon, never separate portrait cards`
+- `sharp-edged geometric dimensional window`
+- `flat smooth taut semi-transparent holographic membrane`
+- `the total visible projected area of all rift surfaces never exceeds 25% of the full video frame`
 
-The ribbon samples the same screen-space rectangle that it covers. Its alternate face, hair, body, background, and hands keep the exact scale, crop, perspective, and coordinates of the live-action image beneath it.
+The rift is a nonphysical spatial image field suspended between the subject and camera:
 
-- Never recenter a face inside the ribbon.
-- Never resize the face to fit a panel.
-- Never move a facial crop down onto the chest.
-- Never show a complete floating head inside a rectangle.
-- If the ribbon crosses background beside the face, show the alternate rendering of that corresponding background area—not blank filler and not a portrait backdrop.
-- Folding changes only panel orientation and perspective. UV/content coordinates remain continuous across every hinge.
-- The active ribbon must overlap the subject. It may not float entirely in empty space or sit wholly below the chin as a held card.
+- A thin, crisp, linear cyan-magenta-violet energy contour defines its perimeter.
+- The contour is narrow and controlled, not a broad glow cloud.
+- The interior is a flat, smooth, taut, semi-transparent holographic membrane carrying the alternate world image.
+- Straight states have perfectly straight top and bottom edges and sharp corners.
+- Folded states use hard geometric crease lines and planar triangular or trapezoid facets.
+- The membrane has no black backface. Every visible face continues to show alternate imagery.
+- It has zero paper, fabric, rubber, tape, scarf, ribbon, filmstrip, glass, or card material cues.
 
-## 5. Adaptive geometry
+Do not call the rift a `ribbon` in the generated prompt. Use `dimensional window`, `holographic membrane`, `image plane`, or `energy-bounded spatial aperture`.
 
-- Frame from waist or mid-torso upward and keep both hands visible throughout the active sequence.
-- Begin with a 1–2% high hairline slit.
-- Open the hero ribbon across both eyes, nose, cheeks, and upper mouth; extend it toward opposite lateral hand positions so it occupies most of the available frame width.
-- Compress the scan ribbon to roughly one eye-height while keeping it wide enough to intersect the face and both hand trajectories.
-- Keep the ribbon between eye level and upper chest. Never turn it into a short card at the sternum.
-- Use two or three connected diagonal hinges. No panel may become large enough to contain a complete independently composed head.
+## 4. Enforce the 25% projected-area cap
 
-Use borderless alpha edges with no glow, bezel, outline, or rigid thickness.
+This is the highest-priority geometry rule:
 
-## 6. 11-second motion grammar
+> The sum of the screen-space projected areas of every visible rift face must remain at or below 25% of the full frame area on every frame.
 
-Use 8 continuous beats:
+- Measure area, not only height or width.
+- A suggested hero state is approximately 70–82% of frame width by 22–28% of frame height, provided the product stays at or below 25%.
+- A narrow scan state may be approximately 75–88% wide by 6–10% high.
+- When folded or split, add the projected area of all visible facets; the combined total still remains ≤25%.
+- Foreshortening may reduce projected area as a plane turns toward camera depth.
+- Never expand into a half-frame or full-frame portal.
+- Never let the rift cover most of the person or environment.
 
-1. Pinch a dark slit
-2. Pull into a wide hero ribbon crossing the face
-3. Push one palm toward camera and create strong depth/parallax
-4. Fold the same ribbon into three or four connected trapezoid panels
-5. Sweep the connected zigzag ribbon diagonally while hands exchange depth
-6. Flatten into a thin scan strip and perform one up/down local scan
-7. Reopen once for a final wide alternate-identity reveal
-8. Compress and close in the final 0.8 seconds
+Repeat the 25% cap in the mechanism section, timeline, and negative constraints.
 
-Keep the ribbon visibly active from approximately 0.5s until 10.2s. Do not begin the ending early. Each wrist must travel visibly: at least 18% of frame width or 10% of frame height across the active sequence. Include one foreground palm with perspective foreshortening, approximately 1.3–1.6× the apparent size of the rear hand.
+## 5. Alternate image and identity synchronization
 
-Do not add independent strip stacking, axial twist, light-sword motion, armor takeover, lightning burst, or long decorative ending particles unless explicitly requested.
+- Show the alternate version of the same person on the membrane, with matching facial structure, gaze, expression timing, head angle, pose, and hand gesture.
+- The alternate character is not an unrelated portrait and does not act independently.
+- Show the alternate environment behind that person on the same membrane.
+- Let the complete alternate face appear only when the rift's legal ≤25% geometry crosses the real face; do not resize it into a chest card.
+- The membrane image deforms with the surface during stretching, twisting, folding, and foreshortening.
+- Preserve temporal synchronization and recognizable identity rather than demanding software-like pixel-perfect UV registration.
 
-## 7. Identity, hands, and style
+## 6. Hand interaction and spatial behavior
 
-- Keep one person, one skeleton, one face coordinate system, and one pair of hands.
-- Preserve gaze, expression timing, face angle, hair silhouette, shoulder line, wrists, palms, and exactly five fingers.
-- A hand crossing the ribbon may be artistic inside the ribbon and live action outside it, but it remains one continuous hand.
-- For first-pass testing, preserve the subject's silhouette and change art medium, makeup, garment surface, and local motifs inside the ribbon.
-- Prefer mineral-pigment mural, mother-of-pearl lacquer, stained glass, gold-leaf oil painting, porcelain enamel, mosaic, or woodblock print.
-- Keep the ending under 0.8 seconds. Prefer a small smile, blink, snap, or hand release over a flower, prop, or particle sequence.
+- Keep both hands beside the left/right edges or near the upper corners. Never place both hands underneath as if supporting an object.
+- Hands act like a puppeteer controlling invisible tension lines. No visible strings.
+- The rift responds immediately and causally: pull apart → widen; opposite vertical movement → twist or diagonal shear; push/pull → move in depth; inward diagonal gesture → hard-crease fold; pinch together → contract.
+- Hands need not maintain physical contact with the edge. They hover beside it and control it through gestures.
+- Include one strong foreground palm and clear hand depth, but do not let hands obscure the rift for long.
+- Keep fingers expressive and moving; no prolonged corner-holding pose.
 
-## 8. Prompt writing and validation
+## 7. Compact 11-second motion grammar
 
-- For 11 seconds, target 750–1300 English words.
-- Use executable spatial and motion commands, not lore-heavy narration.
-- Author Chinese independently.
-- Include full-frame coordinate sampling, adaptive framing, 8 timestamps, hand trajectories, connected fold, scan, and negative constraints.
-- Replace every placeholder and avoid copyrighted character names.
+Use 6 continuous beats; do not overload the clip:
+
+1. Activate a 2–3 pixel cyan-magenta energy line
+2. Expand into a legal ≤25% sharp rectangular holographic window
+3. Push one side into depth and perform one controlled S-shear
+4. Fold along one or two hard diagonal creases into connected acute triangular facets
+5. Reopen, lift across the face, and perform one short scan while the alternate identity mirrors the subject
+6. Snap flat, contract to the energy line, and close
+
+Keep the rift visible and active through most of the clip. Each phase must flow directly into the next with no reset, no second opening, and no idle hold longer than 0.25 seconds.
+
+## 8. Light interaction
+
+- The cyan-magenta-violet edge casts a subtle matching rim onto nearby fingertips, cheeks, hair, and clothing.
+- Keep spill localized and physically plausible.
+- Add a faint internal parallax or refractive shimmer to establish holographic depth.
+- Avoid smoke, sparks, lightning, explosive particles, or broad bloom that hides the geometry.
+
+## 9. Mandatory exclusions
+
+Explicitly ban:
+
+- black fabric, black ribbon, silk, scarf, rubber strip, tape, paper, card, photo, filmstrip, sprocket holes, rigid glass, or screen bezel
+- rounded corners, soft organic outline, drooping, fluttering, cloth wrinkles, cloth folds, sagging, or an opaque black backface
+- hands holding or supporting an object from below
+- a chest-level portrait card or independently composed portrait
+- disconnected stacked strips or separate photo panels
+- a portal larger than 25% of the frame, full-frame takeover, or background replacement
+- uncontrolled glow, lightning, laser sword, explosive particles, text, logos, subtitles, cuts, zooms, or random camera motion
+
+## 10. Write and validate
+
+- For 11 seconds, target 650–1050 English words.
+- Use concrete visual and motion commands.
+- Write Chinese independently and naturally.
+- Include 6 timestamps, material stack, projected-area cap, gesture causality, identity synchronization, and exclusions.
+- Replace every placeholder and avoid copyrighted character names unless the user explicitly supplies one.
 
 Run `references/checklist.md`. If saved, run:
 
@@ -113,4 +130,4 @@ Run `references/checklist.md`. If saved, run:
 python scripts/validate_prompt.py <prompt-file>
 ```
 
-Fix every `FAIL`. Deliver English prompt, independently authored Chinese prompt, and measured self-check unless the user asks for one language only.
+Fix every `FAIL`. Deliver English prompt, Chinese prompt, and measured self-check unless the user asks for one language only.

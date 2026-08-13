@@ -1,43 +1,47 @@
-# Continuous Folding-Ribbon Self-Check
+# Geometric Holographic Rift Self-Check
 
 Fix every failed item before delivery.
 
 ## Structure
 
 - [ ] No placeholder remains.
-- [ ] English and Chinese share the same 8 timestamps and mechanics.
-- [ ] Timeline contains slit, hero reveal, depth push, connected fold, zigzag sweep, thin scan, final reopen, close.
-- [ ] English is approximately 750–1300 words for 11 seconds.
+- [ ] English and Chinese share the same 6 timestamps and mechanics.
+- [ ] English is approximately 650–1050 words for 11 seconds.
+- [ ] Output ratio is not prescribed.
 
-## Coordinate sampling
+## Rift material
 
-- [ ] Exact phrase `borderless body-registered transformation ribbon` appears.
-- [ ] Exact phrase `full-frame coordinate-preserving alternate crop` appears.
-- [ ] Exact phrase `one continuous connected ribbon, never separate portrait cards` appears.
-- [ ] Ribbon content uses the same full-frame crop, scale, perspective, and screen coordinates as the covered live-action region.
-- [ ] Face is never recentered, resized, or moved to the chest.
-- [ ] Corresponding background continues inside ribbon areas beside the subject.
-- [ ] Fold changes geometry only; image coordinates remain continuous across hinges.
+- [ ] Exact phrase `sharp-edged geometric dimensional window` appears.
+- [ ] Exact phrase `flat smooth taut semi-transparent holographic membrane` appears.
+- [ ] Perimeter is a thin, crisp, linear cyan-magenta-violet energy contour.
+- [ ] Straight states have straight edges and sharp corners.
+- [ ] Folded states use hard crease lines and planar acute triangular or trapezoid facets.
+- [ ] Every visible face carries alternate imagery; no opaque black backface appears.
+- [ ] Subtle colored light spills onto nearby hands and face.
 
-## Geometry and choreography
+## Area cap
 
-- [ ] Framing keeps both hands visible and leaves enough lateral room for a wide face-crossing ribbon.
-- [ ] Ribbon is active from about 0.5s to 10.2s; ending does not start early.
-- [ ] Wide reveal crosses the face and spans most of the frame width.
-- [ ] Ribbon always intersects face, neck, shoulders, torso, or hands.
-- [ ] Fold is one connected three- or four-panel zigzag ribbon with two or three hinges.
-- [ ] No three independent stacked rectangles or portrait cards.
-- [ ] One hand pushes toward camera with 1.3–1.6× apparent scale and visible foreshortening.
-- [ ] Wrists travel at least 18% frame width or 10% frame height.
-- [ ] Ending is no longer than 0.8 seconds.
+- [ ] Exact phrase `the total visible projected area of all rift surfaces never exceeds 25% of the full video frame` appears.
+- [ ] The script says projected screen-space area, not only height.
+- [ ] Folded or split facets are summed together and remain ≤25%.
+- [ ] Timeline repeats the ≤25% limit at the hero opening or fold.
+- [ ] Negative constraints prohibit exceeding 25%.
 
-## Anatomy and exclusions
+## Choreography and synchronization
 
-- [ ] One person, one skeleton, one face coordinate system, and one pair of hands.
-- [ ] Face, hair, clothes, wrists, palms, and five fingers remain registered.
-- [ ] No full-body takeover, detached head, portrait photo, card, screen, portal, axial twist, laser, light sword, lightning burst, or long particle ending.
-- [ ] No text, watermark, subtitle, UI, logo, flashing, camera cut, zoom, or random movement.
+- [ ] Hands remain beside lateral edges or upper corners, never supporting from below.
+- [ ] Hands control invisible tension without visible strings.
+- [ ] Pull, shear, depth push, hard fold, scan, and contraction have immediate gesture causality.
+- [ ] Alternate person mirrors facial expression, head angle, pose, and hand gestures.
+- [ ] No reset, second opening, or idle hold longer than 0.25 seconds.
+
+## Exclusions
+
+- [ ] No black fabric, ribbon, silk, scarf, rubber, tape, paper, card, photo, filmstrip, sprocket holes, or rigid glass.
+- [ ] No cloth wrinkles, drooping, fluttering, sagging, rounded corners, organic edges, or black backface.
+- [ ] No chest portrait card, disconnected photo strips, independent second character, half-frame portal, or full-frame takeover.
+- [ ] No broad glow cloud, lightning, laser sword, explosive particles, text, watermark, subtitle, UI, logo, cut, zoom, or random camera movement.
 
 ## Mechanical report
 
-Report placeholder count, timeline beats, exact phrase counts, active-duration rule, adaptive geometry, coordinate continuity, connected-fold rule, hand-depth choreography, forbidden-card cues, English word count, and negative constraints.
+Report placeholder count, timeline beats, required phrase counts, material definition, 25% projected-area rule, folded-area sum rule, hand-position rule, alternate-identity synchronization, forbidden-material guardrails, output-ratio omission, English word count, and negative constraints.

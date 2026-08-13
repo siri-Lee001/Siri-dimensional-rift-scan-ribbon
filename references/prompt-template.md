@@ -1,95 +1,79 @@
-# Continuous Coordinate-Preserving Folding-Ribbon Template
+# Material-First Geometric Rift Template
 
-Use this template for an 11-second reference-matching clip. Scale timestamps proportionally for other durations. Do not prescribe an output ratio; the user selects it in the video tool.
+Use for an 11-second clip. Do not prescribe output ratio.
 
 ## English template
 
 ```text
-SCENE AND CAMERA
+SCENE
 
-{REAL_CHARACTER}. {REAL_SCENE}. Fixed frontal medium shot, framed from waist or mid-torso upward, chest-level lens, one uninterrupted take. Keep one stable live-action identity, one skeleton, one face coordinate system, one pair of coherent hands, and an unchanged background. No cut, zoom, pan, orbit, reframing, or camera shake. {REAL_LIGHTING}. Keep the subject centered, keep both hands visible, and preserve generous lateral space for their movement.
+{REAL_CHARACTER}. {REAL_SCENE}. Fixed frontal medium shot, waist-up, both hands visible, stable live-action identity and background, one uninterrupted take. {REAL_LIGHTING}.
 
-CORE EFFECT
+RIFT MATERIAL AND GEOMETRY
 
-Create a borderless body-registered transformation ribbon controlled continuously by {HIS_HER} two hands. It is a full-frame coordinate-preserving alternate crop and one continuous connected ribbon, never separate portrait cards. The ribbon samples the exact screen-space rectangle it covers in the live-action camera view. Inside it, render that same crop as {TRANSFORMED_CHARACTER} in {ART_STYLE}, using {STYLE_MATERIALS}, {PALETTE}, and restrained {TRANSFORMED_SCENE_MOTIFS}. Include the alternate rendering of the corresponding background wherever the ribbon crosses empty space beside the subject.
+Create a sharp-edged geometric dimensional window suspended between the subject and camera. Its perimeter is a thin, crisp, linear cyan-magenta-violet energy contour, like a precise laser incision in space. The contour is narrow and controlled, never a broad glow cloud. Between the edges is a flat smooth taut semi-transparent holographic membrane. It is nonphysical, weightless, and held under invisible spatial tension. Straight states have perfectly straight top and bottom edges with sharp corners. Folded states have hard straight crease lines and planar acute triangular or trapezoid facets. Every visible face displays alternate imagery; there is no opaque black backface.
 
-This is not a picture placed inside a strip. The alternate eyes, nose, mouth, jaw, hair, shoulders, garment, wrists, palms, fingers, and background keep the exact scale, crop, perspective, and x-y screen coordinates of the live-action pixels beneath them. Never recenter or resize the alternate face. Never move a facial crop down onto the chest. Never compose a complete head inside a rectangle. Outside-ribbon pixels remain original live action on every frame, including original makeup, hair ornaments, clothes, skin, and background. A region becomes artistic only while the ribbon physically covers it and returns to live action immediately after the ribbon passes.
+The total visible projected area of all rift surfaces never exceeds 25% of the full video frame. This is a screen-space area limit, not merely a height limit. If the window folds or splits, add the projected area of every visible facet; their combined total remains at or below 25% on every frame. Reduce width, height, or perspective projection whenever necessary. Never create a half-frame or full-frame portal.
 
-The ribbon stays embedded in and overlapping the face, neck, shoulders, torso, or hands while active. It must not float entirely in empty space, sit wholly below the chin, or behave like an object held at the sternum. Its borderless alpha edges have no frame, bezel, outline, glow, paper thickness, glass thickness, shadow, or handle. Folding changes only the ribbon's three-dimensional orientation and perspective. Preserve continuous UV/image coordinates across every hinge so one facial feature may extend naturally across adjacent trapezoid panels without duplication, new crops, or collage composition.
+Inside the membrane, show {ALTERNATE_CHARACTER}, the same person in {ART_STYLE}, with {ALTERNATE_SCENE}. Match the real subject's facial structure, gaze, expression timing, head angle, pose, and hand gestures. The alternate character mirrors the real person in real time rather than acting independently. The alternate image and background stretch, shear, fold, foreshorten, and contract with the membrane.
 
-ADAPTIVE GEOMETRY
+Hands remain beside the left/right edges or near the upper corners, never underneath in a supporting pose. They act like a puppeteer controlling invisible tension lines, but no strings are visible. Pulling apart widens the window; opposite vertical motion creates a controlled spatial shear; pushing one hand forward moves one side in depth; an inward diagonal gesture creates a hard fold; pinching inward contracts the window. Hands need not maintain physical contact. Keep fingers expressive and moving.
 
-Begin at 1–2% of frame height. Open the hero ribbon across both eyes, nose, cheeks, and upper mouth, extending toward opposite lateral hand positions and occupying most of the available frame width. Keep it tall enough to reveal the face crop clearly but too shallow to contain a complete independently composed head. Compress the narrow scan ribbon to roughly one eye-height while keeping it wide enough to intersect the face and both hand trajectories. Keep all active ribbon geometry between eye level and upper chest, never as a short chest card. Adapt lateral hand arcs to the available frame and use depth and foreshortening whenever side space is limited.
+The cyan-magenta-violet perimeter casts subtle matching light onto nearby fingertips, cheeks, hair, and clothing. Add faint internal parallax and refractive shimmer. Keep the geometry readable; no smoke, lightning, sparks, explosive particles, or heavy bloom.
 
-HAND CHOREOGRAPHY
+11-SECOND TIMELINE
 
-Every deformation is visibly driven by the hands on the same frames. Each wrist travels at least 18% of frame width or 10% of frame height during the active sequence. At the depth-push beat, one open palm advances toward the lens with obvious perspective foreshortening and appears 1.3–1.6× the size of the rear hand; preserve exactly five fingers. During the diagonal sweep, the hands exchange near/far depth. A hand crossing the ribbon remains one continuous hand: artistic inside the covered portion and live action outside it. Do not let both hands merely hold two corners near the chest.
+[0.0–1.0s] ACTIVATE: Both hands hover at chest-to-face height on opposite sides of a 2–3 pixel horizontal cyan-magenta energy line. Fingers spread and pull outward immediately. The line is luminous and geometric, not black material.
 
-{DURATION}-SECOND TIMELINE
+[1.0–2.8s] OPEN: The line expands into one sharp rectangular holographic window. Keep the visible projected area at or below 25% of the full frame. Reveal the synchronized alternate person and alternate environment on the taut semi-transparent membrane. Straight edges, sharp corners, narrow neon perimeter, zero thickness.
 
-[0.0–0.5s] PINCH THE SLIT: Both hands are already raised near mouth level. Thumb and index finger of each hand pinch opposite ends of a 1–2% high dark slit that crosses the lower face and extends laterally. Start pulling immediately. The slit is borderless and body-registered, not a glowing line.
+[2.8–4.5s] DEPTH + SHEAR: One open palm advances toward camera while the opposite hand recedes. One side of the window advances and the other recedes, forming a perspective trapezoid. Then one hand rises as the other lowers, creating one controlled S-shaped spatial shear. The membrane remains taut; no sagging or cloth wrinkles. Total projected area remains ≤25%.
 
-[0.5–1.6s] HERO FACE REVEAL: Pull rapidly toward the lateral frame edges. Expand the same slit into a wide hero ribbon crossing both eyes, nose, cheeks, and upper mouth while spanning most of the available frame width. Reveal only the exact alternate crop inside it. The face remains life-size and aligned; alternate background fills the side portions. Hair above and jaw below remain live action.
+[4.5–6.5s] HARD-CREASE FOLD: Both hands make an inward diagonal folding gesture near the upper corners. One or two hard diagonal crease lines form two or three connected acute triangular facets, like precise holographic origami. Every facet stays planar and carries continuous alternate imagery. Sum all visible facet areas; combined projected area remains ≤25%.
 
-[1.6–2.8s] DEPTH PUSH: Keep the ribbon crossing the face. Push one palm toward camera until it appears 1.3–1.6× the rear hand while the opposite hand retreats toward the shoulder. The near edge of the ribbon advances with that palm and the far edge recedes, creating strong parallax. Do not shrink or move the alternate face; change only the ribbon plane's perspective.
+[6.5–9.5s] REOPEN + FACE SCAN: Hands sweep outward and the facets reopen into one flat window. Lift it across the eyes and upper face, then narrow it into a short scan across the face and collar. The alternate person mirrors every expression and gesture. Keep the window active, luminous, semi-transparent, and below the 25% area cap.
 
-[2.8–4.6s] CONNECTED ACCORDION FOLD: Raise the near hand and lower the far hand. Bend the same unbroken ribbon along two or three diagonal hinges into three or four connected trapezoid panels. Fold adjacent panels alternately toward and away from camera by roughly 25–40 degrees. Maintain one continuous image across the hinges. No panel may detach, acquire its own portrait, or display a newly centered face.
-
-[4.6–6.7s] DIAGONAL ZIGZAG SWEEP: Sweep the connected accordion diagonally from upper left across the eyes toward lower right across the neck and upper chest, then reverse once. Exchange which hand is nearer the camera. The panels breathe open and closed while remaining joined edge-to-edge. Every screen region restores to live action immediately behind the moving ribbon; no transformed trail accumulates.
-
-[6.7–8.3s] FLATTEN AND SCAN: Pull both hands apart to flatten the accordion back into one ribbon, then compress it to roughly one eye-height. Guide one deliberate up/down scan from eye line to collar and back toward the mouth. Keep it wide enough to intersect face and both hand trajectories. This is one connected band, not several eye/mouth/costume strips.
-
-[8.3–10.2s] FINAL WIDE REOPEN: Snap both wrists outward and reopen the same scan band into one final hero-width ribbon crossing the face. Hold the strongest alternate identity for only 0.35 seconds, then perform one shallow diagonal fold and flatten again. Preserve the live-action body outside the band. Keep active hand motion and visible coordinate registration through 10.2 seconds.
-
-[10.2–{DURATION}] COMPRESS AND CLOSE: Bring the hands together decisively. Compress the ribbon from hero height to scan height, to a 1–2% slit, then to a single dark point between the fingertips. The point disappears by 10.7 seconds. {ENDING_ACTION}. End on the unchanged live-action subject. The entire ending is no longer than 0.8 seconds and contains no flower, prop reveal, or extended particles.
+[9.5–11.0s] SNAP CLOSE: The window snaps flat, contracts smoothly to the 2–3 pixel energy line, then disappears between the inward-moving fingertips. {ENDING_ACTION}. No second opening and no decorative particle ending.
 
 NEGATIVE CONSTRAINTS
 
-NO portrait card, handheld photo, floating head, detached rectangle, separate screen, paper strip, rigid glass panel, framed image, portal, doorway, split screen, or alternate-world window. NO recentered face, resized face, face moved to chest, complete head inside a band, unrelated portrait backdrop, blank filler, new crop per panel, duplicated eyes, duplicated mouth, or broken UV continuity. NO independent stacked strips and NO three separate rectangles. NO full-body transformation, cumulative transformation, transformed trail, armor takeover, crown takeover, mask takeover, second person, duplicate body, or double exposure. NO axial twist, spinning filmstrip, light sword, laser, energy beam, lightning burst, glowing horizontal line, flower ending, long particle ending, or decorative final hold. NO face drift, broken neck, extra fingers, fused fingers, disconnected wrists, changing gaze, changing hairstyle, or costume changes outside the ribbon. NO camera cut, zoom, pan, orbit, shake, text, subtitle, watermark, UI, logo, flicker, flash, or idle pause longer than 0.25 seconds.
+NO black fabric. NO black ribbon. NO silk, scarf, rubber strip, tape, paper, card, photo, filmstrip, sprocket holes, rigid glass, or screen bezel. NO opaque black backface. NO cloth wrinkles, soft folds, drooping, fluttering, sagging, rounded corners, or organic outline. NO hands supporting the rift from below. NO continuously gripping a physical object. NO chest-level portrait card. NO static independent portrait. NO disconnected stacked strips or separate photo panels. NEVER exceed 25% total projected frame area, including the sum of all folded or split facets. NO half-frame portal. NO full-frame takeover. NO independent second character. NO broad glow cloud, smoke, lightning, laser sword, sparks, explosive particles, text, watermark, subtitle, UI, logo, cut, zoom, or random camera motion.
 ```
 
 ## 中文模板
 
 ```text
-场景与镜头
+场景
 
-{REAL_CHARACTER_CN}，身处{REAL_SCENE_CN}。固定正面中景，从腰部或半身以上构图，胸口高度平视镜头，全程一镜到底。人物身份、骨骼、脸部坐标、双手、背景和曝光始终稳定；不切镜、不推拉、不摇移、不绕拍、不重新构图。{REAL_LIGHTING_CN}。人物居中，双手始终入画，并为动作保留充足的横向空间。
+{REAL_CHARACTER_CN}，身处{REAL_SCENE_CN}。固定正面中景，腰部以上，双手完整入画，真人身份与背景稳定，一镜到底。{REAL_LIGHTING_CN}。
 
-核心机制
+裂隙材质与几何
 
-生成一条由双手持续操控、穿过人物身体平面的无边框异次元折叠带。它不是一张塞进横条里的肖像，而是对当前摄像机完整画面的同坐标艺术化采样：裂隙覆盖画面哪里，就把原画面同一位置、同一大小、同一透视的内容转译成{TRANSFORMED_CHARACTER_CN}与{ART_STYLE_CN}，材质为{STYLE_MATERIALS_CN}，配色为{PALETTE_CN}，并融入克制的{TRANSFORMED_SCENE_MOTIFS_CN}。横带经过人物两侧背景时，内部必须显示那个位置对应的异世界背景，不能留白，也不能换成肖像棚背景。
+在人物和镜头之间生成一个悬浮的锐边几何次元窗口。外围是一圈纤细、清晰、线性的青色—洋红—紫色能量轮廓，像激光精准切开空间；轮廓窄而锐利，不能形成大团柔光。轮廓之间张开一层平整、光滑、绷紧、半透明的全息影像膜。它没有重量，不是实体物品，由无形空间张力维持。平直状态拥有完全笔直的上下边和锐利角；折叠状态拥有硬直折痕及平整的锐角三角面或梯形面。每一个可见面都显示异世界影像，绝不出现不透明黑色背面。
 
-裂隙内的眼睛、鼻子、嘴、下颌、头发、肩膀、衣服、手腕、手掌、手指和背景，全部与下方真人像素逐点对齐。严禁把脸重新居中、缩放后塞进面板，严禁把脸部切片搬到胸前，严禁在小矩形中出现一颗完整人头。裂隙外每一帧都保持原始真人妆容、发饰、服装、皮肤和背景。某个区域只有被裂隙覆盖时才艺术化，裂隙离开后同帧恢复真人，不留下累计变身痕迹。
+所有裂隙可见面的屏幕投影总面积，在每一帧都不得超过完整画面面积的25%。这是面积上限，不是单纯的高度上限。折叠或分裂时，必须把所有可见面片的投影面积相加，合计仍然≤25%；必要时主动缩小宽度、高度或透视投影。严禁半屏或全屏传送门。
 
-裂隙活动期间始终与脸、颈部、肩膀、躯干或手掌相交，不能悬在空处，不能完全落到下巴以下变成胸前手持卡片。边缘使用锐利透明遮罩，不发光、无边框、无描边、无纸张或玻璃厚度、无投影、无把手。折叠只改变同一条横带的空间朝向和透视；图像坐标必须连续跨过每一道折痕，不能在每个面板里重新取景或生成新肖像。
+影像膜内显示{ALTERNATE_CHARACTER_CN}，采用{ART_STYLE_CN}，身处{ALTERNATE_SCENE_CN}。这是同一个人在另一世界中的形态：脸型、视线、表情节奏、头部角度、姿势和手势与真人实时同步。替代人物不能独立表演。膜面拉伸、错切、折叠、透视缩短和收缩时，内部人物与背景同步变形。
 
-自适应几何
+双手始终位于裂隙左右两侧或顶部两角附近，绝不放在下方托举。双手像提线木偶师一样通过无形张力操控裂隙，但画面中没有可见线。双手外拉对应裂隙变宽；一上一下对应空间错切；一手前推对应一侧进入镜头景深；双手向内斜折对应硬折痕；双手靠拢对应收缩。手无需持续接触边缘，手指始终灵活运动。
 
-起始细缝为画面高度1–2%。主展示带横穿双眼、鼻子、脸颊和上半张嘴，并向两侧手掌位置延伸，占据当前画面可用宽度的大部分；高度既要清楚展示脸部切片，又不能容纳一颗重新构图的完整人头。扫描带压窄到约一只眼睛的高度，同时保持足够宽，与脸部和双手运动轨迹相交。横带始终在眼睛到上胸之间活动，不能缩成胸口短卡片。根据当前画面的可用空间调整横向手势；横向空间有限时，使用手掌前后纵深和透视缩短制造冲击。
+青—洋红—紫能量轮廓在附近指尖、脸颊、头发和衣服上投下克制的同色边光；膜内存在轻微视差与折射闪动。不能用烟雾、闪电、火花、爆炸粒子或大面积泛光遮挡几何形状。
 
-手部动作
+11秒时间线
 
-裂隙的每次展开、折叠、扫动和压缩都必须由同帧手势驱动。每只手腕在主体动作段至少横移画面宽度18%，或纵移画面高度10%。纵深推进时，一只张开的手掌明显伸向镜头，透视缩短，视觉尺寸达到后方手掌的1.3–1.6倍，并保持五根手指。斜向扫动时两手交换前后景深。手掌穿过裂隙时仍是同一只连续的手：被横带覆盖的部分艺术化，外部部分保持真人。禁止双手一直缩在胸前捏住卡片两角。
+[0.0–1.0秒] 激活：双手悬停在胸口至脸部高度，分别位于一条2–3像素宽的青—洋红发光水平线两侧，手指张开并立即外拉。它是发光几何能量线，不是黑色物质。
 
-{DURATION}秒时间线
+[1.0–2.8秒] 展开：能量线扩张成一个锐边矩形全息窗口。屏幕投影面积始终≤完整画面25%。绷紧半透明膜上出现同步的异世界人物与环境。保持直边、锐角、窄霓虹轮廓和零实体厚度。
 
-[0.0–0.5秒] 捏出细缝：双手已经抬到嘴部附近，拇指和食指分别捏住一条横穿下半张脸、向两侧延伸的1–2%高暗色细缝，立即向外拉。细缝无边框、贴合身体坐标，不是发光线。
+[2.8–4.5秒] 景深与错切：一只张开的手掌推向镜头，另一只手后退；窗口一侧前进、另一侧后退，形成透视梯形。随后一手抬高、一手压低，产生一次受控S形空间错切。膜面始终绷紧，没有下垂和布料褶皱，总投影面积仍≤25%。
 
-[0.5–1.6秒] 主脸部揭示：双手迅速拉向画面两侧，把同一条细缝展开成宽幅主横带，横穿双眼、鼻子、脸颊和上半张嘴，并占据当前画面可用宽度的大部分。只在横带内显示对应位置的艺术身份。脸保持真人原尺寸和原坐标，两侧显示对应异世界背景；上方头发和下方下颌仍是真人。
+[4.5–6.5秒] 硬折叠：双手在顶部两角附近做向内斜折动作，一至两道硬直斜折痕形成两到三个相连的锐角三角面，像精准的全息折纸。每个面片保持平整并持续显示异世界影像。所有可见面片投影面积相加后仍≤25%。
 
-[1.6–2.8秒] 手掌纵深推进：横带继续穿过脸部。一只手掌伸向镜头，视觉尺寸达到后方手掌的1.3–1.6倍，另一只手退向肩部。横带近端随前景手掌前移，远端后退，产生强烈视差；只改变横带平面的透视，不能缩放或移动内部人脸。
+[6.5–9.5秒] 重开与扫脸：双手外扫，面片重新展开为一个平整窗口。把窗口提升到眼睛和上半张脸位置，再压窄完成一次经过脸部与衣领的短扫描。异世界人物实时镜像真人的表情和手势。窗口持续发光、半透明，并始终遵守25%面积上限。
 
-[2.8–4.6秒] 连续手风琴折叠：前景手抬高，后景手压低，让同一条完整横带沿两到三道斜向折痕弯成三个或四个首尾相连的梯形面板，相邻面板交替向镜头前后折叠约25–40度。图像跨折痕连续。任何面板都不能脱落，不能拥有独立肖像，也不能重新居中一张脸。
-
-[4.6–6.7秒] 斜向锯齿扫动：连接在一起的折叠带从左上方穿过眼睛，斜扫到右下方的颈部和上胸，再反向一次；双手交换前后景深。面板在扫动中开合，但始终边缘相连。横带离开的区域立即恢复真人，不留下变身轨迹。
-
-[6.7–8.3秒] 拉平并扫描：双手外拉，把折叠面重新拉平成一条横带，再压窄到约一只眼睛的高度。从眼线向衣领下扫一次，再回到嘴部附近。横带仍需足够宽，并与脸部及双手运动路径相交。它是一条完整连接带，不是眼睛、嘴巴、服装三张照片。
-
-[8.3–10.2秒] 最终宽幅重开：双腕向外一弹，把同一条扫描带再次展开成横穿脸部的主展示宽带。最强艺术身份只短暂停留约0.35秒，随后完成一次浅斜折并重新拉平。横带外始终保留真人，持续动作和坐标对齐保持到10.2秒。
-
-[10.2–{DURATION}] 压缩闭合：双手果断合拢，把横带从主展示高度压到扫描高度，再压成1–2%的细缝，最后收成指尖之间的暗点，10.7秒前消失。{ENDING_ACTION_CN}。以未改变的真人结束。收尾总长不超过0.8秒，不出现花朵、道具展示或漫长粒子。
+[9.5–11.0秒] 闭合：窗口迅速弹回平面，平滑收缩成2–3像素发光线，最后在合拢的指尖之间消失。{ENDING_ACTION_CN}。不允许二次展开，不使用装饰性粒子收尾。
 
 负面约束
 
-严禁肖像卡片、手持照片、悬浮人头、独立矩形、屏幕、纸带、硬玻璃板、画框、传送门、门洞、分屏和异世界窗口；严禁重新居中或缩放脸部、把脸搬到胸前、在横带里出现完整头部、无关肖像背景、空白填充、每块面板重新取景、复制五官和折痕处图像断裂；严禁三条独立堆叠切片或三张矩形照片；严禁全身变身、累计变身、变身残影、铠甲接管、皇冠接管、面具接管、第二人物、复制身体和双重曝光；严禁轴向扭转、旋转胶片、光剑、激光、能量束、闪电、发光横线、花朵收尾、漫长粒子和装饰性定格；严禁脸部漂移、断颈、多指、粘指、断腕、视线突变、发型突变和裂隙外服装变化；严禁切镜、推拉、摇移、绕拍、抖动、文字、字幕、水印、UI、Logo、闪烁、闪白，以及超过0.25秒的空闲停顿。
+严禁黑色布料、黑色丝带、丝绸、围巾、橡胶条、胶带、纸张、卡片、照片、胶片、齿孔、硬玻璃和屏幕边框；严禁不透明黑色背面；严禁布料褶皱、柔软折痕、下垂、飘动、松弛、圆角和有机轮廓；严禁双手从下方托举，严禁持续抓住实体物品；严禁胸前肖像卡、静态独立肖像、断开的堆叠切片和独立照片面板；所有折叠或分裂面片的投影面积总和绝不超过完整画面25%；严禁半屏传送门和全屏覆盖；严禁独立第二人物、大团柔光、烟雾、闪电、光剑、火花、爆炸粒子、文字、水印、字幕、UI、Logo、切镜、推拉和随机运镜。
 ```

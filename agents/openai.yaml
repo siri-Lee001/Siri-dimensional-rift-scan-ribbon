@@ -1,4 +1,4 @@
 interface:
   display_name: "Dimensional Rift Scan Ribbon"
-  short_description: "Create coordinate-locked folding-ribbon prompts"
-  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second full-frame coordinate-preserving transformation ribbon with a wide face reveal, strong hand parallax, continuous connected folds, a thin scan, and no portrait cards."
+  short_description: "Create sharp holographic rift-window prompts"
+  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second sharp geometric holographic dimensional window with a taut semi-transparent membrane, synchronized alternate identity, hard-crease folds, gesture causality, and a strict 25% total projected-area cap."
