@@ -1,67 +1,83 @@
-# Target Effect — Observed Visual Grammar
+# Target Effect — Borderless Registered Ribbon
 
-## What the reference actually shows
+## What the target actually behaves like
 
-- A broad, sharp horizontal image slice floats across the subject.
-- The slice contains a large, coherent alternate character and alternate environment.
-- Alternate imagery is vivid and opaque enough to cover the real image beneath it.
-- The alternate face often occupies most of the slice height and remains readable.
-- The slice tilts, narrows, stretches, or bends in perspective while staying broadly horizontal.
-- Hands remain active near its left and right ends and appear to pull its movement.
-- The effect sometimes crosses the real face and creates a loose visual alignment, but it is not a surgical pixel-perfect replacement.
+The base performance is a real person continuously moving both hands. A horizontal alternate-style region appears only between the hands. It behaves like a local restyling of the same composition: wherever the region crosses the person, the corresponding body zone becomes the alternate counterpart; wherever it crosses nearby background, the same local spatial area becomes its alternate-world equivalent.
 
-## What the reference does not require
+The result is not a floating monitor with a separate portrait and panorama.
 
-- No source-plate explanation.
-- No coordinate or landmark instructions.
-- No transparent glass visor.
-- No isolated eye or lips.
-- No persistent vertical center crack.
-- No tiny decorative band.
+## Invariants
 
-## Reliable construction
+- One real subject, one alternate counterpart, one ribbon.
+- Fixed frontal continuous camera unless overridden.
+- Borderless opaque image region with two straight horizontal cut boundaries and short straight ends.
+- No visible outline, glowing frame, white border, glass, thickness, or shadow suggesting a held object.
+- Full footprint never exceeds 25% of the frame.
+- Both hands remain outside the ends with visible gaps.
+- Alternate subject holds the real subject's apparent body center, scale, pose, facing direction, and movement timing.
+- Outside the ribbon remains the unchanged real frame.
 
-1. Establish the unchanged real subject and setting.
-2. Open one opaque horizontal slice around 72–76% wide and 24–28% high.
-3. Put one large alternate head-and-shoulders character in the slice, with environment on both sides.
-4. Keep the face readable through pull, tilt, shallow wave, and face-crossing motion.
-5. Keep the complete effect at or below 25% of the frame.
-6. Close only in the final second.
+## Registered reveal
 
-## Failure corrections
+Treat the alternate counterpart as fixed at the real subject's position. The ribbon reveals only what intersects it:
 
-### Transparent eye shield
+| Ribbon height | Visible alternate content |
+|---|---|
+| chest | corresponding costume/chest/core; no face |
+| neck | collar, neck, lower jaw or functional equivalent |
+| mouth | corresponding mouth/muzzle/lower visor band |
+| eyes | corresponding eyes/sensors/upper-face band |
 
-Cause: glass, panel, membrane, lens, layer, or overlay language.
+At face height, hair and head contours continue through the top and bottom boundaries at the same apparent width as the hidden real head. Do not place a complete portrait into unused ribbon space. Restyle local background at the sides instead of opening an unrelated vista.
 
-Correction: use an opaque image-filled spatial slice; the real background is not visible through it.
+## Fold geometry
 
-### Vertical black crack
+The reliable fold is a short hero beat, not a simultaneous scan:
 
-Cause: centerline, seam, fold axis, landmark, or face-center language is visualized literally.
+1. Start from a flat registered ribbon.
+2. Hands remain outside both ends.
+3. Both wrists rotate inward while forearms stay separated.
+4. Two diagonal creases form; left and right sections hinge in depth into one connected bow-tie silhouette.
+5. Inner acute tips meet at center; content stays continuous and single.
+6. Hold 0.20–0.35 seconds for readability.
+7. Reverse wrists and restore the exact flat ribbon before moving it again.
 
-Correction: remove technical alignment language; use one broad horizontal rectangle and only a shallow off-center perspective bend.
+Never combine folding with vertical or lateral travel in the same beat.
 
-### Isolated eye or floating mouth
+## Learned failure map
 
-Cause: narrow-band and facial-coordinate instructions fragment the face.
+### Framed screen
 
-Correction: show one coherent large head-and-shoulders image with eyes, nose, mouth, cheeks, and hair together.
+Cause: edge seam, neon border, glow, window, portal, or alternate panorama wording.
 
-### Chest-level portrait
+Correction: say borderless local restyling with hard cut boundaries; explicitly ban visible outline and frame.
 
-Cause: the alternate face is scaled down to fit a small slit.
+### Oversized or compressed face
 
-Correction: make the slice 24–28% high and the alternate face fill most of its height; raise the whole slice across the real face during the hero beat.
+Cause: “face fills the ribbon,” complete portrait, or separate character image language.
 
-### Blank line halfway through
+Correction: reveal only the intersected zone of a fixed same-scale counterpart; continue the real silhouette across boundaries.
 
-Cause: repeated seam, contraction, scan, and closing instructions.
+### Hands pass through the ribbon
 
-Correction: use a scan line inside the alternate image while the full slice remains open; reserve contraction for the final second only.
+Cause: complex pinching or crossing gestures directed toward the center.
 
-### Identity drift outside the effect
+Correction: assign permanent left-hand and right-hand outside zones. Use wrist rotation and forearm travel; fingers articulate beside the ends, never over the image.
 
-Cause: overdescribing multiple versions of the character and complex transformations.
+### Fold ignored
 
-Correction: describe one stable real subject first; state once that everything outside the slice remains unchanged.
+Cause: fold is one clause among scan, sweep, tilt, pulse, expression, and many negatives; or the prompt simultaneously says the ribbon stays rectangular.
+
+Correction: make fold one full timestamped hero beat, suspend scanning, permit the temporary bow-tie silhouette, hold it briefly, and flatten before the next move.
+
+### Static hands
+
+Cause: long visual holds and repeated “palms beside ends” wording without trajectories.
+
+Correction: give each beat a distinct joint-led motion and finger-state change. Limit an unchanged pose to 0.35 seconds.
+
+### Prompt overload
+
+Cause: more than four effect verbs, six or more technical subgoals, or dozens of negative clauses in five seconds.
+
+Correction: use the duration budget. A five-second fold test gets open, rise, fold/flatten, return, close—nothing else.
