@@ -1,4 +1,4 @@
 interface:
   display_name: "Dimensional Rift Scan Ribbon"
-  short_description: "Create face-anchored registered rift prompts"
-  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second face-anchored dimensional-rift prompt with stationary screen-space registered real and alternate plates, landmark-locked facial alignment, a straight 72% x 29% horizontal matte that stays on the face, lateral no-contact hand control, and a <=25% complete visual footprint."
+  short_description: "Create visual-first dimensional image-slice prompts"
+  default_prompt: "Use $dimensional-rift-prompt to create an 11-second prompt with one opaque horizontal dimensional image slice, edge-to-edge alternate-world imagery, a large coherent alternate face, lateral hand control, shallow elastic folding, one internal scan sweep, a stable real world outside the slice, and a complete visual footprint no larger than 25% of the frame. Do not prescribe the video ratio."

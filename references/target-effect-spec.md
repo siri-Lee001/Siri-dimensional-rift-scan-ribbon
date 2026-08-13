@@ -1,136 +1,67 @@
-# Target Effect Specification
+# Target Effect — Observed Visual Grammar
 
-## Correct mental model
+## What the reference actually shows
 
-The target is two co-registered source plates and one moving matte:
+- A broad, sharp horizontal image slice floats across the subject.
+- The slice contains a large, coherent alternate character and alternate environment.
+- Alternate imagery is vivid and opaque enough to cover the real image beneath it.
+- The alternate face often occupies most of the slice height and remains readable.
+- The slice tilts, narrows, stretches, or bends in perspective while staying broadly horizontal.
+- Hands remain active near its left and right ends and appear to pull its movement.
+- The effect sometimes crosses the real face and creates a loose visual alignment, but it is not a surgical pixel-perfect replacement.
 
-1. Plate A is an immutable live-action take filling the full frame.
-2. Plate B is a complete alternate take of the same performance, registered to the same scale, coordinates, gaze, pose, and timing, but kept invisible by default.
-3. One shallow horizontal matte reveals Plate B only where it overlaps Plate A and covers no more than 25% of frame.
+## What the reference does not require
 
-It is a local replacement in one continuous image—not a screen showing another shot.
+- No source-plate explanation.
+- No coordinate or landmark instructions.
+- No transparent glass visor.
+- No isolated eye or lips.
+- No persistent vertical center crack.
+- No tiny decorative band.
 
-Plate A and Plate B remain stationary in screen coordinates. Only the matte moves or deforms. The alternate pupils, nose, mouth, jaw, and face center stay locked to corresponding real landmarks; they never ride along with the matte.
+## Reliable construction
 
-## Non-negotiable world separation
-
-- At least 75% of every frame remains the recognizable real subject and real environment.
-- Every pixel outside the matte remains real-world imagery.
-- Alternate-world content has zero visibility outside the matte.
-- The real and alternate scenes must be visually and semantically incompatible.
-- The base plate never adopts the alternate costume, architecture, palette, or rendering style.
-
-## Subject representation
-
-- One subject, one head, one body, one pose.
-- The same anatomical region changes locally at the matte boundary.
-- The hidden alternate plate contains a coherent, recognizable alternate identity; the visible crop is not random decoration.
-- A slit across the eyes contains only the alternate eye band, not a complete alternate face.
-- A slit across the torso contains only the alternate torso band, not a miniature full person.
-- Uncovered regions restore immediately to the real identity.
-- Never place a second character, portrait, inset shot, or recursive copy inside the slit.
-- Keep the slit within a face corridor from slightly above eyebrows to just below chin throughout every open frame.
-- Every visible alternate feature remains embedded in a connected face crop. No single eye, floating lips, disembodied face, or face placed at chest level.
-
-## Temporal and directional invariants
-
-- From roughly 0.6s to 10.2s, the rift remains continuously open, alternate-image-filled, and causally controlled.
-- Its long axis stays within 12 degrees of horizontal.
-- Width remains at least 3.5 times height until final closure.
-- Hero and motion states are 28–30% frame height and 70–74% width, about 20–22% filled area. The complete effect remains ≤25%.
-- Top and bottom edges are straight and end caps vertical; no ellipse, oval lens, capsule, eye shape, or curved glass silhouette.
-- A fold is a shallow Z-depth kink in one still-wide connected strip, never a detached shard, diamond, isolated triangle, or empty outline.
-- Both hand centers stay to the left and right; neither palm cups or presents the effect from below.
-
-## Rift silhouette and material
-
-- Long, shallow horizontal reality cut.
-- Alternate treatment reaches the cut edge; no transparent glass margin.
-- Boundary is a single-pixel cyan–magenta chromatic seam, not a luminous frame.
-- One off-center diagonal fold may create two unequal connected facets.
-- Every facet remains part of the same local moving matte.
-- No HUD, screen, panel, chassis, book, butterfly, ribbon, fabric, or black backface.
-
-## Footprint rule
-
-On every frame:
-
-1. Enclose alternate treatment, seam, spill, distortion, corners, motion blur, and folded facets in one screen-space box.
-2. Keep the box no wider than 78% and no taller than 22% of frame.
-3. Keep the total visible footprint at or below 25%.
-4. Sum the projected areas of all folded facets.
-5. Let no ray, line, corner, or glow escape the box.
+1. Establish the unchanged real subject and setting.
+2. Open one opaque horizontal slice around 72–76% wide and 24–28% high.
+3. Put one large alternate head-and-shoulders character in the slice, with environment on both sides.
+4. Keep the face readable through pull, tilt, shallow wave, and face-crossing motion.
+5. Keep the complete effect at or below 25% of the frame.
+6. Close only in the final second.
 
 ## Failure corrections
 
-### Inside and outside become the same alternate world
+### Transparent eye shield
 
-Cause: the alternate scene is described as a stronger full scene than the real base plate, so the model promotes it globally.
+Cause: glass, panel, membrane, lens, layer, or overlay language.
 
-Correction: define and repeat the immutable real base plate first; require at least 75% real-world visibility; state zero alternate-world pixels outside the matte; express alternate details only as local substitutions.
+Correction: use an opaque image-filled spatial slice; the real background is not visible through it.
 
-### Recursive picture-in-picture
+### Vertical black crack
 
-Cause: asking for an alternate person, portrait, mirrored character, or face-and-torso crop inside the slit.
+Cause: centerline, seam, fold axis, landmark, or face-center language is visualized literally.
 
-Correction: render no second person and no self-contained alternate shot. Restyle only the exact eye, skin, hair, clothing, or background fragment currently covered by the moving matte.
+Correction: remove technical alignment language; use one broad horizontal rectangle and only a shallow off-center perspective bend.
 
-### Decorative strip instead of alternate identity
+### Isolated eye or floating mouth
 
-Cause: the prompt suppresses the alternate person too aggressively or describes tiny ornamental details, leaving only abstract pattern.
+Cause: narrow-band and facial-coordinate instructions fragment the face.
 
-Correction: precompose a full-size co-registered alternate source plate with three large identity anchors, then reveal only its aligned crop through the matte. Never scale the plate down.
+Correction: show one coherent large head-and-shoulders image with eyes, nose, mouth, cheeks, and hair together.
 
-### Physical glass ornament, shard, or floating card
+### Chest-level portrait
 
-Cause: an art style such as stained glass, mosaic, engraving, paper cut, or collage is interpreted as the literal material of the rift.
+Cause: the alternate face is scaled down to fit a small slit.
 
-Correction: state that the style affects Plate B's image rendering only. The rift itself has no material thickness, glass, lead frame, paper edge, tile, card body, or object affordance.
+Correction: make the slice 24–28% high and the alternate face fill most of its height; raise the whole slice across the real face during the hero beat.
 
-### Vertical diamond, triangle, or early disappearance
+### Blank line halfway through
 
-Cause: fold and contraction language overpowers the horizontal silhouette and continuity.
+Cause: repeated seam, contraction, scan, and closing instructions.
 
-Correction: lock the long axis within 12 degrees of horizontal, keep width:height at least 3.5:1, maintain image fill from 0.6–10.2s, and define folding as a shallow Z-depth kink in one still-wide strip.
+Correction: use a scan line inside the alternate image while the full slice remains open; reserve contraction for the final second only.
 
-### Hands cup the effect from below
+### Identity drift outside the effect
 
-Cause: ballet, magic, offering, or presentation gestures invite an object-holding pose.
+Cause: overdescribing multiple versions of the character and complex transformations.
 
-Correction: place both hand centers laterally, forbid upward-facing palms below the slit, and require one side hand to cross in front while the other remains behind.
-
-### Alternate face appears at chest level
-
-Cause: the model centers Plate B's face inside the moving slit instead of registering it to Plate A's face.
-
-Correction: lock alternate face center and landmarks to the real face in stationary screen coordinates; require the slit to overlap the real face throughout all open frames; ban chest-level face placement.
-
-### Single eye or floating mouth
-
-Cause: the slit becomes too thin or carries facial features as attached content while moving.
-
-Correction: maintain 28–30% frame height and keep any eye, nose, or mouth embedded in an anatomically connected facial crop. Plates stay fixed; only the matte moves.
-
-### Oval glass lens
-
-Cause: depth, stained-glass, or portal language curves the long edges and adds transparency.
-
-Correction: require two straight horizontal long edges, vertical end caps, zero transparency, zero refraction, and no ellipse, oval, capsule, lens, or eye-shaped aperture.
-
-### HUD or transparent display
-
-Cause: window, hologram, membrane, neon perimeter, glass, diagnostic, interface, corner frame.
-
-Correction: use a borderless reality cut with a single-pixel chromatic seam and no transparent margin or circuitry.
-
-### Electronic book or butterfly
-
-Cause: two hands gripping matching corners, a centered crease, two equal planes.
-
-Correction: visible hand-edge gaps, asymmetrical hand depth, one off-center diagonal crease, two unequal planes.
-
-### Oversized effect
-
-Cause: counting the inner image but ignoring glow, fold faces, rays, and blur.
-
-Correction: constrain the complete envelope to 78% × 22% and preserve the ≤25% hard cap in every state.
+Correction: describe one stable real subject first; state once that everything outside the slice remains unchanged.
