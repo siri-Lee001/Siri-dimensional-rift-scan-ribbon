@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Quality gate for geometric holographic dimensional-rift prompts."""
+"""Quality gate for horizontal borderless dimensional image-slit prompts."""
 
 from __future__ import annotations
 
@@ -10,9 +10,9 @@ import sys
 from pathlib import Path
 
 REQUIRED = (
-    "sharp-edged geometric dimensional window",
-    "flat smooth taut semi-transparent holographic membrane",
-    "the total visible projected area of all rift surfaces never exceeds 25% of the full video frame",
+    "horizontal borderless dimensional image slit",
+    "alternate-world imagery reaches every edge with no transparent glass margin",
+    "the complete visual footprint of the rift, including edge light and every folded facet, never exceeds 25% of the full video frame",
 )
 SEP = r"[-–—]"
 
@@ -40,66 +40,75 @@ def measure(text: str) -> dict[str, object]:
     for phrase, count in phrase_counts.items():
         if count < 1:
             failures.append(f'Missing exact phrase: "{phrase}".')
-    if not 650 <= len(words) <= 1050:
-        warnings.append(f"English word count is {len(words)}; target is 650-1050.")
-    if negatives < 18:
-        failures.append(f"Negative constraints are too sparse; found {negatives}, require 18.")
+    if not 600 <= len(words) <= 950:
+        warnings.append(f"English word count is {len(words)}; target is 600-950.")
+    if negatives < 24:
+        failures.append(f"Negative constraints are too sparse; found {negatives}, require 24.")
 
-    material_terms = (
-        r"thin.{0,25}crisp.{0,25}linear.{0,40}cyan.{0,15}magenta.{0,15}violet",
-        r"straight (?:top and bottom )?edges?",
-        r"sharp corners?",
-        r"hard.{0,20}crease",
-        r"planar.{0,25}(?:triangular|trapezoid)",
-        r"no opaque black backface",
-        r"subtle.{0,35}(?:light|rim).{0,40}(?:finger|cheek|skin|hair|clothing)",
+    appearance_patterns = (
+        r"single[- ]pixel.{0,35}cyan.{0,15}magenta.{0,35}(?:chromatic seam|color split)",
+        r"long.{0,20}shallow.{0,40}(?:rectangle|trapezoid|slit)",
+        r"no (?:frame body|bezel)",
+        r"no transparent (?:glass )?margin",
+        r"off-center diagonal crease",
+        r"two unequal connected planes",
+        r"no (?:black|opaque black) backface",
     )
-    material_ok = all(re.search(p, en, re.I | re.S) for p in material_terms)
-    if not material_ok:
-        failures.append("Rift material stack or light interaction is incomplete.")
+    appearance_ok = all(re.search(p, en, re.I | re.S) for p in appearance_patterns)
+    if not appearance_ok:
+        failures.append("Borderless slit appearance or asymmetric fold definition is incomplete.")
 
-    area_ok = (
-        len(re.findall(r"(?:≤|at or below|never exceed|remains?).{0,20}25%|25%.{0,35}(?:area|frame)", en, re.I)) >= 3
-        and bool(re.search(r"screen[- ]space area", en, re.I))
-        and bool(re.search(r"(?:sum|add).{0,60}(?:facet|surface|face).{0,60}25%", en, re.I | re.S))
-        and bool(re.search(r"NO half-frame portal", en, re.I))
-        and bool(re.search(r"NO full-frame takeover", en, re.I))
+    footprint_ok = (
+        bool(re.search(r"bounding box.{0,50}(?:no wider than|width).{0,20}78%.{0,50}(?:no taller than|height).{0,20}22%", en, re.I | re.S))
+        and bool(re.search(r"(?:imagery|seams).{0,80}(?:motion blur).{0,80}(?:folded|faces)", en, re.I | re.S))
+        and bool(re.search(r"(?:sum|add).{0,60}(?:face|facet).{0,60}25%", en, re.I | re.S))
+        and bool(re.search(r"no (?:ray|glow).{0,40}(?:escape|outside)", en, re.I))
+        and bool(re.search(r"NEVER exceed.{0,30}78%.{0,10}22%", en, re.I))
+        and bool(re.search(r"NEVER exceed 25%", en, re.I))
     )
-    if not area_ok:
-        failures.append("The repeated 25% projected-area cap or folded-facet sum rule is incomplete.")
+    if not footprint_ok:
+        failures.append("Complete-envelope bounding box or 25% footprint rule is incomplete.")
 
-    hand_ok = (
-        bool(re.search(r"hands remain beside.{0,60}(?:left/right|left and right).{0,40}(?:upper corners|edges)", en, re.I | re.S))
-        and bool(re.search(r"never underneath.{0,30}support", en, re.I))
-        and bool(re.search(r"invisible tension", en, re.I))
-        and bool(re.search(r"no strings are visible", en, re.I))
-    )
-    if not hand_ok:
-        failures.append("Hand position or invisible-tension control is incomplete.")
-
-    sync_ok = all(re.search(p, en, re.I | re.S) for p in (
-        r"same person",
+    identity_ok = all(re.search(p, en, re.I | re.S) for p in (
+        r"one life-size alternate",
+        r"same scale as the real subject",
+        r"face scale",
         r"gaze",
         r"expression timing",
         r"head angle",
-        r"hand gestures",
-        r"mirrors?.{0,35}(?:real|subject|person)",
+        r"mirrors?.{0,30}real subject",
+        r"NO miniature full-body figure",
+        r"NO multiple mecha figures",
     ))
-    if not sync_ok:
-        failures.append("Alternate-identity synchronization is incomplete.")
+    if not identity_ok:
+        failures.append("Life-size single alternate identity or synchronization is incomplete.")
 
-    anti_material = (
-        r"NO black fabric",
-        r"NO black ribbon",
-        r"NO silk",
-        r"NO opaque black backface",
-        r"NO cloth wrinkles",
-        r"NO hands supporting",
-        r"NO chest-level portrait card",
-        r"NO disconnected stacked strips",
+    hand_ok = (
+        bool(re.search(r"hands hover.{0,50}air gaps", en, re.I | re.S))
+        and bool(re.search(r"do not grip matching corners", en, re.I))
+        and bool(re.search(r"one hand.{0,40}in front.{0,50}other.{0,30}behind", en, re.I | re.S))
     )
-    if not all(re.search(p, en, re.I) for p in anti_material):
-        failures.append("Forbidden-material or portrait-card guardrails are incomplete.")
+    if not hand_ok:
+        failures.append("Air-gap hand control or foreground/background occlusion is incomplete.")
+
+    anti_hud = (
+        r"NO HUD",
+        r"NO holographic dashboard",
+        r"NO transparent monitor",
+        r"NO digital interface",
+        r"NO screen",
+        r"NO circuit border",
+        r"NO corner brackets",
+        r"NO open book",
+        r"NO electronic book",
+        r"NO butterfly wings",
+        r"NO centered spine",
+        r"NO symmetrical V-fold",
+        r"NO bilateral corner gripping",
+    )
+    anti_hud_ok = all(re.search(p, en, re.I) for p in anti_hud)
+    if not anti_hud_ok:
+        failures.append("HUD, screen, book, butterfly, or symmetric-fold guardrails are incomplete.")
 
     ratio_unspecified = not bool(re.search(r"\b(?:9\s*:\s*16|16\s*:\s*9)\b|aspect[- ]ratio", en, re.I))
     if not ratio_unspecified:
@@ -113,11 +122,11 @@ def measure(text: str) -> dict[str, object]:
             "required_phrase_counts": phrase_counts,
             "english_word_count": len(words),
             "negative_constraint_count": negatives,
-            "rift_material_stack_present": material_ok,
-            "projected_area_cap_present": area_ok,
-            "hand_control_present": hand_ok,
-            "alternate_identity_synchronized": sync_ok,
-            "forbidden_material_guardrails_present": all(re.search(p, en, re.I) for p in anti_material),
+            "borderless_slit_appearance_present": appearance_ok,
+            "complete_footprint_cap_present": footprint_ok,
+            "life_size_alternate_identity_present": identity_ok,
+            "air_gap_occlusion_choreography_present": hand_ok,
+            "anti_hud_book_guardrails_present": anti_hud_ok,
             "output_ratio_unspecified": ratio_unspecified,
         },
         "failures": failures,
@@ -127,14 +136,14 @@ def measure(text: str) -> dict[str, object]:
 
 def self_test() -> None:
     beats = "\n".join(f"[{i}.0-{i}.5s] motion" for i in range(6))
-    padding = " ".join(["controlled holographic geometry"] * 150)
+    padding = " ".join(["controlled borderless dimensional image"] * 130)
     sample = f"""# Part A
 {'. '.join(REQUIRED)}. {beats}
-A thin crisp linear cyan-magenta-violet contour. Straight top and bottom edges, sharp corners, hard diagonal crease, planar acute triangular facets. Every face carries imagery; no opaque black backface. Subtle colored rim light reaches nearby fingers and cheeks.
-This is a screen-space area limit. Keep at or below 25% in opening, remains at or below 25% while folding, and never exceed 25% in scanning. Add the projected area of every visible facet; the sum of all facets remains at or below 25%. NO half-frame portal. NO full-frame takeover.
-Hands remain beside the left/right edges or upper corners, never underneath in a supporting pose. Invisible tension controls it; no strings are visible.
-The same person matches gaze, expression timing, head angle, pose, and hand gestures; the alternate person mirrors the real subject.
-NO black fabric. NO black ribbon. NO silk. NO scarf. NO rubber. NO tape. NO paper. NO card. NO photo. NO filmstrip. NO sprocket holes. NO rigid glass. NO opaque black backface. NO cloth wrinkles. NO soft folds. NO drooping. NO fluttering. NO sagging. NO rounded corners. NO hands supporting the rift from below. NO chest-level portrait card. NO disconnected stacked strips. {padding}
+A single-pixel cyan-magenta chromatic seam. A long shallow horizontal rectangle. Alternate imagery fills to every edge with no frame body or bezel and no transparent glass margin. One off-center diagonal crease forms two unequal connected planes with no black backface.
+Enclose imagery, seams, color spill, corners, motion blur, and folded faces in one bounding box no wider than 78% and no taller than 22%. Sum every folded face; combined area remains at or below 25%. No ray or glow may escape outside the box. NEVER exceed the 78% x 22% bounding box. NEVER exceed 25% total visual footprint.
+Show one life-size alternate at the same scale as the real subject. Match face scale, gaze, expression timing, head angle, pose, and gestures. The alternate mirrors the real subject. NO miniature full-body figure. NO multiple mecha figures.
+Both hands hover with visible air gaps and do not grip matching corners. One hand passes in front while the other remains behind.
+NO HUD. NO holographic dashboard. NO transparent monitor. NO digital interface. NO screen. NO frame. NO bezel. NO circuit border. NO corner brackets. NO targeting reticle. NO glass. NO open book. NO electronic book. NO butterfly wings. NO centered spine. NO symmetrical V-fold. NO two equal panels. NO matching wings. NO bilateral corner gripping. NO neon rays. NO broad glow. NO black fabric. NO ribbon. NO paper. NO card. NO photo. NO filmstrip. {padding}
 # Part B
 中文。
 """

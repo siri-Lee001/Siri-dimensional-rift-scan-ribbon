@@ -1,4 +1,4 @@
 interface:
   display_name: "Dimensional Rift Scan Ribbon"
-  short_description: "Create sharp holographic rift-window prompts"
-  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second sharp geometric holographic dimensional window with a taut semi-transparent membrane, synchronized alternate identity, hard-crease folds, gesture causality, and a strict 25% total projected-area cap."
+  short_description: "Create borderless dimensional image-slit prompts"
+  default_prompt: "Use $dimensional-rift-scan-ribbon to create an 11-second horizontal borderless dimensional image slit with edge-to-edge alternate imagery, one life-size synchronized alternate identity, an asymmetric off-center fold, air-gap hand control, and a strict 25% complete visual-footprint cap."

@@ -2,72 +2,67 @@
 
 ## Correct mental model
 
-Treat the rift as a sharp geometric holographic image field suspended in air, not a ribbon or physical prop.
+The target is a horizontal cut where one reality replaces another inside a shallow strip. It is not a visible object with a chassis.
 
-Material stack:
+- Alternate imagery reaches the boundary itself.
+- The boundary is a single-pixel cyan-magenta chromatic seam, not a luminous frame.
+- There is no transparent glass margin, HUD ornament, corner bracket, central hinge housing, or empty panel area.
+- The strip may shear or fold in depth while remaining a single connected image slice.
 
-1. Thin cyan-magenta-violet linear energy perimeter
-2. Flat, smooth, taut, semi-transparent holographic membrane
-3. Synchronized alternate person and environment carried on the membrane
-4. Local colored light spill on nearby skin, hair, and clothes
-5. Faint internal parallax or refractive shimmer
+## Target silhouette
 
-## Geometry
+- Long and shallow; horizontal width dominates height.
+- Straight state: rectangle or mild trapezoid.
+- Depth state: one end approaches camera and the other recedes.
+- Fold state: one off-center diagonal crease creates two unequal planes.
+- Never form a symmetric V, butterfly, open book, double door, or two matching monitor wings.
 
-- Straight state: clean rectangle or trapezoid, straight edges, sharp corners.
-- Depth state: one side advances and the opposite side recedes; perspective forms a trapezoid.
-- Shear state: one controlled S-shaped spatial deformation while edge tension remains visible.
-- Fold state: one or two hard straight crease lines create connected acute triangular facets.
-- Scan state: narrow horizontal window crossing eyes, face, or upper chest.
-- Closing state: planar window snaps flat, contracts to a thin energy line, then disappears.
+## Footprint rule
 
-## Non-negotiable area rule
+On every frame:
 
-On every frame, sum the screen-space projected area of every visible rift face. The total must remain ≤25% of the full frame area. This applies during opening, twisting, folding, splitting, scanning, and closing. A split does not grant each piece its own 25% allowance.
+1. Enclose alternate imagery, seams, color spill, distortion, corners, motion blur, and all folded faces in one screen-space bounding box.
+2. Keep that complete box no wider than 78% and no taller than 22% of the frame.
+3. Keep the total visible footprint ≤25% of full-frame area.
+4. Sum all folded-face projected areas; a fold does not create extra allowance.
+5. No ray, line, corner, or glow may escape the box.
 
-## Correct hand relationship
+## Subject representation
 
-- Hands hover beside the left/right edges or upper corners.
-- Hands act through invisible tension; no visible string.
-- Hands may briefly approach a corner but do not continuously pinch and hold a physical object.
-- Both hands never move below the rift to support it.
-- Gesture direction and rift deformation match on the same frames.
+- Show one life-size crop of the same subject, never a miniature full-body figure.
+- Match face scale, gaze, expression timing, head angle, pose, and gesture.
+- Fill remaining pixels with the corresponding alternate environment.
+- For a mecha-engineer identity, show the engineer's face and upper torso at the same scale as the real subject—not mecha robots standing in a hangar.
 
-## Alternate identity behavior
+## Hand relationship
 
-- The alternate person is the same individual in another world/style.
-- Match face structure, gaze, expression timing, head angle, body pose, and gestures.
-- The alternate image deforms together with the membrane.
-- Do not treat the alternate person as a static portrait or independent actor.
+- Hands control from nearby space with visible air gaps.
+- Avoid bilateral corner gripping; it creates a monitor or book.
+- One hand may cross in front of the slice while the other remains behind it, creating clear occlusion depth.
+- Use asymmetrical gestures and off-center folds.
 
 ## Failure corrections
 
-### Black ribbon or cloth
+### HUD or transparent display
 
-Cause: words such as ribbon, dark slit, pinch ends, accordion, soft fold.
+Cause: holographic window, membrane, neon perimeter, glass, diagnostic, interface, sharp corner frame.
 
-Correction: use geometric dimensional window, taut holographic membrane, linear energy perimeter, hard crease, zero fabric behavior, and no black backface.
+Correction: use borderless dimensional image slit, image-to-edge fill, single-pixel chromatic seam, no transparent margin, no circuitry, no brackets, no interface graphics.
 
-### Portrait card
+### Electronic book or butterfly
 
-Cause: a small opaque rectangle held at chest height with a centered face.
+Cause: two hands at matching corners, centered vertical crease, two equal panels, symmetrical fold.
 
-Correction: keep hands at the sides, use semi-transparency and colored edge light, make the alternate person mirror live movement, and move the legal ≤25% window through face space rather than placing it on the sternum.
+Correction: visible hand-edge gaps, one off-center diagonal crease, two unequal planes, asymmetrical depth, no central spine.
 
-### Oversized portal
+### Oversized visual footprint
 
-Cause: describing a giant reveal or giving only a height limit.
+Cause: width × height calculation ignores glow, rays, sharp protrusions, and motion blur.
 
-Correction: repeat that the sum of all projected rift faces is ≤25% of full-frame area. Reduce width, height, or projected depth whenever needed.
+Correction: constrain the entire visible envelope to 78% × 22%, then retain the ≤25% hard cap.
 
-### Soft organic deformation
+### Miniature character inside the slit
 
-Cause: fabric, ribbon, silk, flutter, elastic sheet, or accordion language.
+Cause: describing a hangar, robot, or full alternate character instead of a matching crop.
 
-Correction: use straight edges, sharp corners, planar facets, hard diagonal crease lines, and controlled spatial shear.
-
-### Weak spatial integration
-
-Cause: no light interaction or depth cue.
-
-Correction: add localized cyan-magenta rim light on fingers and cheeks, one foreground-palm pass, membrane parallax, and perspective foreshortening.
+Correction: require one life-size face-and-upper-torso crop of the same subject; ban distant figures and multiple mecha.

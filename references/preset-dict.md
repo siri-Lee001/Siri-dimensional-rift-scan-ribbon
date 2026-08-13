@@ -69,8 +69,8 @@ Avoid ordinary anime/cel shading unless explicitly requested.
 | 中文 | English title | English action |
 |---|---|---|
 | 释放消散（默认） | RELEASE + DISSOLVE | releases both hands, lets the line vanish, returns to a natural stance |
-| 打响指 | SNAP + CLEAN CUT | snaps once; the holographic window collapses instantly into a point |
-| 竖起大拇指 | THUMBS UP | gives one clear thumbs-up after the holographic window disappears |
+| 打响指 | SNAP + CLEAN CUT | snaps once; the dimensional image slit collapses instantly into a point |
+| 竖起大拇指 | THUMBS UP | gives one clear thumbs-up after the dimensional image slit disappears |
 | 比耶微笑 | PEACE SIGN + SMILE | raises a peace sign and gives a restrained smile |
 | 比心眨眼 | HEART FINGER + WINK | forms a small finger heart and gives one playful wink |
 
